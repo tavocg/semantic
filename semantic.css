@@ -405,6 +405,25 @@ input:where([type='button'], [type='reset'], [type='submit']),
 
 /* end - preflight.css */
 
+:root {
+  --s-c-bg:  #f8fafc;
+  --s-c-fg:  #0f172a;
+  --s-c-pri: #2563eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --s-c-bg:  #0f172a;
+    --s-c-fg:  #f8fafc;
+    --s-c-pri: #60a5fa;
+  }
+}
+
+body {
+  background-color: var(--s-c-bg);
+  color: var(--s-c-fg);
+}
+
 main {
   padding: 0 1.25rem;
 
@@ -427,11 +446,11 @@ h1, h2, h3, h4, h5, h6 {
 
   /* headings have different sizes only inside <main> */
   main & {
-    &:is(h1) { font-size: 2.25rem;  line-height: 2.5rem;  } /* text-4xl */
-    &:is(h2) { font-size: 1.875rem; line-height: 2.25rem; } /* text-3xl */
-    &:is(h3) { font-size: 1.5rem;   line-height: 2rem;    } /* text-2xl */
-    &:is(h4) { font-size: 1.25rem;  line-height: 1.75rem; } /* text-xl */
-    &:is(h5) { font-size: 1.125rem; line-height: 1.75rem; } /* text-lg */
+    &:is(h1) {font-size: 2.25rem;  line-height: 2.5rem}  /* text-4xl */
+    &:is(h2) {font-size: 1.875rem; line-height: 2.25rem} /* text-3xl */
+    &:is(h3) {font-size: 1.5rem;   line-height: 2rem}    /* text-2xl */
+    &:is(h4) {font-size: 1.25rem;  line-height: 1.75rem} /* text-xl */
+    &:is(h5) {font-size: 1.125rem; line-height: 1.75rem} /* text-lg */
     /* text-base: already default */
     /* &:is(h6) { font-size: 1rem; line-height: 1.5rem; } */
   }
