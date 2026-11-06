@@ -408,20 +408,22 @@ input:where([type='button'], [type='reset'], [type='submit']),
 :root {
   color-scheme: light;
 
-  --s-col-bg: #f8fafc;
-  --s-col-fg: #0f172a;
+  --s-col-bg:      #f8fafc;
+  --s-col-fg:      #0f172a;
   --s-col-fg-mute: #64748b;
   --s-col-primary: #6366f1;
+  --s-col-border:  #a5b4fc;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
 
-    --s-col-bg: #0b1120;
-    --s-col-fg: #e2e8f0;
+    --s-col-bg:      #0b1120;
+    --s-col-fg:      #e2e8f0;
     --s-col-fg-mute: #94a3b8;
     --s-col-primary: #a5b4fc;
+    --s-col-border:  #a5b4fc;
   }
 }
 
@@ -449,13 +451,11 @@ body {
       height: 100dvh;
       overflow-y: auto;
     }
+
     > main {
       grid-area: main;
       height: 100dvh;
-      min-height: 0;
-      min-width: 0;
       overflow-y: auto;
-      box-sizing: border-box;
     }
   }
 }
@@ -509,15 +509,12 @@ nav {
   }
 }
 
-main, section, article {
-  & > * {
-    margin: 1rem 0;
+h1, h2, h3, h4, h5, h6, p {
+  &:not(p) {
+    font-weight: bold;
   }
-}
 
-h1, h2, h3, h4, h5, h6 {
-  /* headings are always bold */
-  font-weight: bold;
+  margin: 1rem 0;
 
   /* headings have different sizes only inside <main> */
   main & {
@@ -529,4 +526,59 @@ h1, h2, h3, h4, h5, h6 {
     /* text-base: already default */
     /* &:is(h6) { font-size: 1rem; line-height: 1.5rem; } */
   }
+}
+
+a:not(nav a) {
+  color: var(--s-col-primary);
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+kbd {
+  padding: 0.185rem;
+  background-color: var(--s-col-primary);
+  color: var(--s-col-bg);
+  border-radius: 0.275rem;
+  font-weight: bold;
+}
+
+ins {
+  color: green;
+  text-decoration: none;
+}
+
+del {
+  color: red;
+}
+
+mark {
+  background-color: var(--s-col-primary);
+  padding: 0.125rem 0.5rem;
+}
+
+input:not([type="checkbox"],[type="radio"]), button:not([rel="prev"]) {
+  margin: 0.5rem 0;
+  padding: 0.875rem 1rem;
+  width: 100%;
+  background-color: var(--s-col-bg-secondary);
+  border: 1px solid var(--s-col-fg-mute);
+  border-radius: 0.25rem;
+
+  &:is([type="search"]) {
+    border-radius: 999px;
+  }
+
+  &:is(button, [type="submit"], [type="reset"]) {
+    background-color: var(--s-col-primary);
+    border-color: var(--s-col-primary);
+    color: var(--s-col-bg);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+label, figcaption {
+  color: var(--s-col-fg-mute);
 }
