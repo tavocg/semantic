@@ -407,19 +407,21 @@ input:where([type='button'], [type='reset'], [type='submit']),
 
 :root {
   color-scheme: light;
-  --s-col-bg:   #f8fafc;
-  --s-col-fg:   #0f172a;
-  --s-col-fg-mute: #f8fafc;
-  --s-col-primary:  #2563eb;
+
+  --s-col-bg: #f8fafc;
+  --s-col-fg: #0f172a;
+  --s-col-fg-mute: #64748b;
+  --s-col-primary: #6366f1;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --s-col-bg:   #0f172a;
-    --s-col-fg:   #f8fafc;
-    --s-col-fg-mute: #f8fafc;
-    --s-col-primary:  #60a5fa;
+
+    --s-col-bg: #0b1120;
+    --s-col-fg: #e2e8f0;
+    --s-col-fg-mute: #94a3b8;
+    --s-col-primary: #a5b4fc;
   }
 }
 
