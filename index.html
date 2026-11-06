@@ -1,53 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content"/>
-    <title>Semantic CSS</title>
-    <meta name="description" content="A drop-in, beautiful, responsive stylesheet for semantic HTML"/>
-    <link rel="stylesheet" href="semantic.css">
-    <link rel="icon" href="logo.svg" type="image/svg+xml">
-  </head>
-  <body>
-    <!-- <header> -->
-    <!--   <a href="/"> -->
-    <!--     <img src="logo.svg" style="height:1.5rem"> -->
-    <!--   </a> -->
-    <!--   <div> -->
-    <!--     Another -->
-    <!--   </div> -->
-    <!-- </header> -->
-    <aside>
-      <nav>
-        <ul>
-          <li><a href="#" aria-current="page">Item 1</a></li>
-          <li><a href="#">Item 2</a></li>
-          <li><a href="#">Item 3</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <main>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Un workspace de ejemplo construido con HTML semántico y una sola hoja de estilos. Sin clases, sin JavaScript.">
+  <meta name="color-scheme" content="light dark">
+  <title>Workspace · Semantic CSS</title>
+  <link rel="stylesheet" href="semantic.css">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <aside id="navigation" popover aria-label="Navegación principal">
+    <header><strong>◈ Semantic CSS</strong><br><small>Estilos para HTML semántico</small></header>
+    <nav aria-label="Workspace">
+      <small>Workspace</small>
+      <ul>
+        <li><a href="#overview" aria-current="page">Vista general</a></li>
+        <li><a href="#projects">Biblioteca</a></li>
+        <li><a href="#preferences">Preferencias</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Documentación">
+      <small>Construir</small>
+      <ul>
+        <li><a href="#start">Primeros pasos</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#questions">Preguntas frecuentes</a></li>
+        <li><a href="examples/pico.html">Todos los elementos ↗</a></li>
+      </ul>
+    </nav>
+    <footer><strong>Proyecto de ejemplo</strong><br><small>HTML y CSS, sin JavaScript.</small></footer>
+  </aside>
+
+  <main id="content">
+    <header>
+      <button type="button" popovertarget="navigation" aria-label="Abrir navegación"></button>
+      <strong>Semantic CSS</strong>
+    </header>
+
+    <section id="overview" aria-labelledby="overview-title">
+      <header>
+        <small>WORKSPACE / VISTA GENERAL</small>
+        <hgroup>
+          <h1 id="overview-title">Semantic CSS</h1>
+          <p>Ejemplo de una aplicación con navegación, formularios y componentes HTML nativos.</p>
+        </hgroup>
+        <div role="group" aria-label="Acciones principales">
+          <a href="#start" role="button" data-variant="primary">Primeros pasos</a>
+          <button type="button" popovertarget="quickstart">Ver integración</button>
+        </div>
+      </header>
       <article>
-        <header>
-          <h1>Semantic CSS</h1>
-          <p>
-            A drop-in, beautiful, responsive stylesheet for semantic HTML
-          </p>
-        </header>
-        <h2>Subheading</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-        </p>
-        <p>
-          See examples:
-        </p>
-        <ul>
-          <li><a href="examples/pico.html">Pico CSS classless HTML</a></li>
-        </ul>
+        <small>DEPENDENCIAS</small>
+        <p><strong>0</strong></p>
+        <small>Sin frameworks, fuentes externas ni scripts.</small>
       </article>
-    </main>
-  </body>
+      <article>
+        <small>PERSONALIZACIÓN</small>
+        <p><strong>Variables CSS</strong></p>
+        <small>Variables CSS para superficies, texto y estados.</small>
+      </article>
+      <article>
+        <small>DISEÑO RESPONSIVE</small>
+        <p><strong>De móvil a escritorio</strong></p>
+        <small>Navegación y componentes adaptados al ancho disponible.</small>
+      </article>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <header><h2 id="projects-title">Biblioteca de componentes</h2><p>Elementos HTML utilizados en cada sección del ejemplo.</p></header>
+      <table>
+        <caption>Recursos del proyecto</caption>
+        <thead><tr><th scope="col">Recurso</th><th scope="col">HTML que lo construye</th><th scope="col">Explorar</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Panel de control</th><td><code>section</code> + <code>article</code></td><td><a href="#overview">Tarjetas</a></td></tr>
+          <tr><th scope="row">Configuración</th><td><code>form</code> + <code>fieldset</code></td><td><a href="#preferences">Formulario</a></td></tr>
+          <tr><th scope="row">Centro de ayuda</th><td><code>details</code> + <code>summary</code></td><td><a href="#questions">Acordeones</a></td></tr>
+          <tr><th scope="row">Documentación</th><td><code>pre</code> + <code>code</code></td><td><a href="#start">Integración</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="preferences" aria-labelledby="preferences-title">
+      <header><h2 id="preferences-title">Formularios</h2><p>Prueba los controles. La vista previa conserva tus cambios mientras sigues en esta página.</p></header>
+      <article>
+        <h3>Identidad del workspace</h3>
+        <form action="#preferences" method="get">
+          <label>Nombre del proyecto<input name="project" value="Sitio del equipo" required autocomplete="organization"></label>
+          <label>Correo de contacto<input name="email" type="email" placeholder="hola@ejemplo.com" autocomplete="email"></label>
+          <label>Tipo de proyecto<select name="type"><option>Aplicación web</option><option>Documentación</option><option>Sitio personal</option></select></label>
+          <label>Descripción<textarea name="description" rows="3" placeholder="¿Qué estás construyendo?"></textarea></label>
+          <div role="group" aria-label="Acciones del formulario"><button type="submit">Probar envío</button><button type="reset">Restablecer</button></div>
+          <p><small>Demo nativa: el envío muestra los valores en la URL. No se guardan en un servidor.</small></p>
+        </form>
+      </article>
+      <article>
+        <h3>Preferencias de interfaz</h3>
+        <fieldset>
+          <legend>Notificaciones</legend>
+          <label><input type="checkbox" checked>Actualizaciones del proyecto</label>
+          <label><input type="checkbox">Novedades del producto</label>
+          <label><input type="checkbox" role="switch" checked>Resumen semanal</label>
+        </fieldset>
+        <fieldset>
+          <legend>Visibilidad</legend>
+          <label><input type="radio" name="visibility" value="private" checked>Solo mi equipo</label>
+          <label><input type="radio" name="visibility" value="public">Público</label>
+        </fieldset>
+        <label>Densidad visual<input type="range" min="0" max="100" value="55"><small>Una muestra del control; no modifica el layout.</small></label>
+        <label>Color de muestra<input type="color" value="#246bce"></label>
+      </article>
+    </section>
+
+    <section id="start" aria-labelledby="start-title">
+      <hgroup><h2 id="start-title">Instalación</h2><p>Enlaza la hoja de estilos y utiliza los elementos HTML habituales.</p></hgroup>
+      <pre><code>&lt;link rel="stylesheet" href="semantic.css"&gt;
+
+&lt;section&gt;
+  &lt;article&gt;
+    &lt;h3&gt;Ejemplo de tarjeta&lt;/h3&gt;
+    &lt;p&gt;Título y descripción dentro de un artículo.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/section&gt;</code></pre>
+      <blockquote><p>El HTML describe el contenido. El CSS decide cómo presentarlo.</p><footer>El principio detrás de <cite>Semantic CSS</cite></footer></blockquote>
+    </section>
+
+    <section id="components" aria-labelledby="components-title">
+      <header><h2 id="components-title">Estados y elementos de texto</h2><p>Estados coherentes y controles nativos que funcionan con teclado.</p></header>
+      <article>
+        <h3>Estado y progreso</h3>
+        <label for="setup">Preparación del workspace · 72 %</label>
+        <progress id="setup" value="72" max="100">72 %</progress>
+        <p aria-busy="true">Ejemplo de carga</p>
+        <p><ins>Listo para publicar</ins> · <del>Versión anterior</del></p>
+        <button type="button" disabled>Acción no disponible</button>
+      </article>
+      <article>
+        <h3>Texto y búsqueda</h3>
+        <p>Destaca lo <mark>importante</mark>, muestra <code>código</code> y representa teclas como <kbd>Esc</kbd>.</p>
+        <label>Buscar en la biblioteca<input type="search" placeholder="Buscar recursos…"><small>Muestra visual del campo de búsqueda.</small></label>
+        <small>Selecciona cualquier texto para ver el color de selección.</small>
+      </article>
+    </section>
+
+    <section id="questions" aria-labelledby="questions-title">
+      <h2 id="questions-title">Preguntas frecuentes</h2>
+      <details open><summary>¿Necesito clases para cada componente?</summary><p>No. Las etiquetas definen la presentación: <code>nav</code> crea navegación, <code>details</code> un acordeón y los artículos dentro de una sección forman una cuadrícula.</p></details>
+      <details><summary>¿Cómo cambio los colores?</summary><p>Sobrescribe las variables <code>--s-col-*</code> en <code>:root</code>. El primario, el foco y las superficies se comparten entre todos los componentes.</p></details>
+      <details><summary>¿Cómo funciona en móvil y en modo oscuro?</summary><p>Las cuadrículas se reorganizan según el espacio y la paleta sigue la preferencia del sistema. El aside con <code>popover</code> se abre desde el menú móvil y se cierra con Escape o al tocar fuera.</p></details>
+      <details><summary>¿Todo esto funciona sin JavaScript?</summary><p>Sí. Los formularios, acordeones y paneles emergentes utilizan comportamientos nativos del navegador. Búsquedas, persistencia y lógica de aplicación se conectan por separado cuando tu proyecto las necesita.</p></details>
+    </section>
+
+    <footer id="about">
+      <section><h3>◈ Semantic CSS</h3><p>Hoja de estilos para formularios, navegación y contenido HTML.</p><p>Diseñado por <a href="https://tavo.cr">Gustavo Calvo</a>.</p></section>
+      <nav aria-label="Acerca de"><h3>Proyecto</h3><ul><li><a href="#overview">La idea</a></li><li><a href="#start">Cómo funciona</a></li><li><a href="LICENSE">Licencia</a></li></ul></nav>
+      <nav aria-label="Guías"><h3>Documentación</h3><ul><li><a href="#start">Primeros pasos</a></li><li><a href="#preferences">Formularios</a></li><li><a href="#questions">Personalización</a></li></ul></nav>
+      <nav aria-label="Ejemplos"><h3>Explorar</h3><ul><li><a href="#components">Componentes</a></li><li><a href="#projects">Patrones HTML</a></li><li><a href="examples/pico.html">Galería completa ↗</a></li></ul></nav>
+      <small>Código bajo licencia <a href="LICENSE">GPL-3.0-or-later</a>. Iconos <a href="https://heroicons.com">Heroicons</a> y reset Tailwind bajo MIT. Hecho con HTML y CSS.</small>
+    </footer>
+  </main>
+
+  <article id="quickstart" popover role="dialog" aria-labelledby="quickstart-title">
+    <header><h2 id="quickstart-title">Agregar Semantic CSS</h2><button type="button" rel="prev" popovertarget="quickstart" popovertargetaction="hide" aria-label="Cerrar"></button></header>
+    <p>Copia <code>semantic.css</code> a tu proyecto y enlázalo desde el documento.</p>
+    <pre><code>&lt;link rel="stylesheet"
+      href="semantic.css"&gt;</code></pre>
+    <p>No requiere instalación ni compilación. Los estilos se aplican a los elementos HTML del documento.</p>
+    <footer><button type="button" popovertarget="quickstart" popovertargetaction="hide">Entendido</button></footer>
+  </article>
+</body>
 </html>
