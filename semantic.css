@@ -406,23 +406,110 @@ input:where([type='button'], [type='reset'], [type='submit']),
 /* end - preflight.css */
 
 :root {
-  --s-c-bg:   #f8fafc;
-  --s-c-fg:   #0f172a;
-  --s-c-fg-m: #f8fafc;
-  --s-c-pri:  #2563eb;
-}
-
-body {
-  background-color: var(--s-c-bg);
-  color: var(--s-c-fg);
+  color-scheme: light;
+  --s-col-bg:   #f8fafc;
+  --s-col-fg:   #0f172a;
+  --s-col-fg-mute: #f8fafc;
+  --s-col-primary:  #2563eb;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --s-c-bg:   #0f172a;
-    --s-c-fg:   #f8fafc;
-    --s-c-fg-m: #f8fafc;
-    --s-c-pri:  #60a5fa;
+    color-scheme: dark;
+    --s-col-bg:   #0f172a;
+    --s-col-fg:   #f8fafc;
+    --s-col-fg-mute: #f8fafc;
+    --s-col-primary:  #60a5fa;
+  }
+}
+
+body {
+  background-color: var(--s-col-bg);
+  color: var(--s-col-fg);
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  main {
+    flex-grow: 1;
+  }
+
+  &:has(> aside) {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+    grid-template-areas:
+      "aside main";
+
+    > aside {
+      grid-area: aside;
+      height: 100dvh;
+      overflow-y: auto;
+    }
+    > main {
+      grid-area: main;
+      height: 100dvh;
+      min-height: 0;
+      min-width: 0;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+  }
+}
+
+header, footer {
+  &:is(body > &) {
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+
+    &:is(footer) {
+      justify-content: space-evenly;
+      color: var(--s-col-fg-mute);
+    }
+
+    & > * {
+      padding: 1.25rem;
+    }
+  }
+
+  p {
+    color: var(--s-col-fg-mute);
+  }
+
+  & > * {
+    align-items: center;
+    align-content: center;
+  }
+}
+
+main {
+  padding: 1.25rem;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+nav {
+  & ul {
+    &:not(aside ul) {
+      display: flex;
+    }
+    li {
+      a {
+        display: block;
+        padding: 0.5rem 1.25rem;
+        &:hover, &[aria-current="page"] {
+          background-color: var(--s-col-primary);
+        }
+      }
+    }
+  }
+}
+
+main, section, article {
+  & > * {
+    margin: 1rem 0;
   }
 }
 
@@ -441,161 +528,3 @@ h1, h2, h3, h4, h5, h6 {
     /* &:is(h6) { font-size: 1rem; line-height: 1.5rem; } */
   }
 }
-
-header, footer {
-  height: 5rem;
-  display: flex;
-
-  justify-content: space-between;
-
-  &:is(footer) {
-    justify-content: space-evenly;
-    color: var(--s-c-fg-m);
-  }
-
-  &:is(header) {
-    img {
-      height: 1.5rem
-    }
-  }
-
-  & > * {
-    padding: 1.25rem;
-    align-items: center;
-    align-content: center;
-  }
-}
-
-main {
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  max-width: 1024px;
-  margin: 0 auto;
-
-  &:has(> footer:last-child) {
-    > :first-child {
-      flex: 1;
-    }
-  }
-
-  overflow-y: auto;
-}
-
-nav {
-  & ul {
-    &:not(aside ul) {
-      display: flex;
-    }
-    li {
-      a {
-        display: block;
-        padding: 0.5rem 1.25rem;
-        &:hover, &[aria-current="page"] {
-          background-color: var(--s-c-pri);
-        }
-      }
-    }
-  }
-}
-
-section, article, hgroup {
-  /* anything directly inside a section/article/hgroup has a top and bottom margin */
-  & > * {
-    margin: 1rem 0;
-  }
-
-  &:is(hgroup) {
-    p {
-      color: var(--s-c-fg-m);
-    }
-  }
-}
-
-body {
-  display: grid;
-  grid-template-columns: 250px minmax(0, 1fr);
-  grid-template-rows: minmax(0, 1fr);
-  grid-template-areas:
-    "aside main";
-
-  overflow: hidden;
-  height: 100dvh;
-  margin: 0;
-
-  /* no aside */
-  &:not(:has(> aside)) {
-    grid-template-columns: minmax(0, 1fr);
-
-    grid-template-areas:
-      "main";
-
-    &:has(> header) {
-      grid-template-areas:
-        "header"
-        "main";
-    }
-
-    &:has(> nav) {
-      grid-template-areas:
-        "nav"
-        "main";
-    }
-
-    &:has(> header):has(> nav) {
-      grid-template-areas:
-        "header"
-        "nav"
-        "main";
-    }
-  }
-
-  /* header */
-  &:has(> header) {
-    grid-template-rows: 5rem minmax(0, 1fr);
-    grid-template-areas:
-      "header header"
-      "aside main";
-  }
-
-  /* nav */
-  &:has(> nav) {
-    grid-template-rows: auto minmax(0, 1fr);
-    grid-template-areas:
-      "nav nav"
-      "aside main";
-  }
-
-  /* header and nav */
-  &:has(> header):has(> nav) {
-    grid-template-rows: 5rem auto minmax(0, 1fr);
-    grid-template-areas:
-      "header header"
-      "nav nav"
-      "aside main";
-  }
-
-  > header {
-    grid-area: header;
-
-    /* sticky header only when direct child of body */
-    &:is(main > &) {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-  }
-
-  > nav {
-    grid-area: nav;
-  }
-
-  > aside {
-    grid-area: aside;
-  }
-
-  > main {
-    grid-area: main;
-  }
-}
-
