@@ -167,7 +167,8 @@ q { font-style: italic; }
 code, kbd, samp { font-size: 0.85em; padding: 0.15em 0.35em; border-radius: var(--s-radius); background: var(--s-col-bg-secondary); }
 pre { padding: 1.25rem; overflow-x: auto; border: 1px solid var(--s-col-border); border-radius: var(--s-radius); background: var(--s-col-bg-aside); }
 pre code { background: none; padding: 0; }
-kbd, mark { background: var(--s-col-primary); color: white; border-radius: var(--s-radius); padding: 0.15em 0.4em; }
+kbd, mark { background: var(--s-col-primary); color: white; padding: 0.15em 0.4em; }
+kbd { font-weight: bold }
 ins { color: var(--s-col-green); text-decoration: none; } del { color: var(--s-col-red); }
 
 /* 7. Forms & buttons */
@@ -184,7 +185,7 @@ input[type="search"] { padding-inline-start: 2.5rem; background-image: var(--s-i
 input[aria-invalid="true"] { border-color: var(--s-col-red); }
 button, input:is([type="button"], [type="submit"], [type="reset"]), ::file-selector-button, a[role="button"] {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; width: auto;
-  padding: 0.55rem 0.875rem; border: 1px solid var(--s-col-border); border-radius: var(--s-radius);
+  padding: 0.55rem 1.5rem; border: 1px solid var(--s-col-border); border-radius: var(--s-radius);
   background: var(--s-col-bg-secondary); color: var(--s-col-heading); font-weight: 600; font-size: 0.875rem; cursor: pointer; text-decoration: none;
 }
 :is(button, a[role="button"]):hover { background: var(--s-col-selected); }
