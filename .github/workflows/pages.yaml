@@ -6,8 +6,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
+  id-token: write
 
 concurrency:
   group: pages
@@ -47,22 +48,18 @@ jobs:
           PAGES_BASE_URL: ${{ steps.pages.outputs.base_url }}
         run: hugo --gc --minify --cleanDestinationDir --baseURL "${PAGES_BASE_URL}/" --cacheDir "${RUNNER_TEMP}/hugo-cache"
 
-      - name: Publish to gh-pages
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          touch public/.nojekyll
-          git init --initial-branch=gh-pages public
-          git -C public config user.name "github-actions[bot]"
-          git -C public config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git -C public add --all
-          git -C public commit -m "Publish site"
-          git -C public remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
-          gh auth setup-git --hostname github.com
-          git -C public push --force origin gh-pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./public
 
-      # Pushes made with GITHUB_TOKEN do not trigger Pages automatically.
-      - name: Request Pages build
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
