@@ -1,0 +1,5 @@
+baseURL = 'https://tavocg.github.io/semantic/'
+locale = 'en-us'
+title = 'Semantic'
+
+theme = 'semantic'
