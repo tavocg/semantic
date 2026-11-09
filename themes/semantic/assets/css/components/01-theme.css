@@ -11,9 +11,10 @@
 }
 
 :root {
-  --cf: #0a0a0a;
+  --cf: #1e1e1e;
   --cb: #fff;
-  --cp: #60a5fa;
+
+  --cp: #007c8e;
 
   --c-red:   red;
   --c-green: green;
@@ -21,8 +22,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --cf: #fafafa;
+    --cf: #dcdcdc;
     --cb: #0a0a0a;
+
+    --cp: #00deff;
   }
 }
 

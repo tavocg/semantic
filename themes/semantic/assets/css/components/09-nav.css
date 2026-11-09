@@ -1,37 +1,6 @@
 /* Navigation (<nav>). */
 
-header nav {
+nav {
   overflow-y: hidden;
   overflow-x: auto;
-  background-color: var(--cbs);
-  overflow: hidden;
-  border-radius: var(--rl);
-  border: 1px solid var(--c-border);
-
-  /* FIXME: margin, padding and border-bottom from all these are tricky, find a
-   * better way to handle them, while keeping the tab-like feel of the nav. */
-
-  ul {
-    display: flex;
-
-    margin: 0.4rem 0 0.6rem 0;
-
-    a {
-      padding: 0.6rem 1.2rem 0.52rem 1.2rem;
-
-      color: var(--cfs);
-      font-weight: bold;
-
-      &:hover {
-        color: var(--cf);
-        background-color: var(--cbs);
-        border-bottom: 0.4rem solid var(--cfs);
-      }
-
-      &[aria-current="page"] {
-        color: var(--cf);
-        border-bottom: 0.4rem solid var(--cf);
-      }
-    }
-  }
 }

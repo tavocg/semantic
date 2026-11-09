@@ -5,7 +5,7 @@
  */
 
 ol, ul, dl {
-  &:not(nav &) {
+  &:not(nav &, footer &, header &) {
     margin: 1.5rem 0;
     list-style-position: outside;
     padding-inline-start: 2ch;
@@ -26,5 +26,10 @@ ol, ul, dl {
     &:is(ul) {
       list-style-type: square;
     }
+  }
+
+  &:is(nav &) {
+    display: flex;
+    margin: 0.4rem 0 0.6rem 0;
   }
 }
