@@ -1,1 +1,6 @@
 /* Thematic breaks (<hr>). */
+
+hr {
+  margin: 1.5rem 0;
+  color: var(--c-border);
+}
