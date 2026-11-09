@@ -43,9 +43,7 @@ a {
   &:is(nav a) {
     /* FIXME: find a better way to do this (see 09-nav.css, the overflow causes
      * problems?) */
-    padding: 0.6rem 1.2rem 0.52rem 1.2rem;
-
-    font-weight: bold;
+    padding: 0.6rem 0.8rem 0.52rem 0.8rem;
 
     &:hover {
       color: var(--cf);
