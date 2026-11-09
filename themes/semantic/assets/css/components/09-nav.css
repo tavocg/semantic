@@ -1,22 +1,29 @@
 /* Navigation (<nav>). */
 
-nav {
+header nav {
   background-color: var(--cbs);
   border-radius: 1rem;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: auto;
 
   ul {
     display: flex;
 
+    /* match top-bottom margin with a padding */
+    margin: 0.5rem 0;
+
     a {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.2rem;
 
       &:hover {
         background-color: var(--cbs);
       }
 
       &[aria-current="page"] {
-        border-bottom: var(--cp);
+        text-decoration: underline;
+        text-decoration-color: var(--cp);
+        text-decoration-thickness: 0.1rem;
+        text-underline-offset: 0.2rem;
       }
     }
   }

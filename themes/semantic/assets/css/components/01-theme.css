@@ -1,21 +1,26 @@
 /* Theme: global design tokens and color schemes. */
 
 :root {
+  color-scheme: light dark;
+}
+
+:root {
   --ws: 48rem;
 }
 
 :root {
-  --cf: #000;
+  --cf: #0a0a0a;
   --cb: #fff;
   --cp: #60a5fa;
+
   --c-red:   red;
   --c-green: green;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --cf: #fff;
-    --cb: #000;
+    --cf: #fafafa;
+    --cb: #0a0a0a;
   }
 }
 
