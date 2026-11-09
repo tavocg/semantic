@@ -5,7 +5,7 @@
 footer {
   display: flex;
   justify-content: space-evenly;
-  color: var(--cfs);
   background-color: var(--cbs);
   padding: 1.5rem 1rem;
+  border-top: 1px solid var(--c-border);
 }

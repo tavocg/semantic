@@ -25,6 +25,7 @@
 }
 
 :root {
-  --cfs: rgb(from var(--cf) r g b / 66%);
-  --cbs: rgb(from var(--cf) r g b / 5%);
+  --cfs:      rgb(from var(--cf) r g b / 66%);
+  --cbs:      rgb(from var(--cf) r g b / 3%);
+  --c-border: rgb(from var(--cf) r g b / 10%);
 }
