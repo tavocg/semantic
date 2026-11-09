@@ -1,3 +1,15 @@
 /*
  * Introductory content (<header>).
  */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--cbs);
+
+  img {
+    max-height: 2rem;
+  }
+}

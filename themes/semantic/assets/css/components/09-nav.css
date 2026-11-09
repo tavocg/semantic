@@ -1,1 +1,23 @@
 /* Navigation (<nav>). */
+
+nav {
+  background-color: var(--cbs);
+  border-radius: 1rem;
+  overflow: hidden;
+
+  ul {
+    display: flex;
+
+    a {
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        background-color: var(--cbs);
+      }
+
+      &[aria-current="page"] {
+        border-bottom: var(--cp);
+      }
+    }
+  }
+}
