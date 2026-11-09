@@ -60,17 +60,8 @@ a {
   }
 }
 
-del {
-  color :var(--c-red);
-}
-
 s {
   text-decoration: line-through;
-}
-
-ins {
-  color: var(--c-green);
-  text-decoration: none;
 }
 
 kbd {
