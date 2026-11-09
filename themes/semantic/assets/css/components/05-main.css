@@ -1,0 +1,7 @@
+/* Main content styles (<main>). */
+
+main {
+  max-width: var(--ws);
+  margin: 0 auto;
+  padding: 1rem;
+}

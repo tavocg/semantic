@@ -1,0 +1,25 @@
+/* Theme: global design tokens and color schemes. */
+
+:root {
+  --ws: 48rem;
+}
+
+:root {
+  --cf: #000;
+  --cb: #fff;
+  --cp: #60a5fa;
+  --c-red:   red;
+  --c-green: green;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cf: #fff;
+    --cb: #000;
+  }
+}
+
+:root {
+  --cfs: rgb(from var(--cf) r g b / 66%);
+  --cbs: rgb(from var(--cf) r g b / 5%);
+}

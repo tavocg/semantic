@@ -1,0 +1,31 @@
+/*
+ * Lists:
+ * Ordered and unordered lists (<ol>, <ul>, <menu>, <li>).
+ * Description lists (<dl>, <dt>, <dd>).
+ */
+
+ol, ul, dl {
+  margin: 1rem 0;
+
+  &:not(nav &) {
+
+    & li::before {
+      font-size: 0.8em;
+      padding-inline-end:1ch;
+      color: var(--cfs);;
+    }
+
+    &:is(ol) li::before {
+      font-variant-numeric: tabular-nums;
+      content: counter(list-item) ".";
+    }
+
+    &:is(ul) {
+      list-style-type: square;
+      padding-inline-start: 2ch;
+      & li::marker {
+        color: var(--cfs);;
+      }
+    }
+  }
+}

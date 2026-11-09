@@ -1,0 +1,60 @@
+/*
+ * Typography:
+ * Headings (<h1>, <h2>, <h3>, <h4>, <h5>, <h6>).
+ * Paragraphs and links (<p>, <a>).
+ * Inline text (<strong>, <em>, <b>, <i>, <u>, <s>, <small>, <mark>,
+ * <abbr>, <q>, <cite>, <dfn>, <sub>, <sup>, <del>, <ins>, <time>, <data>,
+ * <span>, <br>, <wbr>, <bdi>, <bdo>, <ruby>, <rt>, <rp>).
+ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+h1 { font-size: 2.25rem;  line-height: calc(2.5  / 2.25) }
+h2 { font-size: 1.875rem; line-height: calc(2.25 / 1.875) }
+h3 { font-size: 1.5rem;   line-height: calc(2    / 1.5) }
+h4 { font-size: 1.25rem;  line-height: calc(1.75 / 1.25) }
+h5 { font-size: 1.125rem; line-height: calc(1.75 / 1.125) }
+
+a {
+  &:hover {
+    text-decoration: underline;
+  }
+  &:not(nav a) {
+    color: var(--cp);
+  }
+}
+
+del {
+  color :var(--c-red);
+}
+
+s {
+  text-decoration: line-through;
+}
+
+ins {
+  color: var(--c-green);
+  text-decoration: none;
+}
+
+kbd {
+  font-weight: bold;
+  color: var(--cb);
+  background-color: var(--cf);
+  border-radius: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  margin: 0.2rem;
+  letter-spacing: -0.05em;
+}
+
+mark {
+  background-color: var(--cp);
+  padding: 0 0.5rem;
+}

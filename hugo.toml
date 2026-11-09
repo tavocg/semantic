@@ -3,3 +3,6 @@ locale = 'en-us'
 title = 'Semantic'
 
 theme = 'semantic'
+
+[markup.goldmark.renderer]
+unsafe = true

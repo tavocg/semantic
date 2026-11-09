@@ -1,0 +1,8 @@
+/*
+ * Document body (<body>).
+ */
+
+body {
+  color: var(--cf);
+  background-color: var(--cb);
+}

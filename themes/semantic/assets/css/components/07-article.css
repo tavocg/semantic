@@ -1,1 +1,5 @@
 /* Self-contained content (<article>). */
+
+article {
+  margin: 1rem 0;
+}
