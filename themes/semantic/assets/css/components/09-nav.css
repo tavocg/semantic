@@ -16,15 +16,19 @@ header nav {
       /* make top-bottom slightly larger than ul's */
       padding: 1rem 1.2rem;
 
+      color: var(--cfs);
+      font-weight: bold;
+
       &:hover {
+        color: var(--cf);
         background-color: var(--cbs);
       }
 
       &[aria-current="page"] {
+        color: var(--cf);
         text-decoration: underline;
-        text-decoration-color: var(--cp);
-        text-decoration-thickness: 0.1rem;
-        text-underline-offset: 0.2rem;
+        text-decoration-thickness: 0.2rem;
+        text-underline-offset: 0.3rem;
       }
     }
   }
