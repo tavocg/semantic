@@ -7,8 +7,4 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-
-  img {
-    max-height: 2rem;
-  }
 }

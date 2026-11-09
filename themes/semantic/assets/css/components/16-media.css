@@ -5,3 +5,9 @@
  * Embedded content (<iframe>, <embed>, <object>).
  * Graphics (<svg>, <canvas>).
  */
+
+img {
+  &:is(header &) {
+    max-height: 2rem;
+  }
+}
