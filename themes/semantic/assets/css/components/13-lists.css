@@ -6,6 +6,7 @@
 
 ol, ul, dl {
   &:not(nav &) {
+    margin: 1.5rem 0;
     list-style-position: outside;
     padding-inline-start: 2ch;
 
