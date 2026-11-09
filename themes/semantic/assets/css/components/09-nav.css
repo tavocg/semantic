@@ -1,20 +1,20 @@
 /* Navigation (<nav>). */
 
 header nav {
-  background-color: var(--cbs);
-  border: 1px solid var(--c-border);
-  border-radius: 1rem;
   overflow-y: hidden;
   overflow-x: auto;
+  background-color: var(--cbs);
+  overflow: hidden;
+  border-radius: var(--rl);
 
   ul {
     display: flex;
 
-    margin: 0.5rem 0;
+    margin: 0.6rem 0;
 
     a {
-      /* make top-bottom slightly larger than ul's */
-      padding: 1rem 1.2rem;
+      /* FIXME: this padding is tricky, find a better way */
+      padding: 0.6rem 1.2rem 0.4rem 1.2rem;
 
       color: var(--cfs);
       font-weight: bold;
@@ -22,13 +22,12 @@ header nav {
       &:hover {
         color: var(--cf);
         background-color: var(--cbs);
+        border-bottom: 0.2rem solid var(--cfs);
       }
 
       &[aria-current="page"] {
         color: var(--cf);
-        text-decoration: underline;
-        text-decoration-thickness: 0.2rem;
-        text-underline-offset: 0.3rem;
+        border-bottom: 0.2rem solid var(--cf);
       }
     }
   }
