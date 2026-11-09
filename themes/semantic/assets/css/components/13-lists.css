@@ -6,25 +6,24 @@
 
 ol, ul, dl {
   &:not(nav &) {
-    margin: 1.5rem 0;
+    list-style-position: outside;
+    padding-inline-start: 2ch;
 
-    & li::before {
+    & li::marker {
       font-size: 0.8em;
-      padding-inline-end:1ch;
       color: var(--cfs);;
     }
 
-    &:is(ol) li::before {
-      font-variant-numeric: tabular-nums;
-      content: counter(list-item) ".";
+    &:is(ol) {
+      list-style-type: decimal;
+
+      & li::marker {
+        font-variant-numeric: tabular-nums;
+      }
     }
 
     &:is(ul) {
       list-style-type: square;
-      padding-inline-start: 2ch;
-      & li::marker {
-        color: var(--cfs);;
-      }
     }
   }
 }
