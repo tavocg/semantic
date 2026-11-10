@@ -9,7 +9,9 @@
       {{ end }}
     </hgroup>
     {{ .Content }}
-    <hr>
-    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    {{ if .GetTerms "tags" }}
+      <hr>
+      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    {{ end }}
   </article>
 {{ end }}
