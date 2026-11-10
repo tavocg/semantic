@@ -93,3 +93,91 @@ weight = 20
     <button type="submit" aria-busy="true" onclick="event.preventDefault()">Submit</button>
   </footer>
 </form>
+
+## Text fields
+
+```html
+<label>
+  <span>Name</span>
+  <input type="text" name="name" placeholder="Your name">
+</label>
+```
+
+Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="color"` for other input types.
+
+## Select
+
+```html
+<label>
+  <span>Choice</span>
+  <select name="choice">
+    <option>First option</option>
+    <option>Second option</option>
+  </select>
+</label>
+```
+
+## Slider
+
+```html
+<label>
+  <span>Volume</span>
+  <input type="range" name="volume" min="0" max="100" value="50">
+</label>
+```
+
+## Validation
+
+```html
+<label>
+  <span>Valid</span>
+  <input type="text" aria-invalid="false">
+</label>
+<label>
+  <span>Invalid</span>
+  <input type="text" aria-invalid="true">
+</label>
+```
+
+## Checkboxes
+
+```html
+<label><input type="checkbox" name="updates" checked> Receive updates</label>
+```
+
+## Radio buttons
+
+```html
+<label><input type="radio" name="choice" value="one" checked> One</label>
+<label><input type="radio" name="choice" value="two"> Two</label>
+```
+
+## Switches
+
+```html
+<label><input type="checkbox" name="notifications" role="switch"> Notifications</label>
+```
+
+## Buttons
+
+```html
+<button>Button</button>
+<button class="outline">Outline</button>
+<button type="reset">Reset</button>
+<button type="submit">Submit</button>
+<a class="button" href="/docs/">Documentation</a>
+```
+
+## Busy and disabled states
+
+```html
+<button aria-busy="true">Loading</button>
+<button disabled>Disabled</button>
+<input type="text" disabled>
+```
+
+## Spinner
+
+```html
+<span class="spinner" role="status" aria-label="Loading"></span>
+```

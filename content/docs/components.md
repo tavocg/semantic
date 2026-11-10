@@ -13,6 +13,18 @@ weight = 30
 | Isaac Newton | Physics and mathematics |
 | James Clerk Maxwell | Physics |
 
+```html
+<table>
+  <thead>
+    <tr><th>Scientist</th><th>Field</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Albert Einstein</td><td>Physics</td></tr>
+    <tr><td>Isaac Newton</td><td>Physics and mathematics</td></tr>
+  </tbody>
+</table>
+```
+
 ### Wide table
 
 | Scientist | Field | Contribution | Key concepts | Applications |
@@ -33,6 +45,17 @@ weight = 30
   {{< lorem >}}
 </dialog>
 
+```html
+<button commandfor="modal-1" command="show-modal">Open modal</button>
+<dialog id="modal-1">
+  <header>
+    <h2>Modal title</h2>
+    <button class="outline" commandfor="modal-1" command="close">×</button>
+  </header>
+  <p>Modal content.</p>
+</dialog>
+```
+
 ## Accordions
 
 <details open>
@@ -44,3 +67,12 @@ weight = 30
   <summary>Second section</summary>
   <p>{{< lorem sentence 2 >}}</p>
 </details>
+
+```html
+<details>
+  <summary>Section title</summary>
+  <p>Section content.</p>
+</details>
+```
+
+Add `open` to show a section expanded by default.
