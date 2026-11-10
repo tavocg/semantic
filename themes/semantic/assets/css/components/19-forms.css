@@ -86,10 +86,14 @@ button, a.button, input[type="submit"], input[type="reset"] {
   border-color: var(--cfs);
   color: var(--cf);
 
-  &:not(.outline, [type="reset"]) {
+  &:not(.outline, .plain, [type="reset"]) {
     border-color: var(--cp);
     background-color: var(--cp);
     color: var(--cb);
+  }
+
+  &.plain {
+    border: 0;
   }
 
   &:not(:disabled, [disabled], [aria-disabled="true"]) {
