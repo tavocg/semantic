@@ -1,0 +1,15 @@
+{{ define "aside" }}
+  <aside id="site-aside" popover>
+    {{ .Params.sidebar | markdownify }}
+  </aside>
+{{ end }}
+
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+{{ end }}
+
+{{ define "footer" }}{{ "" }}{{ end }}
