@@ -2,32 +2,88 @@
 title = 'Aside'
 weight = 40
 layout = 'aside'
-sidebar = 'Supporting information goes here.'
+sidebar = '''
+<small>Getting started</small>
+<nav>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#layout">Layout</a></li>
+  </ul>
+</nav>
+<small>Elements</small>
+<nav>
+  <ul>
+    <li><a href="#text">Text</a></li>
+    <li><a href="#inputs">Inputs</a></li>
+  </ul>
+</nav>
+<small>Components</small>
+<nav>
+  <ul>
+    <li><a href="#table">Table</a></li>
+    <li><a href="#accordion">Accordion</a></li>
+  </ul>
+</nav>
+'''
 +++
 
-Place an `<aside>` directly inside `<body>` to create a left sidebar. Add an optional header button to open it on small screens.
+<style>
+/* Match each URL fragment to its sidebar link. */
+body:not(:has(> main > section[id]:target)) > aside a[href="#overview"],
+body:has(> main > #overview:target) > aside a[href="#overview"],
+body:has(> main > #layout:target) > aside a[href="#layout"],
+body:has(> main > #text:target) > aside a[href="#text"],
+body:has(> main > #inputs:target) > aside a[href="#inputs"],
+body:has(> main > #table:target) > aside a[href="#table"],
+body:has(> main > #accordion:target) > aside a[href="#accordion"] {
+  background-color: var(--cbs);
+  border-color: var(--c-border);
+}
+</style>
 
-```html
-<body>
-  <aside id="site-aside" popover>Supporting information.</aside>
-  <header>
-    <button popovertarget="site-aside">Menu</button>
-  </header>
-  <main>
-    <p>Main content.</p>
-    <footer>Footer</footer>
-  </main>
-</body>
-```
+<section id="overview">
+  <h2>Overview</h2>
+  <p>Choose an item in the sidebar to display its content. Each section has its own URL fragment, so you can bookmark it or use the browser's Back button.</p>
+  {{< lorem >}}
+</section>
 
-## Main content
+<section id="layout">
+  <h2>Layout</h2>
+  <p>A direct child aside creates a left sidebar. Header, main, and footer stay on the right.</p>
+  <p>On small screens, use the menu button to open the sidebar. Click outside or press Escape to close it.</p>
+  <aside><p>This aside is inside main and stays in the normal content flow.</p></aside>
+</section>
 
-{{< lorem >}}
+<section id="text">
+  <h2>Text</h2>
+  <p>Use <strong>strong text</strong>, <em>emphasis</em>, or <mark>highlighted text</mark>.</p>
+  {{< lorem >}}
+</section>
 
-<aside>
-  <p>This aside is inside main, so it stays in the normal content flow.</p>
-</aside>
+<section id="inputs">
+  <h2>Inputs</h2>
+  <label>
+    <span>Name</span>
+    <input type="text" name="name" placeholder="Your name">
+  </label>
+  <label><input type="checkbox" name="updates"> Receive updates</label>
+</section>
 
-The menu button is hidden on large screens. Below 48rem, it opens the sidebar; click outside or press Escape to close it.
+<section id="table">
+  <h2>Table</h2>
+  <table>
+    <thead><tr><th>Scientist</th><th>Field</th></tr></thead>
+    <tbody>
+      <tr><td>Albert Einstein</td><td>Physics</td></tr>
+      <tr><td>Isaac Newton</td><td>Physics and mathematics</td></tr>
+    </tbody>
+  </table>
+</section>
 
-On large screens, the sidebar stays visible at the viewport height while the page scrolls. Long sidebar content scrolls independently.
+<section id="accordion">
+  <h2>Accordion</h2>
+  <details>
+    <summary>More information</summary>
+    <p>{{< lorem sentence >}}</p>
+  </details>
+</section>
