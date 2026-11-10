@@ -9,8 +9,8 @@ title = 'My New Hugo Project'
     weight = 10
 
   [[menus.main]]
-    name = 'Posts'
-    pageRef = '/posts'
+    name = 'Docs'
+    pageRef = '/docs'
     weight = 20
 
   [[menus.main]]

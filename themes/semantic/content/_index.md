@@ -8,5 +8,5 @@ A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.
 
 ## Usage
 
-- [Typography](typography)
+- [Typography]({{< relref "docs/typography.md" >}})
 
