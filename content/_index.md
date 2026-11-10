@@ -6,5 +6,5 @@ title = 'Semantic CSS'
 
 A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.
 
-<button class="outline">See docs</button>
-<button>Download</button>
+<a class="button outline" href="{{< relref "/docs" >}}">See docs</a>
+<a class="button" href="semantic.css" download>Download</a>

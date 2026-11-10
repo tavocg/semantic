@@ -1,9 +1,11 @@
 {{- with resources.Get "css/main.css" }}
   {{- $opts := dict
+    "targetPath" "semantic.css"
     "minify" (cond hugo.IsDevelopment false true)
     "sourceMap" (cond hugo.IsDevelopment "linked" "none")
   }}
   {{- with . | css.Build $opts }}
+    {{- .Publish }}
     {{- if hugo.IsDevelopment }}
       <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{- else }}
