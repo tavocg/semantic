@@ -8,6 +8,7 @@ sidebar = '''
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#layout">Layout</a></li>
+    <li><a href="https://example.com">Example</a></li>
   </ul>
 </nav>
 <h2>Elements</h2>
