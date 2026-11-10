@@ -1,6 +1,17 @@
 {{ define "aside" }}
   <aside id="site-aside" popover>
     {{ .Params.sidebar | safeHTML }}
+    <script>
+      document.getElementById('site-aside').addEventListener('click', event => {
+        if (
+          event.target.closest('a[href]') &&
+          matchMedia('(max-width: 48rem)').matches &&
+          event.currentTarget.matches(':popover-open')
+        ) {
+          event.currentTarget.hidePopover();
+        }
+      });
+    </script>
   </aside>
 {{ end }}
 
