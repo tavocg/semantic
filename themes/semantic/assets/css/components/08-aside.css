@@ -39,6 +39,38 @@ body > header button[popovertarget="site-aside"] {
   margin: 0;
 }
 
+body > aside > h2 {
+  margin: 1rem 0 0 0;
+  font-size: small;
+  line-height: 1.5;
+  font-weight: normal;
+  color: var(--cfs);
+}
+
+body > aside nav a[href] {
+  display: block;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--rl);
+
+  &:hover {
+    background-color: var(--cbs);
+    border: 1px solid var(--c-border);
+  }
+}
+
+/* Only direct main sections become panels; nested sections stay untouched. */
+body:has(> aside) > main:has(> section[id]) {
+  > section[id] {
+    display: none;
+  }
+
+  > section[id]:target,
+  &:not(:has(> section[id]:target)) > section[id]:first-of-type {
+    display: block;
+  }
+}
+
 @media (max-width: 48rem) {
   body:has(> aside[popover]):has(> header button[popovertarget="site-aside"]) {
     display: flex;
