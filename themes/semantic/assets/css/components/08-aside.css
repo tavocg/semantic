@@ -96,6 +96,11 @@ body:has(> aside) > main:has(> section[id]) {
     > aside[popover] {
       display: none;
 
+      &::backdrop {
+        background-color: rgb(0 0 0 / 50%);
+        backdrop-filter: blur(4px);
+      }
+
       &:popover-open {
         display: block;
         position: fixed;
