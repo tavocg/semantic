@@ -15,6 +15,8 @@
   --cb: #fafafa;
 
   --cp: #007687;
+  --c-red: #cc3541;
+  --c-green: #087f5b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,11 +25,13 @@
     --cb: #0a0a0a;
 
     --cp: #00d3f2;
+    --c-red: #f16e78;
+    --c-green: #63d6ad;
   }
 }
 
 :root {
-  --cfs:      rgb(from var(--cf) r g b / 66%);
+  --cfs:      rgb(from var(--cf) r g b / 50%);
   --cbs:      rgb(from var(--cf) r g b / 3%);
   --cps:      rgb(from var(--cp) r g b / 30%);
   --c-border: rgb(from var(--cf) r g b / 10%);

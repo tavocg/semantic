@@ -16,7 +16,7 @@ form {
 input, select, button, a.button {
   font-size: 18px;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.8rem;
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
   background-color: var(--cbs);
@@ -157,14 +157,15 @@ input[type="checkbox"][role="switch"] {
   padding: 0.125rem;
   border: 1px solid var(--c-border);
   border-radius: 999px;
-  background-color: var(--cbs);
+  background-color: var(--cfs);
 
   &::before {
     content: "";
     width: calc(1.25rem - 2px);
     height: calc(1.25rem - 2px);
+    border: 1px solid var(--c-border);
     border-radius: inherit;
-    background-color: var(--cf);
+    background-color: var(--cb);
   }
 
   &:checked {
@@ -174,6 +175,26 @@ input[type="checkbox"][role="switch"] {
       justify-self: end;
     }
   }
+}
+
+input[aria-invalid="false"] {
+  border-color: var(--c-green);
+}
+
+input[aria-invalid="true"] {
+  border-color: var(--c-red);
+}
+
+label:has(input[aria-invalid="false"]),
+label:has(input[aria-invalid="false"]) > span,
+label:has(+ input[aria-invalid="false"]) {
+  color: var(--c-green);
+}
+
+label:has(input[aria-invalid="true"]),
+label:has(input[aria-invalid="true"]) > span,
+label:has(+ input[aria-invalid="true"]) {
+  color: var(--c-red);
 }
 
 :disabled, [disabled], [aria-disabled="true"] {
