@@ -7,6 +7,7 @@
  */
 
 form {
+  margin: 1.5rem 0;
   padding: 1rem;
   background-color: var(--cbs);
   border: 1px solid var(--c-border);
