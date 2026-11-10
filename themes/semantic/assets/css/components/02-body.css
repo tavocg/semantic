@@ -2,6 +2,11 @@
  * Document body (<body>).
  */
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cfs) transparent;
+}
+
 body {
   color: var(--cf);
   background-color: var(--cb);
