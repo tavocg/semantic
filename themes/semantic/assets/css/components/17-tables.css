@@ -5,3 +5,30 @@
  * Row groups (<thead>, <tbody>, <tfoot>).
  * Rows and cells (<tr>, <th>, <td>).
  */
+
+table {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+  margin-block: 1rem;
+  margin-inline: auto;
+  border: 1px solid var(--c-border);
+  border-radius: var(--rl);
+
+  th, td {
+    padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid var(--c-border);
+    text-align: start;
+    white-space: nowrap;
+  }
+
+  th {
+    font-weight: bold;
+    background-color: var(--cbs);
+  }
+
+  tbody > tr:last-child > :is(th, td) {
+    border-bottom: 0;
+  }
+}

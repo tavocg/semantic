@@ -4,11 +4,21 @@ title = '3. Components'
 
 ## Tables
 
-| Scientist | Field | Contribution |
-| --- | --- | --- |
-| Albert Einstein | Physics | Theory of relativity |
-| Isaac Newton | Physics and mathematics | Laws of motion and universal gravitation |
-| James Clerk Maxwell | Physics | Classical theory of electromagnetism |
+### Small table
+
+| Scientist | Field |
+| --- | --- |
+| Albert Einstein | Physics |
+| Isaac Newton | Physics and mathematics |
+| James Clerk Maxwell | Physics |
+
+### Wide table
+
+| Scientist | Field | Contribution | Key concepts | Applications |
+| --- | --- | --- | --- | --- |
+| Albert Einstein | Theoretical physics | Special and general relativity | Spacetime, mass-energy equivalence, gravity | Cosmology and relativistic corrections in satellite navigation |
+| Isaac Newton | Physics and mathematics | Laws of motion and universal gravitation | Force, acceleration, momentum, gravitational attraction | Classical mechanics, engineering, and orbital calculations |
+| James Clerk Maxwell | Mathematical physics | Classical theory of electromagnetism | Electric and magnetic fields, electromagnetic waves | Radio communication, optics, and electrical engineering |
 
 ## Modals
 
