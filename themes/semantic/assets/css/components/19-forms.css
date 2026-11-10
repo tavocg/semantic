@@ -6,7 +6,7 @@
  * Results and indicators (<output>, <progress>, <meter>).
  */
 
-input, select, search, button {
+input, select, search, button, a.button {
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border: 1px solid var(--c-border);
