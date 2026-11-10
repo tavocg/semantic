@@ -3,6 +3,10 @@ title = '2. Forms'
 +++
 
 <form>
+  <hgroup>
+    <h2>My form</h2>
+    <p>Form that sends data.</p>
+  </hgroup>
   <label for="search">Search</label>
   <input type="search" id="search" name="search" placeholder="Search">
   <label for="text">Text</label>
