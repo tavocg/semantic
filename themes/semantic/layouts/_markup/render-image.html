@@ -1,0 +1,9 @@
+{{- $figure := and .IsBlock .Title -}}
+{{- if $figure }}<figure>{{ end -}}
+<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+>
+{{- if $figure -}}
+  <figcaption>{{ .Title }}</figcaption>
+</figure>
+{{- end -}}
