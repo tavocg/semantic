@@ -1,7 +1,7 @@
 /* Block quotations (<blockquote>). */
 
 blockquote {
-  margin: 0.5rem 0;
+  margin: 1.5rem 0;
   padding: 0.1rem 1.5rem;
   background-color: var(--cbs);
 
