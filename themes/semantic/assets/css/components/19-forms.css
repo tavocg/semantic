@@ -17,16 +17,28 @@ input, select, button, a.button {
     filter: brightness(1.1);
   }
 
-  & ~ & {
-    margin-inline-start: 0.5rem;
-  }
-
   &:focus, &:active {
     outline: 0.15rem solid var(--cps);
   }
+
+  &:not(
+  button,
+  a.button,
+  &[type="checkbox"],
+  &[type="radio"],
+  &[type="submit"],
+  &[type="reset"],
+  &[type="color"]) {
+    width: 100%;
+  }
 }
 
-button, a.button {
+input, select, button, a.button, label {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+button, a.button, input[type="submit"], input[type="reset"] {
   font-weight: bold;
 
   &:hover {
@@ -36,7 +48,7 @@ button, a.button {
   border-color: var(--cfs);
   color: var(--cf);
 
-  &:not(.outline) {
+  &:not(.outline, input[type="reset"]) {
     border-color: var(--cp);
     background-color: var(--cp);
     color: var(--cb);
@@ -47,4 +59,15 @@ button, a.button {
   &:active {
     transform: scale(0.94);
   }
+
+  & ~ & {
+    margin-inline-start: 0.5rem;
+  }
+}
+
+fieldset {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--rl);
 }
