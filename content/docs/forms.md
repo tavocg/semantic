@@ -84,7 +84,7 @@ title = '2. Forms'
     </fieldset>
   </div>
   <footer>
-    <input type="reset" value="Reset" onclick="event.preventDefault()">
+    <button type="reset" onclick="event.preventDefault()">Reset</button>
     <button type="submit" aria-busy="true" onclick="event.preventDefault()">Submit</button>
   </footer>
 </form>
