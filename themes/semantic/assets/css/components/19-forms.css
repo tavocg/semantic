@@ -48,6 +48,10 @@ input, select, button, a.button, label {
   margin-bottom: 1.2rem;
 }
 
+input[type="range"] {
+  accent-color: var(--cp);
+}
+
 input[type="color"] {
   display: block;
   width: 3rem;
