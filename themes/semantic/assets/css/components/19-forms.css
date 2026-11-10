@@ -16,11 +16,15 @@ form {
 input, select, button, a.button {
   font-size: 18px;
   gap: 0.5rem;
-  padding: 0.5rem 0.8rem;
+  padding: 0.6rem 1rem;
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
   background-color: var(--cbs);
   width: 100%;
+
+  &:is([type="search"]) {
+    border-radius: 999px;
+  }
 
   &:hover {
     filter: brightness(1.1);
@@ -75,8 +79,6 @@ input[type="color"] {
 }
 
 button, a.button, input[type="submit"], input[type="reset"] {
-  font-weight: bold;
-
   &:hover {
     cursor: pointer;
   }
