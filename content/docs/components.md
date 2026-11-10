@@ -1,5 +1,6 @@
 +++
-title = '3. Components'
+title = 'Components'
+weight = 30
 +++
 
 ## Tables

@@ -1,5 +1,6 @@
 +++
-title = '2. Forms'
+title = 'Forms'
+weight = 20
 +++
 
 <form>

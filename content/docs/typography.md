@@ -1,5 +1,6 @@
 +++
-title = '1. Typography'
+title = 'Typography'
+weight = 10
 +++
 
 {{< lorem >}}

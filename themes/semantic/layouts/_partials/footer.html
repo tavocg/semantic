@@ -5,21 +5,21 @@
 </section>
 <section>
   <small>
-    <strong>Links</strong>
+    <strong>Documentation</strong>
     <ul>
-      <li><a href="#">Link one</a></li>
-      <li><a href="#">Link two</a></li>
-      <li><a href="#">Link three</a></li>
+      {{- with site.GetPage "/docs" }}
+        {{- range .RegularPagesRecursive }}
+          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{- end }}
+      {{- end }}
     </ul>
   </small>
 </section>
 <section>
   <small>
-    <strong>Links</strong>
+    <strong>Project</strong>
     <ul>
-      <li><a href="#">Link one</a></li>
-      <li><a href="#">Link two</a></li>
-      <li><a href="#">Link three</a></li>
+      <li><a href="https://github.com/tavocg/semantic">Source code</a></li>
     </ul>
   </small>
 </section>
