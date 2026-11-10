@@ -1,1 +1,35 @@
 /* Disclosure content (<details>, <summary>). */
+
+details {
+  margin-top: 0.2rem;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--rl);
+
+  > summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: "+";
+      color: var(--cfs);
+    }
+
+    &:hover {
+      color: var(--cp);
+    }
+  }
+
+  &[open] > summary::after {
+    content: "−";
+  }
+}
