@@ -2,26 +2,21 @@
 title = '1. Typography'
 +++
 
-Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur
-feugiat. Vivamus porta nunc a erat mattis, mattis feugiat turpis pretium.
-Quisque sed tristique felis.
+{{< lorem >}}
 
-> "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui
-> sit amet ipsum cursus ornare."
+> "{{< lorem inline >}}"
 >
-> *- Phasellus eget lacinia*
+> *Einstein*
 
 ### Lists
 
-- Aliquam lobortis lacus eu libero ornare facilisis.
-- Nam et magna at libero scelerisque egestas.
-- Suspendisse id nisl ut leo finibus vehicula quis eu ex.
-- Proin ultricies turpis et volutpat vehicula.
+- {{< lorem sentence 1 >}}
+- {{< lorem sentence 2 >}}
+- {{< lorem sentence 3 >}}
 
-1. Aliquam lobortis lacus eu libero ornare facilisis.
-2. Nam et magna at libero scelerisque egestas.
-3. Suspendisse id nisl ut leo finibus vehicula quis eu ex.
-4. Proin ultricies turpis et volutpat vehicula.
+1. {{< lorem sentence 1 >}}
+2. {{< lorem sentence 2 >}}
+3. {{< lorem sentence 3 >}}
 
 ### Inline text elements
 
