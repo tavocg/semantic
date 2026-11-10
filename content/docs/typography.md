@@ -8,6 +8,8 @@ title = '1. Typography'
 >
 > *Einstein*
 
+![Lighthouse in Portland, United States](https://images.pexels.com/photos/37261855/pexels-photo-37261855.jpeg "Lighthouse in Portland, United States. By Brett A in Pexels.")
+
 ## Lists
 
 - {{< lorem sentence 1 >}}
