@@ -86,13 +86,13 @@ button, a.button, input[type="submit"], input[type="reset"] {
   border-color: var(--cfs);
   color: var(--cf);
 
-  &:not(.outline, .plain, [type="reset"]) {
+  &:not(.outline, .plain, [command="close"], [popovertarget], [type="reset"]) {
     border-color: var(--cp);
     background-color: var(--cp);
     color: var(--cb);
   }
 
-  &.plain {
+  &:is(.plain, [command="close"], [popovertarget]) {
     border: 0;
   }
 
