@@ -4,6 +4,9 @@ title = 'Semantic'
 
 theme = 'semantic'
 
+[params]
+description = 'A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.'
+
 [markup.goldmark.renderer]
 unsafe = true
 
