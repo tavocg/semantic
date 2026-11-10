@@ -35,8 +35,6 @@ input, button, a.button {
   &:is(
   button,
   a.button,
-  &[type="checkbox"],
-  &[type="radio"],
   &[type="submit"],
   &[type="reset"],
   &[type="color"]) {
@@ -94,3 +92,63 @@ legend, label {
   }
 }
 
+input[type="checkbox"], input[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--cp);
+  transition: transform 100ms ease;
+
+  &:active {
+    transform: scale(0.94);
+  }
+}
+
+label:has(> input[type="checkbox"], > input[type="radio"]) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block: 0.5rem;
+}
+
+/* Override the native unchecked fill while keeping native selection markers. */
+input[type="checkbox"]:not([role="switch"]):not(:checked):not(:indeterminate),
+input[type="radio"]:not(:checked) {
+  appearance: none;
+  background-color: var(--cbs);
+  border: 1px solid var(--c-border);
+  border-radius: var(--rs);
+}
+
+input[type="radio"]:not(:checked) {
+  border-radius: 50%;
+}
+
+input[type="checkbox"][role="switch"] {
+  appearance: none;
+  display: inline-grid;
+  align-items: center;
+  width: 2.75rem;
+  height: 1.5rem;
+  padding: 0.125rem;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  background-color: var(--cbs);
+
+  &::before {
+    content: "";
+    width: calc(1.25rem - 2px);
+    height: calc(1.25rem - 2px);
+    border-radius: inherit;
+    background-color: var(--cf);
+  }
+
+  &:checked {
+    background-color: color-mix(in srgb, var(--cp) 75%, black);
+
+    &::before {
+      justify-self: end;
+    }
+  }
+}
