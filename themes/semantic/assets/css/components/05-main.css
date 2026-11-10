@@ -8,4 +8,13 @@ main {
   /* need these since parent (body) is flex */
   width: 100%;
   flex-grow: 1;
+
+  &:has(> footer:last-child) {
+    display: flex;
+    flex-direction: column;
+
+    > footer {
+      margin-block-start: auto;
+    }
+  }
 }
