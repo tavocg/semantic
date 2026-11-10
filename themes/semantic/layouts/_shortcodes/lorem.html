@@ -1,0 +1,27 @@
+{{- /*
+Renders the requested number of placeholder paragraphs, defaulting to one.
+Cycles through the available paragraphs when more are requested.
+
+@example: {{< lorem >}}
+@example: {{< lorem 3 >}}
+*/ -}}
+
+{{- $count := 1 -}}
+{{- if gt (len .Params) 0 -}}
+  {{- $count = int (.Get 0) -}}
+{{- end -}}
+
+{{- if lt $count 1 -}}
+  {{- errorf "The lorem shortcode requires a positive paragraph count at %s" .Position -}}
+{{- else -}}
+  {{- $paragraphs := slice
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugiat. Vivamus porta nunc a erat mattis, mattis feugiat turpis pretium. Quisque sed tristique felis. Integer bibendum malesuada libero vel eleifend."
+    "Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at blandit nibh. Donec ac fermentum felis. Vivamus tincidunt arcu ut lacus hendrerit, eget mattis dui finibus. Suspendisse potenti."
+    "Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus ante in consequat luctus. Morbi euismod sagittis efficitur. Aenean non eros orci. Vivamus ut diam sem."
+  -}}
+  {{- range $index := seq 0 (sub $count 1) }}
+<p>{{ index $paragraphs (mod $index (len $paragraphs)) }}</p>
+  {{- end -}}
+{{- end -}}
