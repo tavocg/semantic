@@ -1,5 +1,5 @@
 +++
-title = 'Typography'
+title = '1. Typography'
 +++
 
 Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur
