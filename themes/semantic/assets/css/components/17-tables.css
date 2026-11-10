@@ -6,6 +6,16 @@
  * Rows and cells (<tr>, <th>, <td>).
  */
 
+figure:has(> table) {
+  > figcaption {
+    text-align: center;
+  }
+
+  > table {
+    margin-top: 1rem;
+  }
+}
+
 table {
   display: block;
   width: fit-content;
@@ -15,6 +25,13 @@ table {
   margin-inline: auto;
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
+
+  caption {
+    caption-side: top;
+    color: var(--cfs);
+    font-size: small;
+    text-align: center;
+  }
 
   th, td {
     padding: 0.4rem 0.75rem;
