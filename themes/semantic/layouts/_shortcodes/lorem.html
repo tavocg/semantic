@@ -1,18 +1,32 @@
 {{- /*
 Renders the requested number of placeholder paragraphs, defaulting to one.
 Cycles through the available paragraphs when more are requested.
+Use "inline" with an optional count to render text without paragraph tags.
+Use "sentence" followed by a one-based index to select a single sentence.
+Sentence mode defaults to the first sentence and renders inline text.
 
 @example: {{< lorem >}}
 @example: {{< lorem 3 >}}
+@example: {{< lorem inline >}}
+@example: {{< lorem inline 3 >}}
+@example: {{< lorem sentence >}}
+@example: {{< lorem sentence 2 >}}
 */ -}}
 
 {{- $count := 1 -}}
-{{- if gt (len .Params) 0 -}}
+{{- $mode := "paragraph" -}}
+{{- $first := printf "%v" (.Get 0) -}}
+{{- if in (slice "inline" "sentence") $first -}}
+  {{- $mode = $first -}}
+  {{- if gt (len .Params) 1 -}}
+    {{- $count = int (.Get 1) -}}
+  {{- end -}}
+{{- else if gt (len .Params) 0 -}}
   {{- $count = int (.Get 0) -}}
 {{- end -}}
 
 {{- if lt $count 1 -}}
-  {{- errorf "The lorem shortcode requires a positive paragraph count at %s" .Position -}}
+  {{- errorf "The lorem shortcode requires a positive paragraph count or sentence index at %s" .Position -}}
 {{- else -}}
   {{- $paragraphs := slice
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -21,7 +35,26 @@ Cycles through the available paragraphs when more are requested.
     "Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at blandit nibh. Donec ac fermentum felis. Vivamus tincidunt arcu ut lacus hendrerit, eget mattis dui finibus. Suspendisse potenti."
     "Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus ante in consequat luctus. Morbi euismod sagittis efficitur. Aenean non eros orci. Vivamus ut diam sem."
   -}}
-  {{- range $index := seq 0 (sub $count 1) }}
+  {{- if eq $mode "sentence" -}}
+    {{- $sentences := slice -}}
+    {{- range $paragraphs -}}
+      {{- range findRE `[^.]+\.` . -}}
+        {{- $sentences = $sentences | append (strings.TrimSpace .) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if gt $count (len $sentences) -}}
+      {{- errorf "The lorem shortcode sentence index must be between 1 and %d at %s" (len $sentences) .Position -}}
+    {{- else -}}
+      {{- index $sentences (sub $count 1) -}}
+    {{- end -}}
+  {{- else if eq $mode "inline" -}}
+    {{- range $index := seq 0 (sub $count 1) -}}
+      {{- if gt $index 0 }}{{ " " }}{{ end -}}
+      {{- index $paragraphs (mod $index (len $paragraphs)) -}}
+    {{- end -}}
+  {{- else -}}
+    {{- range $index := seq 0 (sub $count 1) }}
 <p>{{ index $paragraphs (mod $index (len $paragraphs)) }}</p>
+    {{- end -}}
   {{- end -}}
 {{- end -}}
