@@ -6,12 +6,21 @@
  * Results and indicators (<output>, <progress>, <meter>).
  */
 
+form {
+  padding: 1rem;
+  background-color: var(--cbs);
+  border: 1px solid var(--c-border);
+  border-radius: var(--rl);
+}
+
 input, select, button, a.button {
+  font-size: 18px;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
   background-color: var(--cbs);
+  width: 100%;
 
   &:hover {
     filter: brightness(1.1);
@@ -20,8 +29,10 @@ input, select, button, a.button {
   &:focus, &:active {
     outline: 0.15rem solid var(--cps);
   }
+}
 
-  &:not(
+input, button, a.button {
+  &:is(
   button,
   a.button,
   &[type="checkbox"],
@@ -29,7 +40,7 @@ input, select, button, a.button {
   &[type="submit"],
   &[type="reset"],
   &[type="color"]) {
-    width: 100%;
+    width: fit-content;
   }
 }
 
@@ -71,3 +82,15 @@ fieldset {
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
 }
+
+legend, label {
+  &:not(:has(*)) {
+    color: var(--cfs);
+    font-size: small;
+  }
+  & > span {
+    color: var(--cfs);
+    font-size: small;
+  }
+}
+

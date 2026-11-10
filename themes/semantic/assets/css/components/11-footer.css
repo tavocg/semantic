@@ -4,7 +4,15 @@
 
 footer {
   display: flex;
-  justify-content: space-evenly;
-  background-color: var(--cbs);
-  padding: 1.5rem 1rem;
+
+  &:is(body > footer) {
+    justify-content: space-evenly;
+    background-color: var(--cbs);
+    padding: 1.5rem 1rem;
+  }
+
+  &:is(form footer) {
+    margin-top: 1.5rem;
+    justify-content: right;
+  }
 }
