@@ -2,4 +2,5 @@
 <meta name="viewport" content="width=device-width">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+{{ partial "head/social.html" . }}
 {{ partialCached "head/css.html" . }}
