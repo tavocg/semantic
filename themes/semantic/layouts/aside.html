@@ -1,6 +1,6 @@
 {{ define "aside" }}
   <aside id="site-aside" popover>
-    {{ .Params.sidebar | markdownify }}
+    {{ .Params.sidebar | safeHTML }}
   </aside>
 {{ end }}
 
