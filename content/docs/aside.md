@@ -3,21 +3,21 @@ title = 'Aside'
 weight = 40
 layout = 'aside'
 sidebar = '''
-<small>Getting started</small>
+<h2>Getting started</h2>
 <nav>
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#layout">Layout</a></li>
   </ul>
 </nav>
-<small>Elements</small>
+<h2>Elements</h2>
 <nav>
   <ul>
     <li><a href="#text">Text</a></li>
     <li><a href="#inputs">Inputs</a></li>
   </ul>
 </nav>
-<small>Components</small>
+<h2>Components</h2>
 <nav>
   <ul>
     <li><a href="#table">Table</a></li>
