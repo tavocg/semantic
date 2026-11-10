@@ -1,13 +1,6 @@
 +++
-date = '2026-11-08T01:23:21-06:00'
-title = 'Semantic CSS'
+title = 'Typography'
 +++
-
-# Semantic CSS
-
-A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.
-
-## Typography
 
 Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur
 feugiat. Vivamus porta nunc a erat mattis, mattis feugiat turpis pretium.
@@ -71,3 +64,4 @@ Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus a
 ###### Heading 6
 
 Ut sed quam non mauris placerat consequat vitae id risus. Vestibulum tincidunt nulla ut tortor posuere, vitae malesuada tortor molestie. Sed nec interdum dolor. Vestibulum id auctor nisi, a efficitur sem. Aliquam sollicitudin efficitur turpis, sollicitudin hendrerit ligula semper id. Nunc risus felis,
+
