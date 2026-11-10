@@ -11,7 +11,7 @@ table {
   width: fit-content;
   max-width: 100%;
   overflow-x: auto;
-  margin-block: 1rem;
+  margin: 1.5rem 0;
   margin-inline: auto;
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
