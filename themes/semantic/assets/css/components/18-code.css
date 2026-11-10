@@ -7,7 +7,7 @@
 pre {
   overflow-x: auto;
   margin: 1.5rem 0;
-  padding: 0.5rem;
+  padding: 0.8rem 0.8rem;
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
 }
