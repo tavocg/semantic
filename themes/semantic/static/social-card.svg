@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Semantic CSS</title>
+  <desc id="description">A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.</desc>
+  <defs>
+    <linearGradient id="logo" x1="12.208" y1="93.04" x2="102.965" y2="22.133" gradientUnits="userSpaceOnUse">
+      <stop offset="0.287" stop-color="#007c8e"/>
+      <stop offset="0.724" stop-color="#33a8b5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <rect x="24" y="24" width="1152" height="582" rx="28" fill="none" stroke="#292929"/>
+  <svg x="544" y="132" width="112" height="112" viewBox="0 0 115.172 115.172">
+    <path d="M115.172 0 0 46.069l115.172 23.034L0 115.173" fill="url(#logo)"/>
+  </svg>
+  <g font-family="DejaVu Sans, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="350" fill="#fafafa" font-size="80" font-weight="700" letter-spacing="-3">Semantic CSS</text>
+    <text x="600" y="418" fill="#a3a3a3" font-size="28">A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.</text>
+  </g>
+</svg>
