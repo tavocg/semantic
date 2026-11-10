@@ -8,7 +8,7 @@ title = '1. Typography'
 >
 > *Einstein*
 
-### Lists
+## Lists
 
 - {{< lorem sentence 1 >}}
 - {{< lorem sentence 2 >}}
@@ -18,45 +18,50 @@ title = '1. Typography'
 2. {{< lorem sentence 2 >}}
 3. {{< lorem sentence 3 >}}
 
-### Inline text elements
+## Inline text elements
 
-[Link](https://example.com)
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem">
 
-**Bold**
+  [Link](https://example.com)
 
-*Italic*
+  **Bold**
 
-<u>Underline</u>
+  *Italic*
 
-~~Deleted~~
+  <u>Underline</u>
 
-<ins>Inserted</ins>
+  ~~Deleted~~
 
-<s>Strikethrough</s>
+  <ins>Inserted</ins>
 
-<small>Small</small>
+  <s>Strikethrough</s>
 
-Text <sub>Sub</sub>
+  <small>Small</small>
 
-Text <sup>Sup</sup>
+  a<sup>Sup</sup>, b<sub>Sub</sub>
 
-<abbr title="Abbreviation">Abbr.</abbr>
+  <abbr title="Abbreviation">Abbr.</abbr>
 
-<kbd>Ctrl</kbd>+<kbd>k</kbd>
+  <kbd>Ctrl</kbd>+<kbd>k</kbd>
 
-<mark>Highlighted</mark>
+  <mark>Highlighted</mark>
 
-Integer bibendum malesuada libero vel eleifend. Fusce iaculis turpis ipsum, at efficitur sem scelerisque vel. <mark>Aliquam auctor</mark> diam ut purus cursus fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+</div>
+
+## Headings
+
+### Heading 3
+
+{{< lorem >}}
 
 #### Heading 4
 
-Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at blandit nibh. Donec ac fermentum felis. Vivamus tincidunt arcu ut lacus hendrerit, eget mattis dui finibus.
+{{< lorem >}}
 
 ##### Heading 5
 
-Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus ante in consequat luctus. Morbi euismod sagittis efficitur. Aenean non eros orci. Vivamus ut diam sem.
+{{< lorem >}}
 
 ###### Heading 6
 
-Ut sed quam non mauris placerat consequat vitae id risus. Vestibulum tincidunt nulla ut tortor posuere, vitae malesuada tortor molestie. Sed nec interdum dolor. Vestibulum id auctor nisi, a efficitur sem. Aliquam sollicitudin efficitur turpis, sollicitudin hendrerit ligula semper id. Nunc risus felis,
-
+{{< lorem >}}
