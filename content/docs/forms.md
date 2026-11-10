@@ -163,6 +163,7 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
 ```html
 <button>Button</button>
 <button class="outline">Outline</button>
+<button class="plain">Plain</button>
 <button type="reset">Reset</button>
 <button type="submit">Submit</button>
 <a class="button" href="/docs/">Documentation</a>
