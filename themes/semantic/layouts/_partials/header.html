@@ -1,2 +1,5 @@
+{{- if eq .Layout "aside" }}
+  <button class="outline" popovertarget="site-aside" aria-label="Toggle sidebar">☰</button>
+{{- end }}
 <a href="{{ site.Home.RelPermalink }}"><img src="{{ "favicon.svg" | relURL }}" alt="{{ site.Title }}"></a>
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
