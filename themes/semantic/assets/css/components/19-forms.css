@@ -5,3 +5,46 @@
  * Selections and suggestions (<select>, <option>, <optgroup>, <datalist>).
  * Results and indicators (<output>, <progress>, <meter>).
  */
+
+input, select, search, button {
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--rl);
+  background-color: var(--cbs);
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  & ~ & {
+    margin-inline-start: 0.5rem;
+  }
+
+  &:focus, &:active {
+    outline: 0.15rem solid var(--cps);
+  }
+}
+
+button {
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  border-color: var(--cfs);
+  color: var(--cf);
+
+  &:not(.outline) {
+    border-color: var(--cp);
+    background-color: var(--cp);
+    color: var(--cb);
+  }
+
+  transition: transform 100ms ease;
+
+  &:active {
+    transform: scale(0.94);
+  }
+}
