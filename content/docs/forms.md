@@ -26,7 +26,7 @@ title = '2. Forms'
       <input type="text" id="valid" name="valid" placeholder="Valid" aria-invalid="false">
     </label>
     <label for="invalid">
-      <span>Inalid</span>
+      <span>Invalid</span>
       <input type="text" id="invalid" name="invalid" placeholder="Invalid" aria-invalid="true">
     </label>
     <label for="disabled">
