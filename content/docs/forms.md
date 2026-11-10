@@ -85,6 +85,6 @@ title = '2. Forms'
   </div>
   <footer>
     <input type="reset" value="Reset" onclick="event.preventDefault()">
-    <input type="submit" value="Submit" onclick="event.preventDefault()">
+    <button type="submit" aria-busy="true" onclick="event.preventDefault()">Submit</button>
   </footer>
 </form>
