@@ -1,15 +1,81 @@
 <script>
+  // Adapted from https://leanrada.com/htmz/extensions/ (MIT).
+  // Copyright 2024 Lean Rada. See licenses/htmz.txt.
   function htmz(frame) {
-    // Write your extensions here
+    if (frame.contentWindow.location.href === 'about:blank') return;
 
-    // The browser automatically scrolls DOM changes into view in response to user interaction.
-    // This delay prevents that, making this is the only case where we don't lean on browser defaults.
-    // Remove setTimeout wrapper to allow automatic scrolling.
-    setTimeout(() =>
-      document
-        .querySelector(frame.contentWindow.location.hash || null)
-        ?.replaceWith(...frame.contentDocument.body.childNodes)
-    );
+    // Keep the original delay to avoid automatic scrolling after a swap.
+    setTimeout(() => {
+      try {
+        const response = frame.contentDocument;
+        const selector = frame.contentWindow.location.hash || null;
+        const target = document.querySelector(selector);
+        let templateSwapped = false;
+
+        // unwrap-template + swap-template: templates keep rows and other
+        // context-sensitive elements intact while the browser parses HTML.
+        for (const template of response.querySelectorAll('head > template, body > template')) {
+          const slot = template.content.querySelector('slot');
+          if (slot && target) {
+            const placeholder = target.cloneNode();
+            target.replaceWith(placeholder);
+            if (slot.name === 'children') {
+              slot.replaceWith(...target.childNodes);
+            } else {
+              if (slot.hasChildNodes()) target.replaceChildren(...slot.childNodes);
+              slot.replaceWith(target);
+            }
+            placeholder.replaceWith(...template.content.childNodes);
+            templateSwapped = true;
+          } else {
+            response.body.append(template.content);
+          }
+          template.remove();
+        }
+
+        // multitarget: update matching IDs, extracting children before parents.
+        const mainTargetConsumed = !!response.querySelector(selector);
+        for (const element of [...response.querySelectorAll('[id]')].reverse()) {
+          document.getElementById(element.id)?.replaceWith(element);
+        }
+        if (!templateSwapped && !mainTargetConsumed) {
+          document.querySelector(selector)?.replaceWith(...response.body.childNodes);
+        }
+      } finally {
+        htmz.busy?.forEach(element => element.removeAttribute('aria-busy'));
+        htmz.busy = [];
+
+        // no-history: recreate the browsing context, clearing iframe history.
+        // This also implements repeat-gets: the next request starts at blank.
+        frame.remove();
+        document.body.append(frame);
+      }
+    });
   }
+
+  // loader: native links and form submissions keep their default behavior.
+  // Mark the initiating control and destination; CSS supplies the spinner.
+  function htmzBusy(url, control) {
+    const selector = new URL(url, document.baseURI).hash || null;
+    htmz.busy?.forEach(element => element.removeAttribute('aria-busy'));
+    htmz.busy = [control, ...document.querySelectorAll(selector)];
+    htmz.busy.forEach(element => element.setAttribute('aria-busy', 'true'));
+  }
+
+  document.addEventListener('click', event => {
+    if (event.defaultPrevented || event.button !== 0 || event.ctrlKey ||
+        event.metaKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest('a[target="htmz"]');
+    if (link && !link.hasAttribute('download')) htmzBusy(link.href, link);
+  });
+
+  document.addEventListener('submit', event => {
+    const form = event.target;
+    const button = event.submitter;
+    const target = button?.getAttribute('formtarget') ?? form.target;
+    if (event.defaultPrevented || target !== 'htmz') return;
+    const action = button?.hasAttribute('formaction') ? button.formAction : form.action;
+    htmzBusy(action, button || form);
+  });
 </script>
 <iframe hidden name="htmz" onload="window.htmz(this)"></iframe>
