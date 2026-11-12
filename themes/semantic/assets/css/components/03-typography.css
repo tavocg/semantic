@@ -36,7 +36,7 @@ a:not(a.button) {
     }
   }
 
-  &:is(footer ul a, header ul a) {
+  &:is(footer ul a, header ul a, nav a) {
     color: var(--cfs);
   }
 
@@ -45,10 +45,17 @@ a:not(a.button) {
      * problems?) */
     padding: 0.6rem 0.6rem 0.52rem 0.6rem;
 
+    &:is(aside nav a) {
+      padding: 0.3rem 1rem;
+      border-radius: var(--rl);
+    }
+
     &:hover {
       color: var(--cf);
       background-color: var(--cbs);
-      border-bottom: 0.4rem solid;
+      &:not(aside nav a) {
+        border-bottom: 0.4rem solid;
+      }
     }
 
     &[aria-current="page"] {

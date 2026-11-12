@@ -3,6 +3,16 @@ title = 'Components'
 weight = 30
 +++
 
+## Nav
+
+<nav>
+  <ul>
+    <li><a href="#" aria-current="page">First tab</a></li>
+    <li><a href="#">Second tab</a></li>
+    <li><a href="#">Third tab</a></li>
+  </ul>
+</nav>
+
 ## Tables
 
 ### Small table

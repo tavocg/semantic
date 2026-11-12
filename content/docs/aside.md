@@ -38,7 +38,7 @@ body:has(> main > #inputs:target) > aside a[href="#inputs"],
 body:has(> main > #table:target) > aside a[href="#table"],
 body:has(> main > #accordion:target) > aside a[href="#accordion"] {
   background-color: var(--cbs);
-  border-color: var(--c-border);
+  color: var(--cf);
 }
 </style>
 

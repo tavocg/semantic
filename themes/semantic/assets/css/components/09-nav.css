@@ -3,4 +3,17 @@
 nav {
   overflow-y: hidden;
   overflow-x: auto;
+  border-radius: var(--rl);
+
+  &:not(aside &) {
+    background-color: var(--cbs);
+  }
+
+  &:not(header &, footer &) {
+    margin: 1.5rem 0;
+  }
+
+  &:is(aside &) {
+    margin: 0.5rem 0;
+  }
 }

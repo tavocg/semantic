@@ -17,10 +17,14 @@ form {
 input, select, button, a.button {
   font-size: 18px;
   gap: 0.5rem;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 0.8rem;
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
-  background-color: var(--cbs);
+
+  &:not(.plain) {
+    background-color: var(--cbs);
+  }
+
   width: 100%;
 
   &:is([type="search"]) {
@@ -87,13 +91,14 @@ button, a.button, input[type="submit"], input[type="reset"] {
   border-color: var(--cfs);
   color: var(--cf);
 
-  &:not(.outline, .plain, [command="close"], [popovertarget], [type="reset"]) {
+  &:not(.outline, .plain, [command="close"], [type="reset"]) {
     border-color: var(--cp);
     background-color: var(--cp);
     color: var(--cb);
   }
 
-  &:is(.plain, [command="close"], [popovertarget]) {
+  &:is(.plain, [command="close"]) {
+    background-color: transparent;
     border: 0;
   }
 
