@@ -1,0 +1,20 @@
+{{ $page := .page }}
+{{ range .section.Params.sidebar }}
+  <h2>{{ .title }}</h2>
+  <nav>
+    <ul>
+      {{ range .links }}
+        {{ $title := .title }}
+        <li>
+          {{ with .page }}
+            {{ with site.GetPage . }}
+              <a href="{{ .RelPermalink }}"{{ if eq . $page }} aria-current="page"{{ end }}>{{ or $title .LinkTitle }}</a>
+            {{ end }}
+          {{ else }}
+            <a href="{{ .url }}">{{ .title }}</a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+{{ end }}

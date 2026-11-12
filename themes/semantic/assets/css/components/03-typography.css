@@ -41,6 +41,12 @@ a:not(a.button) {
   }
 
   &:is(nav a) {
+    transition: color 150ms ease, background-color 150ms ease;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
     /* FIXME: find a better way to do this (see 09-nav.css, the overflow causes
      * problems?) */
     padding: 0.6rem 0.6rem 0.52rem 0.6rem;

@@ -55,17 +55,10 @@ body > aside > h2 {
 body > aside nav a[href] {
   display: block;
   padding: 0.15rem 0.5rem;
-}
 
-/* Only direct main sections become panels; nested sections stay untouched. */
-body:has(> aside) > main:has(> section[id]) {
-  > section[id] {
-    display: none;
-  }
-
-  > section[id]:target,
-  &:not(:has(> section[id]:target)) > section[id]:first-of-type {
-    display: block;
+  &[aria-current="page"] {
+    background-color: var(--cbs);
+    border-bottom: 0;
   }
 }
 

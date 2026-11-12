@@ -1,23 +1,21 @@
 {{ define "aside" }}
   <aside id="site-aside" popover>
-    {{ .Params.sidebar | safeHTML }}
-    <script>
-      document.getElementById('site-aside').addEventListener('click', event => {
-        if (
-          event.target.closest('a[href]') &&
-          matchMedia('(max-width: 48rem)').matches &&
-          event.currentTarget.matches(':popover-open')
-        ) {
-          event.currentTarget.hidePopover();
-        }
-      });
-    </script>
+    {{ $section := . }}
+    {{ if .IsPage }}{{ $section = .Parent }}{{ end }}
+    {{ partial "aside-menu.html" (dict "section" $section "page" .) }}
   </aside>
 {{ end }}
 
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
+  {{ $section := . }}
+  {{ if .IsPage }}{{ $section = .Parent }}{{ end }}
+  <div id="aside-content" tabindex="-1">
+    <h1>{{ $section.Title }}</h1>
+    <section>
+      <h2>{{ if .IsSection }}Overview{{ else }}{{ .Title }}{{ end }}</h2>
+      {{ .Content }}
+    </section>
+  </div>
   <footer>
     {{ partial "footer.html" . }}
   </footer>
