@@ -70,18 +70,18 @@ weight = 30
 
 <details open>
   <summary>First section</summary>
-  <p>{{< lorem sentence >}}</p>
+  {{< lorem >}}
 </details>
 
 <details>
   <summary>Second section</summary>
-  <p>{{< lorem sentence 2 >}}</p>
+  {{< lorem >}}
 </details>
 
 ```html
 <details>
   <summary>Section title</summary>
-  <p>Section content.</p>
+  <p>{{< lorem inline >}}</p>
 </details>
 ```
 

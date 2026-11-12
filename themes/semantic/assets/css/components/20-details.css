@@ -5,6 +5,17 @@ details {
   padding: 1rem;
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
+  interpolate-size: allow-keywords;
+
+  &::details-content {
+    height: 0;
+    overflow: hidden;
+    transition: height var(--motion, 200ms), content-visibility var(--motion, 200ms) allow-discrete;
+  }
+
+  &[open]::details-content {
+    height: auto;
+  }
 
   > summary {
     display: flex;

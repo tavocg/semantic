@@ -94,6 +94,26 @@ weight = 20
   </footer>
 </form>
 
+## Heading groups
+
+Place a control after the heading to align it on the right. Supporting text sits underneath and keeps the heading group's secondary text color.
+
+<hgroup>
+  <strong>Email notifications</strong>
+  <input type="checkbox" role="switch" aria-label="Email notifications" checked>
+  <p>Receive a short summary of project updates and upcoming milestones.</p>
+</hgroup>
+
+```html
+<hgroup>
+  <strong>Email notifications</strong>
+  <input type="checkbox" role="switch" aria-label="Email notifications" checked>
+  <p>Receive a short summary of project updates and upcoming milestones.</p>
+</hgroup>
+```
+
+The heading can also be an `h1`–`h6`. Inputs, selects, textareas, buttons, and `a.button` links can occupy the control position.
+
 ## Text fields
 
 ```html
