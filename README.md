@@ -17,3 +17,5 @@ rsvg-convert public/social-card.svg --output public/social-card.png
 Licensed under the [GNU General Public License](LICENSE), version 3 or any later version.
 
 Tailwind CSS Preflight retains its original [MIT license](licenses/preflight.txt).
+
+The htmz extensions retain their original [MIT license](licenses/htmz.txt).
