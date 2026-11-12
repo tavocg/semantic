@@ -21,7 +21,7 @@ input, select, button, a.button {
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
 
-  &:not(.plain) {
+  &:not(.plain, [popovertarget]) {
     background-color: var(--cbs);
   }
 
@@ -91,13 +91,13 @@ button, a.button, input[type="submit"], input[type="reset"] {
   border-color: var(--cfs);
   color: var(--cf);
 
-  &:not(.outline, .plain, [command="close"], [type="reset"]) {
+  &:not(.outline, .plain, [command="close"], [popovertarget], [type="reset"]) {
     border-color: var(--cp);
     background-color: var(--cp);
     color: var(--cb);
   }
 
-  &:is(.plain, [command="close"]) {
+  &:is(.plain, [command="close"], [popovertarget]) {
     background-color: transparent;
     border: 0;
   }
