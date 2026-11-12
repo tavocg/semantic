@@ -1,0 +1,19 @@
+/* Reusable motion; components choose where to apply it. */
+
+@keyframes slide-in {
+  from { transform: translateX(var(--slide-from, -100%)) }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(0.5rem) }
+}
+@keyframes spin {
+  to { transform: rotate(1turn) }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion: 0s;
+    --press: 1;
+    --spin: none;
+  }
+}

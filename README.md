@@ -12,6 +12,11 @@ hugo build --minify
 rsvg-convert public/social-card.svg --output public/social-card.png
 ```
 
+Keep control and button styles in `19-forms.css`, including contextual and busy
+states. Navigation links belong in `09-nav.css`; text links belong in
+`03-typography.css`. Shared keyframes and reduced-motion settings live in
+`animations.css`. Component files apply those animations where needed.
+
 ## License
 
 Licensed under the [GNU General Public License](LICENSE), version 3 or any later version.

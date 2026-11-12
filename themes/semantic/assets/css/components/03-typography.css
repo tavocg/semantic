@@ -1,99 +1,36 @@
-/*
- * Typography:
- * Headings (<h1>, <h2>, <h3>, <h4>, <h5>, <h6>).
- * Paragraphs and links (<p>, <a>).
- * Inline text (<strong>, <em>, <b>, <i>, <u>, <s>, <small>, <mark>,
- * <abbr>, <q>, <cite>, <dfn>, <sub>, <sup>, <del>, <ins>, <time>, <data>,
- * <span>, <br>, <wbr>, <bdi>, <bdo>, <ruby>, <rt>, <rp>).
- */
+/* Headings, paragraphs, inline text, and content links. */
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  margin: 0.5rem 0 1.5rem 0;
+  margin: 0.5rem 0 1.5rem;
 }
 
-p {
-  margin: 1.5rem 0;
-
-  &:is(article p) {
-    font-size: 18px;
-    line-height: 1.8rem;
-  }
-}
-
-h1 { font-size: 2.25rem;  line-height: calc(2.5  / 2.25) }
+h1 { font-size: 2.25rem; line-height: calc(2.5 / 2.25) }
 h2 { font-size: 1.875rem; line-height: calc(2.25 / 1.875) }
-h3 { font-size: 1.5rem;   line-height: calc(2    / 1.5) }
-h4 { font-size: 1.25rem;  line-height: calc(1.75 / 1.25) }
+h3 { font-size: 1.5rem; line-height: calc(2 / 1.5) }
+h4 { font-size: 1.25rem; line-height: calc(1.75 / 1.25) }
 h5 { font-size: 1.125rem; line-height: calc(1.75 / 1.125) }
 
-a:not(a.button) {
-  &:not(nav a) {
-    color: var(--cp);
+p { margin: 1.5rem 0 }
+article p { font-size: 18px; line-height: 1.8rem }
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &:is(footer ul a, header ul a, nav a) {
-    color: var(--cfs);
-  }
-
-  &:is(nav a) {
-    transition: color 150ms ease, background-color 150ms ease;
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
-
-    /* FIXME: find a better way to do this (see 09-nav.css, the overflow causes
-     * problems?) */
-    padding: 0.6rem 0.6rem 0.52rem 0.6rem;
-
-    &:is(aside nav a) {
-      padding: 0.3rem 1rem;
-      border-radius: var(--rl);
-    }
-
-    &:hover {
-      color: var(--cf);
-      background-color: var(--cbs);
-      &:not(aside nav a) {
-        border-bottom: 0.4rem solid;
-      }
-    }
-
-    &[aria-current="page"] {
-      color: var(--cp);
-      border-bottom: 0.4rem solid var(--cp);
-    }
-  }
+/* Text links exclude action controls and navigation links. */
+a:not(.button, nav a) {
+  color: var(--cp);
+  &:hover { text-decoration: underline }
+  &:is(footer ul *, header ul *) { color: var(--cfs) }
 }
 
-s {
-  text-decoration: line-through;
+body > aside > h2 {
+  padding-inline-start: 0.5rem;
+  margin: 1rem 0 0;
+  font-size: small;
+  line-height: 1.5;
+  font-weight: normal;
+  color: var(--cfs);
 }
 
-kbd {
-  font-weight: bold;
-  color: var(--cb);
-  background-color: var(--cf);
-  border-radius: var(--rs);
-  padding: 0.2rem 0.5rem;
-  margin: 0.2rem;
-  letter-spacing: -0.05em;
-}
-
-mark {
-  background-color: var(--cp);
-  color: var(--cb);
-  padding: 0 0.5rem;
-}
-
-
-em {
-  &:is(blockquote em) {
-    color: var(--cfs);
-  }
-}
+dialog > header > :is(h1, h2, h3, h4, h5, h6) { margin: 0 }
+hgroup :is(p, time), blockquote em { color: var(--cfs) }
+s { text-decoration: line-through }
+mark { background-color: var(--cp); color: var(--cb); padding: 0 0.5rem }

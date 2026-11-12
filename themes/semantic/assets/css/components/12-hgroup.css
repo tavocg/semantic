@@ -1,7 +1,0 @@
-/* Heading groups (<hgroup>). */
-
-hgroup {
-  p, time {
-    color: var(--cfs);
-  }
-}

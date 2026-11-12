@@ -1,13 +1,3 @@
-/*
- * Media and embedded content:
- * Images and image maps (<img>, <picture>, <map>, <area>).
- * Audio and video (<audio>, <video>, <source>, <track>).
- * Embedded content (<iframe>, <embed>, <object>).
- * Graphics (<svg>, <canvas>).
- */
+/* Images; responsive image/video sizing comes from Preflight. */
 
-img {
-  &:is(header &) {
-    max-height: 2rem;
-  }
-}
+header img { max-height: 2rem }

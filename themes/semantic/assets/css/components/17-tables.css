@@ -6,23 +6,14 @@
  * Rows and cells (<tr>, <th>, <td>).
  */
 
-figure:has(> table) {
-  > figcaption {
-    text-align: center;
-  }
-
-  > table {
-    margin-top: 1rem;
-  }
-}
+figure > table { margin-top: 1rem }
 
 table {
   display: block;
   width: fit-content;
   max-width: 100%;
   overflow-x: auto;
-  margin: 1.5rem 0;
-  margin-inline: auto;
+  margin: 1.5rem auto;
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
 

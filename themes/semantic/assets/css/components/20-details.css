@@ -1,8 +1,7 @@
 /* Disclosure content (<details>, <summary>). */
 
 details {
-  margin-top: 0.2rem;
-  margin-bottom: 1.2rem;
+  margin-block: 0.2rem 1.2rem;
   padding: 1rem;
   border: 1px solid var(--c-border);
   border-radius: var(--rl);

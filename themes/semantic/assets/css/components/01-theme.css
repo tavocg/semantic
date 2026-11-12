@@ -2,37 +2,16 @@
 
 :root {
   color-scheme: light dark;
-}
-
-:root {
   --ws: 48rem;
   --rl: 0.6rem;
   --rs: 0.25rem;
-}
-
-:root {
-  --cf: #1e1e1e;
-  --cb: #fafafa;
-
-  --cp: #007687;
-  --c-red: #cc3541;
-  --c-green: #087f5b;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --cf: #dcdcdc;
-    --cb: #0a0a0a;
-
-    --cp: #00d3f2;
-    --c-red: #f16e78;
-    --c-green: #63d6ad;
-  }
-}
-
-:root {
-  --cfs:      rgb(from var(--cf) r g b / 50%);
-  --cbs:      rgb(from var(--cf) r g b / 3%);
-  --cps:      rgb(from var(--cp) r g b / 30%);
+  --cf: light-dark(#1e1e1e, #dcdcdc);
+  --cb: light-dark(#fafafa, #0a0a0a);
+  --cp: light-dark(#007687, #00d3f2);
+  --c-red: light-dark(#cc3541, #f16e78);
+  --c-green: light-dark(#087f5b, #63d6ad);
+  --cfs: rgb(from var(--cf) r g b / 50%);
+  --cbs: rgb(from var(--cf) r g b / 3%);
+  --cps: rgb(from var(--cp) r g b / 30%);
   --c-border: rgb(from var(--cf) r g b / 10%);
 }

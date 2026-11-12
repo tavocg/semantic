@@ -1,19 +1,32 @@
-/* Navigation (<nav>). */
+/* Navigation containers, links, and their horizontal/sidebar variants. */
 
 nav {
-  overflow-y: hidden;
-  overflow-x: auto;
+  overflow: auto hidden;
   border-radius: var(--rl);
+  &:not(aside *) { background-color: var(--cbs) }
+  &:not(header *, footer *) { margin: 1.5rem 0 }
+  &:is(aside *) { margin: 0.5rem 0 }
+}
 
-  &:not(aside &) {
-    background-color: var(--cbs);
+body > header > nav { margin-inline-start: auto }
+
+nav a:not(.button) {
+  display: inline-flex;
+  align-items: center;
+  outline-offset: -2px;
+  padding: 0.35rem 0.6rem;
+  color: var(--cfs);
+  transition: color var(--motion, 150ms), background-color var(--motion, 150ms);
+
+  &:hover { color: var(--cf); background-color: var(--cbs) }
+  &:is(:hover, [aria-current="page"]):not(aside *) {
+    box-shadow: inset 0 -2px;
   }
-
-  &:not(header &, footer &) {
-    margin: 1.5rem 0;
-  }
-
-  &:is(aside &) {
-    margin: 0.5rem 0;
+  &[aria-current="page"] { color: var(--cp) }
+  &:is(aside *) { padding: 0.3rem 1rem; border-radius: var(--rl) }
+  &:is(body > aside *) {
+    display: flex;
+    padding: 0.15rem 0.5rem;
+    &[aria-current="page"] { background-color: var(--cbs) }
   }
 }

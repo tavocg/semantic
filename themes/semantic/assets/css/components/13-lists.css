@@ -1,42 +1,24 @@
-/*
- * Lists:
- * Ordered and unordered lists (<ol>, <ul>, <menu>, <li>).
- * Description lists (<dl>, <dt>, <dd>).
- */
+/* Lists and description lists, including navigation list layout. */
 
-ol, ul, dl {
-  &:not(nav &, footer &, header &) {
+ol, ul, menu, dl {
+  &:not(nav *, footer *, header *) {
     margin: 1.5rem 0;
-    list-style-position: outside;
     padding-inline-start: 2ch;
-
-    & li::marker {
-      font-size: 0.8em;
-      color: var(--cfs);;
-    }
-
+    li::marker { font-size: 0.8em; color: var(--cfs) }
     &:is(ol) {
       list-style-type: decimal;
-
-      & li::marker {
-        font-variant-numeric: tabular-nums;
-      }
+      li::marker { font-variant-numeric: tabular-nums }
     }
-
-    &:is(ul) {
-      list-style-type: square;
-    }
-  }
-
-  &:is(nav &) {
-    display: flex;
-    margin: 0.4rem 0 0.6rem 0;
-
-    &:is(body > aside nav &) {
-      flex-direction: column;
-      li {
-        margin-block: 0.1rem;
-      }
-    }
+    &:is(ul, menu) { list-style-type: square }
   }
 }
+
+dt { font-weight: bold }
+dd { margin-inline-start: 2ch }
+
+nav :is(ol, ul, menu) { display: flex; margin: 0 }
+body > aside nav :is(ol, ul, menu) {
+  flex-direction: column;
+  margin: 0.4rem 0 0.6rem;
+}
+body > aside nav li { margin-block: 0.1rem }

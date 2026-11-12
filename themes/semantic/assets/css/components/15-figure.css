@@ -9,3 +9,7 @@ figcaption {
   color: var(--cfs);
   font-size: small;
 }
+
+figure:has(> table) > figcaption {
+  text-align: center;
+}
