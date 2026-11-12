@@ -232,30 +232,35 @@ Response:
 
 ### Preserve children in a new container
 
-Type in the input, then replace its container. `<slot name="children">` moves the original children into the new HTML.
+Click Add item repeatedly. Each response creates a new `<ul>`, moves the existing `<li>` elements into it with `<slot name="children">`, and appends one new item. Reset restores the initial list.
 
 <a class="button outline" href="../../htmz/reset-preserve-children.html#demo-children" target="htmz">Reset</a>
-<a class="button" href="../../htmz/preserve-children.html#swap-children" target="htmz">Replace the container</a>
+<a class="button" href="../../htmz/preserve-children.html#swap-children" target="htmz">Add item</a>
 <div id="demo-children">
-  <div id="swap-children">
-    <label>Preserved input <input type="text" value="Edit this value" aria-label="Child to preserve"></label>
-  </div>
+  <ul id="swap-children">
+    <li>First item</li>
+  </ul>
 </div>
 
 ```html
 <a class="button outline" href="../../htmz/reset-preserve-children.html#demo-children" target="htmz">Reset</a>
-<a class="button" href="../../htmz/preserve-children.html#swap-children" target="htmz">Replace the container</a>
+<a class="button" href="../../htmz/preserve-children.html#swap-children" target="htmz">Add item</a>
 <div id="demo-children">
-  <div id="swap-children">
-    <label>Preserved input <input type="text" value="Edit this value" aria-label="Child to preserve"></label>
-  </div>
+  <ul id="swap-children">
+    <li>First item</li>
+  </ul>
 </div>
 ```
 
 Response:
 
 ```html
-<template><section id="swap-children"><h3>A new container</h3><slot name="children"></slot></section></template>
+<template>
+  <ul id="swap-children">
+    <slot name="children"></slot>
+    <li>Added item</li>
+  </ul>
+</template>
 ```
 
 ### Delete an element
