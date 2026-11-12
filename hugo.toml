@@ -12,3 +12,7 @@ unsafe = true
 
 [markup.goldmark.parser]
 wrapStandAloneImageWithinParagraph = false
+
+[markup]
+  [markup.highlight]
+    style = 'github-dark'
