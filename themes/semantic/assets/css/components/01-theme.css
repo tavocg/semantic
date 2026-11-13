@@ -2,18 +2,28 @@
 
 :root {
   color-scheme: light dark;
+
   --ws: 48rem;
   /* Shared spacing unit; components use multiples and fractions. */
   --space: 1rem;
-  --rl: 0.6rem;
-  --rs: 0.25rem;
-  --cf: light-dark(#1e1e1e, #dcdcdc);
-  --cb: light-dark(#fafafa, #0a0a0a);
-  --cp: light-dark(#007687, #00d3f2);
-  --c-red: light-dark(#cc3541, #f16e78);
-  --c-green: light-dark(#087f5b, #63d6ad);
-  --cfs: rgb(from var(--cf) r g b / 50%);
-  --cbs: rgb(from var(--cf) r g b / 3%);
-  --cps: rgb(from var(--cp) r g b / 30%);
-  --c-border: rgb(from var(--cf) r g b / 10%);
+  --rl: calc(var(--space) / 2);
+  --rs: calc(var(--space) / 4);
+
+  /* Neutral backgrounds and a softer teal accent. */
+  --cf: light-dark(#242424, #e5e5e5);
+  --cb: light-dark(#fafafa, #141414);
+  --cp: light-dark(#006d77, #7bd5cf);
+  --c-red: light-dark(#b82e42, #f58b96);
+  --c-green: light-dark(#087451, #78d4aa);
+
+  --cfs: rgb(from var(--cf) r g b / 68%);
+  --cbs: light-dark(
+    rgb(from var(--cf) r g b / 4%),
+    rgb(from var(--cf) r g b / 6%)
+  );
+  --cps: light-dark(
+    rgb(from var(--cp) r g b / 75%),
+    rgb(from var(--cp) r g b / 60%)
+  );
+  --c-border: rgb(from var(--cf) r g b / 18%);
 }
