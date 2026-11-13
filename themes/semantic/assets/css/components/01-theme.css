@@ -1,4 +1,4 @@
-/* Theme: global design tokens and color schemes. */
+/* Theme: shared tokens, default blue palette, and optional HTML palettes. */
 
 :root {
   color-scheme: light dark;
@@ -10,14 +10,14 @@
   --rl: calc(var(--space) / 2);
   --rs: calc(var(--space) / 4);
 
-  /* Neutral backgrounds and a softer teal accent. */
+  /* Neutral backgrounds and a classic blue accent. */
   --cf: light-dark(#242424, #e5e5e5);
   --cb: light-dark(#fafafa, #141414);
   --cb-aside: light-dark(
     color-mix(in srgb, var(--cb) 94%, black),
     color-mix(in srgb, var(--cb) 65%, black)
   );
-  --cp: light-dark(#006d77, #7bd5cf);
+  --cp: light-dark(#1b59b3, #80b4f8);
   --c-red: light-dark(#b82e42, #f58b96);
   --c-green: light-dark(#087451, #78d4aa);
 
@@ -31,4 +31,34 @@
     rgb(from var(--cp) r g b / 60%)
   );
   --c-border: rgb(from var(--cf) r g b / 18%);
+}
+
+:root[data-theme="cyan"] {
+  --cf: light-dark(#1f2b2e, #dfedef);
+  --cb: light-dark(#f3fafb, #101a1d);
+  --cp: light-dark(#006d77, #7bd5cf);
+}
+
+:root[data-theme="green"] {
+  --cf: light-dark(#202c24, #e1eee5);
+  --cb: light-dark(#f5faf6, #111b15);
+  --cp: light-dark(#086d4f, #7ad7b3);
+}
+
+:root[data-theme="violet"] {
+  --cf: light-dark(#2e2238, #eee4f4);
+  --cb: light-dark(#faf7fc, #1b1520);
+  --cp: light-dark(#7047a3, #c5a3ef);
+}
+
+:root[data-theme="red"] {
+  --cf: light-dark(#302124, #f4e3e5);
+  --cb: light-dark(#fdf6f6, #211416);
+  --cp: light-dark(#b3293e, #f6a1aa);
+}
+
+:root[data-theme="orange"] {
+  --cf: light-dark(#302719, #f4e8d8);
+  --cb: light-dark(#fcf8f2, #21180f);
+  --cp: light-dark(#97500c, #f0b76e);
 }
