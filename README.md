@@ -21,6 +21,26 @@ Component spacing uses `--space` (default: `1rem`) from `01-theme.css`.
 Margins, padding, and gaps use this unit or multiples and fractions of it;
 override `--space` to adjust the theme's spacing throughout.
 
+## Color themes
+
+The default palette is blue. Set `data-theme` on `<html>` to choose `blue`,
+`cyan`, `green`, `violet`, `red`, or `orange`:
+
+```html
+<html lang="en" data-theme="green">
+```
+
+Each palette changes the background, text, and accent colors. Derived surfaces,
+including the sidebar, follow the palette. Each theme follows the system's light
+or dark preference through
+`color-scheme: light dark`. Omit the attribute to use the default palette.
+Use `<html>` so the theme variables apply to the whole document.
+
+With Hugo, set `theme: cyan` in a page's frontmatter to choose its palette.
+Use `params.theme` in the site configuration for a site-wide default.
+The base template writes the selected value to `<html data-theme="…">`;
+page frontmatter takes precedence over the site parameter.
+
 ## License
 
 Licensed under the [GNU General Public License](LICENSE), version 3 or any later version.
