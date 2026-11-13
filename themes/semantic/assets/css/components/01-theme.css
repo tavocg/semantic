@@ -4,6 +4,7 @@
   color-scheme: light dark;
 
   --ws: 48rem;
+  --wa: 16rem;
   /* Shared spacing unit; components use multiples and fractions. */
   --space: 1rem;
   --rl: calc(var(--space) / 2);
@@ -12,6 +13,10 @@
   /* Neutral backgrounds and a softer teal accent. */
   --cf: light-dark(#242424, #e5e5e5);
   --cb: light-dark(#fafafa, #141414);
+  --cb-aside: light-dark(
+    color-mix(in srgb, var(--cb) 94%, black),
+    color-mix(in srgb, var(--cb) 65%, black)
+  );
   --cp: light-dark(#006d77, #7bd5cf);
   --c-red: light-dark(#b82e42, #f58b96);
   --c-green: light-dark(#087451, #78d4aa);

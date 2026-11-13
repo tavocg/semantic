@@ -2,7 +2,7 @@
 
 body:has(> aside) {
   display: grid;
-  grid-template-columns: min(18rem, 30%) minmax(0, 1fr);
+  grid-template-columns: min(var(--wa), 30%) minmax(0, 1fr);
   grid-template-rows: auto 1fr auto;
 
   > aside {
@@ -14,10 +14,10 @@ body:has(> aside) {
     height: 100dvh;
     max-height: 100dvh;
     overflow-y: auto;
-    border-inline-end: 1px solid var(--c-border);
     padding: calc(var(--space) / 2);
+    background-color: var(--cb-aside);
 
-    &[popover] { display: block; width: auto; color: inherit }
+    &[popover] { display: block; width: auto }
     &:dir(rtl) { --slide-from: 100% }
 
     /* Keep a popover in place when resizing from mobile to desktop. */
@@ -25,7 +25,7 @@ body:has(> aside) {
       position: fixed;
       inset: 0;
       inset-inline-end: auto;
-      width: min(18rem, 30%);
+      width: min(var(--wa), 30%);
     }
   }
 
@@ -47,8 +47,7 @@ body:has(> aside) {
 
       &:popover-open {
         display: block;
-        width: min(18rem, 85vw);
-        background-color: var(--cb);
+        width: min(var(--wa), 85vw);
         animation: slide-in var(--motion, 200ms) cubic-bezier(0.22, 1, 0.36, 1);
       }
     }
