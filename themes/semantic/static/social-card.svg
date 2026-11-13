@@ -3,8 +3,8 @@
   <desc id="description">A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.</desc>
   <defs>
     <linearGradient id="logo" x1="12.208" y1="93.04" x2="102.965" y2="22.133" gradientUnits="userSpaceOnUse">
-      <stop offset="0.287" stop-color="#007c8e"/>
-      <stop offset="0.724" stop-color="#33a8b5"/>
+      <stop offset="0.287" stop-color="#1b59b3"/>
+      <stop offset="0.724" stop-color="#5791e0"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="#0a0a0a"/>
