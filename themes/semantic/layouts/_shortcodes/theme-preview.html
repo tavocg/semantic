@@ -1,0 +1,9 @@
+{{- $themes := slice "blue" "cyan" "green" "violet" "red" "orange" -}}
+{{- $current := .Page.Param "theme" | default "blue" -}}
+{{- if not (in $themes $current) }}{{ $current = "blue" }}{{ end -}}
+<label for="theme-preview">Preview a theme</label>
+<select id="theme-preview" onchange="document.documentElement.dataset.theme = this.value">
+  {{- range $themes }}
+  <option value="{{ . }}"{{ if eq . $current }} selected{{ end }}>{{ . | title }}{{ if eq . "blue" }} (default){{ end }}</option>
+  {{- end }}
+</select>
