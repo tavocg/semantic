@@ -2,8 +2,8 @@
 
 ol, ul, menu, dl {
   &:not(nav *, footer *, header *) {
-    margin: 1.5rem 0;
-    padding-inline-start: 2ch;
+    margin: calc(var(--space) * 1.5) 0;
+    padding-inline-start: var(--space);
     li::marker { font-size: 0.8em; color: var(--cfs) }
     &:is(ol) {
       list-style-type: decimal;
@@ -14,11 +14,11 @@ ol, ul, menu, dl {
 }
 
 dt { font-weight: bold }
-dd { margin-inline-start: 2ch }
+dd { margin-inline-start: var(--space) }
 
 nav :is(ol, ul, menu) { display: flex; margin: 0 }
 body > aside nav :is(ol, ul, menu) {
   flex-direction: column;
-  margin: 0.4rem 0 0.6rem;
+  margin: calc(var(--space) / 2) 0;
 }
-body > aside nav li { margin-block: 0.1rem }
+body > aside nav li { margin-block: calc(var(--space) / 8) }

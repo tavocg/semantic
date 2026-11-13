@@ -3,7 +3,7 @@
 dialog {
   width: min(95%, 36rem);
   margin: auto;
-  padding: 1.5rem;
+  padding: calc(var(--space) * 1.5);
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
   background-color: var(--cb);

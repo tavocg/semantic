@@ -1,5 +1,5 @@
 /* Self-contained content (<article>). */
 
 article {
-  margin: 1rem 0;
+  margin: var(--space) 0;
 }

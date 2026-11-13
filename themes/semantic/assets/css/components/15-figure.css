@@ -1,11 +1,11 @@
 /* Figures and captions (<figure>, <figcaption>). */
 
 figure {
-  margin: 1.5rem 0;
+  margin: calc(var(--space) * 1.5) 0;
 }
 
 figcaption {
-  margin-top: 0.5rem;
+  margin-top: calc(var(--space) / 2);
   color: var(--cfs);
   font-size: small;
 }

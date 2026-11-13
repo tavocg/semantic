@@ -4,8 +4,8 @@ nav {
   overflow: auto hidden;
   border-radius: var(--rl);
   &:not(aside *) { background-color: var(--cbs) }
-  &:not(header *, footer *) { margin: 1.5rem 0 }
-  &:is(aside *) { margin: 0.5rem 0 }
+  &:not(header *, footer *) { margin: calc(var(--space) * 1.5) 0 }
+  &:is(aside *) { margin: calc(var(--space) / 2) 0 }
 }
 
 body > header > nav { margin-inline-start: auto }
@@ -14,7 +14,7 @@ nav a:not(.button) {
   display: inline-flex;
   align-items: center;
   outline-offset: -2px;
-  padding: 0.35rem 0.6rem;
+  padding: calc(var(--space) / 2);
   color: var(--cfs);
   transition: color var(--motion, 150ms), background-color var(--motion, 150ms);
 
@@ -23,10 +23,10 @@ nav a:not(.button) {
     box-shadow: inset 0 -2px;
   }
   &[aria-current="page"] { color: var(--cp) }
-  &:is(aside *) { padding: 0.3rem 1rem; border-radius: var(--rl) }
+  &:is(aside *) { padding: calc(var(--space) / 2) var(--space); border-radius: var(--rl) }
   &:is(body > aside *) {
     display: flex;
-    padding: 0.15rem 0.5rem;
+    padding: calc(var(--space) / 4) calc(var(--space) / 2);
     &[aria-current="page"] { background-color: var(--cbs) }
   }
 }

@@ -1,8 +1,8 @@
 /* Forms, fields, action controls, and their interaction/status states. */
 
 form {
-  margin: 1.5rem 0;
-  padding: 1rem;
+  margin: calc(var(--space) * 1.5) 0;
+  padding: var(--space);
   background-color: var(--cbs);
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
@@ -11,7 +11,7 @@ form {
 input, select, textarea, button, :where(a.button) {
   font-size: 18px;
   width: 100%;
-  padding: 0.5rem 0.8rem;
+  padding: calc(var(--space) / 2) calc(var(--space) * 3 / 4);
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
   transition: transform var(--motion, 100ms);
@@ -23,7 +23,7 @@ input, select, textarea, button, :where(a.button) {
   }
 }
 
-:where(input, select, textarea, button, a.button, label) { margin-block: 0.2rem 1.2rem }
+:where(input, select, textarea, button, a.button, label) { margin-block: calc(var(--space) / 4) var(--space) }
 input[type="search"] { border-radius: 999px }
 input[type="range"] { accent-color: var(--cp) }
 
@@ -41,7 +41,7 @@ button, a.button, input:is([type="button"], [type="submit"], [type="reset"]) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: calc(var(--space) / 2);
   width: fit-content;
   vertical-align: middle;
   border-color: var(--cfs);
@@ -54,7 +54,7 @@ button, a.button, input:is([type="button"], [type="submit"], [type="reset"]) {
     color: var(--cb);
   }
   &:is(.plain, [command="close"], [popovertarget]) { background-color: transparent; border: 0 }
-  & ~ & { margin-inline-start: 0.5rem }
+  & ~ & { margin-inline-start: calc(var(--space) / 2) }
 }
 
 body > header button[popovertarget="site-aside"] {
@@ -68,7 +68,7 @@ input[type="color"] {
   display: block;
   width: 3rem;
   height: 2.5rem;
-  padding: 0.25rem;
+  padding: calc(var(--space) / 4);
   cursor: pointer;
   &::-webkit-color-swatch-wrapper { padding: 0 }
   &::-webkit-color-swatch { border: 0; border-radius: var(--rs) }
@@ -76,8 +76,8 @@ input[type="color"] {
 }
 
 fieldset {
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
+  margin: var(--space) 0;
+  padding: calc(var(--space) / 2) var(--space);
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
 }
@@ -98,8 +98,8 @@ input:is([type="checkbox"], [type="radio"]) {
 label:has(> input:is([type="checkbox"], [type="radio"])) {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-block: 0.5rem;
+  gap: calc(var(--space) / 2);
+  margin-block: calc(var(--space) / 2);
 }
 
 input[type="checkbox"]:not([role="switch"], :checked, :indeterminate), input[type="radio"]:not(:checked) {
@@ -116,15 +116,15 @@ input[type="checkbox"][role="switch"] {
   align-items: center;
   width: 2.75rem;
   height: 1.5rem;
-  padding: 0.125rem;
+  padding: calc(var(--space) / 8);
   border: 1px solid var(--c-border);
   border-radius: 999px;
   background-color: var(--cfs);
 
   &::before {
     content: "";
-    width: calc(1.25rem - 2px);
-    height: calc(1.25rem - 2px);
+    width: calc(1.5rem - var(--space) / 4 - 2px);
+    height: calc(1.5rem - var(--space) / 4 - 2px);
     border: 1px solid var(--c-border);
     border-radius: inherit;
     background-color: var(--cb);

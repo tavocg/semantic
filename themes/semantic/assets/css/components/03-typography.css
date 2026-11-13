@@ -2,7 +2,7 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  margin: 0.5rem 0 1.5rem;
+  margin: calc(var(--space) / 2) 0 calc(var(--space) * 1.5);
 }
 
 h1 { font-size: 2.25rem; line-height: calc(2.5 / 2.25) }
@@ -11,7 +11,7 @@ h3 { font-size: 1.5rem; line-height: calc(2 / 1.5) }
 h4 { font-size: 1.25rem; line-height: calc(1.75 / 1.25) }
 h5 { font-size: 1.125rem; line-height: calc(1.75 / 1.125) }
 
-p { margin: 1.5rem 0 }
+p { margin: calc(var(--space) * 1.5) 0 }
 article p { font-size: 18px; line-height: 1.8rem }
 
 /* Text links exclude action controls and navigation links. */
@@ -22,8 +22,8 @@ a:not(.button, nav a) {
 }
 
 body > aside > h2 {
-  padding-inline-start: 0.5rem;
-  margin: 1rem 0 0;
+  padding-inline-start: calc(var(--space) / 2);
+  margin: var(--space) 0 0;
   font-size: small;
   line-height: 1.5;
   font-weight: normal;
@@ -33,4 +33,4 @@ body > aside > h2 {
 dialog > header > :is(h1, h2, h3, h4, h5, h6) { margin: 0 }
 hgroup :is(p, time), blockquote em { color: var(--cfs) }
 s { text-decoration: line-through }
-mark { background-color: var(--cp); color: var(--cb); padding: 0 0.5rem }
+mark { background-color: var(--cp); color: var(--cb); padding: 0 calc(var(--space) / 2) }

@@ -15,7 +15,7 @@ body:has(> aside) {
     max-height: 100dvh;
     overflow-y: auto;
     border-inline-end: 1px solid var(--c-border);
-    padding: 0.6rem;
+    padding: calc(var(--space) / 2);
 
     &[popover] { display: block; width: auto; color: inherit }
     &:dir(rtl) { --slide-from: 100% }

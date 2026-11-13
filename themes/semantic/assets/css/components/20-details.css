@@ -1,8 +1,8 @@
 /* Disclosure content (<details>, <summary>). */
 
 details {
-  margin-block: 0.2rem 1.2rem;
-  padding: 1rem;
+  margin-block: calc(var(--space) / 4) var(--space);
+  padding: var(--space);
   border: 1px solid var(--c-border);
   border-radius: var(--rl);
   interpolate-size: allow-keywords;
@@ -21,7 +21,7 @@ details {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: var(--space);
     font-weight: bold;
     cursor: pointer;
 

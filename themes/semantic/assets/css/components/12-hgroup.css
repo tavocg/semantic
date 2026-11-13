@@ -4,7 +4,7 @@ hgroup:has(> :is(input, select, textarea, button, a.button)) {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  gap: 0.25rem 1rem;
+  gap: calc(var(--space) / 4) var(--space);
 
   > :first-child { margin: 0 }
   > p:not(:first-child) { grid-column: 1 / -1; margin: 0 }

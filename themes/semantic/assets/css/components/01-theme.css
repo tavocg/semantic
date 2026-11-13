@@ -3,6 +3,8 @@
 :root {
   color-scheme: light dark;
   --ws: 48rem;
+  /* Shared spacing unit; components use multiples and fractions. */
+  --space: 1rem;
   --rl: 0.6rem;
   --rs: 0.25rem;
   --cf: light-dark(#1e1e1e, #dcdcdc);

@@ -3,7 +3,7 @@
 main {
   max-width: var(--ws);
   margin: 0 auto;
-  padding: 1rem;
+  padding: var(--space);
 
   /* need these since parent (body) is flex */
   width: 100%;

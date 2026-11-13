@@ -17,6 +17,10 @@ states. Navigation links belong in `09-nav.css`; text links belong in
 `03-typography.css`. Shared keyframes and reduced-motion settings live in
 `animations.css`. Component files apply those animations where needed.
 
+Component spacing uses `--space` (default: `1rem`) from `01-theme.css`.
+Margins, padding, and gaps use this unit or multiples and fractions of it;
+override `--space` to adjust the theme's spacing throughout.
+
 ## License
 
 Licensed under the [GNU General Public License](LICENSE), version 3 or any later version.
