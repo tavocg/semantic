@@ -3,8 +3,8 @@ title = 'Themes'
 weight = 50
 +++
 
-Semantic includes six themes: **blue** (the default), **cyan**, **green**,
-**violet**, **red**, and **orange**. Each changes the page background, text,
+The `semantic.css` stylesheet includes five built-in themes: **blue** (the default),
+**green**, **violet**, **red**, and **orange**. Each changes the page background, text,
 accent, and derived surfaces such as the sidebar. Spacing and validation colors
 stay consistent across themes.
 
@@ -26,7 +26,7 @@ stay consistent across themes.
 
 ## Usage
 
-Set `data-theme` on the root `<html>` element:
+Load `semantic.css` and set `data-theme` on the root `<html>` element:
 
 ```html
 <!doctype html>
@@ -41,7 +41,8 @@ Set `data-theme` on the root `<html>` element:
 ```
 
 Use `data-theme="blue"` or omit the attribute to use the default palette.
-An unrecognized value also falls back to blue.
+An unrecognized value also falls back to blue. All five themes are included
+in the same stylesheet.
 
 Place the attribute on `<html>`, rather than `<body>`, so the root variables are
 available throughout the document. Use the standard custom-data attribute
@@ -54,12 +55,12 @@ Select the theme for a page in its frontmatter:
 ```yaml
 ---
 title: Example page
-theme: cyan
+theme: green
 ---
 ```
 
-`baseof.html` adds `data-theme="cyan"` to `<html>`, so the entire page uses the
-selected theme from the first render. Pages without a theme use the site
+`baseof.html` adds `data-theme="green"` to `<html>`, so the entire page uses
+the selected theme from the first render. Pages without a theme use the site
 parameter, or blue if no site parameter is set:
 
 ```toml
@@ -87,3 +88,6 @@ To change the palette from JavaScript:
 ```js
 document.documentElement.dataset.theme = "green";
 ```
+
+All five themes are built in, so changing the attribute switches palettes
+immediately using the same stylesheet.

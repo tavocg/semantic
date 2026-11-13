@@ -23,11 +23,16 @@ override `--space` to adjust the theme's spacing throughout.
 
 ## Color themes
 
-The default palette is blue. Set `data-theme` on `<html>` to choose `blue`,
-`cyan`, `green`, `violet`, `red`, or `orange`:
+`semantic.css` includes five built-in palettes: `blue` (the default), `green`,
+`violet`, `red`, and `orange`. Set `data-theme` on `<html>` to choose one:
 
 ```html
 <html lang="en" data-theme="green">
+  <head>
+    <link rel="stylesheet" href="semantic.css">
+  </head>
+  <body>...</body>
+</html>
 ```
 
 Each palette changes the background, text, and accent colors. Derived surfaces,
@@ -36,10 +41,11 @@ or dark preference through
 `color-scheme: light dark`. Omit the attribute to use the default palette.
 Use `<html>` so the theme variables apply to the whole document.
 
-With Hugo, set `theme: cyan` in a page's frontmatter to choose its palette.
+With Hugo, set `theme: green` in a page's frontmatter to choose its palette.
 Use `params.theme` in the site configuration for a site-wide default.
 The base template writes the selected value to `<html data-theme="…">`;
-page frontmatter takes precedence over the site parameter.
+page frontmatter takes precedence over the site parameter. All palettes use
+the same stylesheet and can be previewed with the selector in Themes.
 
 ## License
 

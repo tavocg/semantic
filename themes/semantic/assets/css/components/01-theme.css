@@ -1,4 +1,4 @@
-/* Theme: shared tokens, default blue palette, and optional HTML palettes. */
+/* Theme: shared tokens, default blue palette, and built-in HTML palettes. */
 
 :root {
   color-scheme: light dark;
@@ -31,12 +31,6 @@
     rgb(from var(--cp) r g b / 60%)
   );
   --c-border: rgb(from var(--cf) r g b / 18%);
-}
-
-:root[data-theme="cyan"] {
-  --cf: light-dark(#1f2b2e, #dfedef);
-  --cb: light-dark(#f3fafb, #101a1d);
-  --cp: light-dark(#006d77, #7bd5cf);
 }
 
 :root[data-theme="green"] {

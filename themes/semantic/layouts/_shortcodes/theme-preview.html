@@ -1,4 +1,4 @@
-{{- $themes := slice "blue" "cyan" "green" "violet" "red" "orange" -}}
+{{- $themes := slice "blue" "green" "violet" "red" "orange" -}}
 {{- $current := .Page.Param "theme" | default "blue" -}}
 {{- if not (in $themes $current) }}{{ $current = "blue" }}{{ end -}}
 <label for="theme-preview">Preview a theme</label>
