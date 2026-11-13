@@ -27,6 +27,15 @@ input, select, textarea, button, :where(a.button) {
 input[type="search"] { border-radius: 999px }
 input[type="range"] { accent-color: var(--cp) }
 
+select {
+  color: var(--cf);
+
+  :is(option, optgroup) {
+    color: var(--cf);
+    background-color: var(--cb);
+  }
+}
+
 button, a.button, input:is([type="button"], [type="submit"], [type="reset"]) {
   --scale: var(--press, 0.94);
   display: inline-flex;
