@@ -45,7 +45,9 @@ button, a.button, input:is([type="button"], [type="submit"], [type="reset"]) {
     background-color: var(--cp);
     color: var(--cb);
   }
-  &:is(.plain, [command="close"], [popovertarget]) { background-color: transparent; border: 0 }
+  &:is(.plain, [command="close"], [popovertarget]):not(&.outline) {
+    background-color: transparent; border: 0
+  }
   & ~ & { margin-inline-start: calc(var(--space) / 2) }
 }
 
