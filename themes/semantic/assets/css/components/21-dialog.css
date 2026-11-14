@@ -8,6 +8,10 @@ dialog {
   border-radius: var(--rl);
   background-color: var(--cb);
 
+  /* Dialog content is its own surface, even when nested in a nowrap table cell. */
+  white-space: normal;
+  overflow-wrap: anywhere;
+
   &[open] { animation: fade-up var(--motion, 150ms) ease-out }
   &::backdrop {
     background-color: rgb(0 0 0 / 50%);
