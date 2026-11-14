@@ -86,8 +86,8 @@ elements such as `<div>` and `<section>`.
   </header>
   {{< lorem >}}
   <footer>
-    <button type="button" class="outline" onclick="this.closest('dialog').close()">Cancel</button>
-    <button type="button" onclick="this.closest('dialog').close()">Confirm</button>
+    <button class="outline" commandfor="modal-1" command="close" autofocus="">Cancel</button>
+    <button>Confirm</button>
   </footer>
 </dialog>
 
@@ -100,8 +100,8 @@ elements such as `<div>` and `<section>`.
   </header>
   <p>Modal content.</p>
   <footer>
-    <button type="button" class="outline" onclick="this.closest('dialog').close()">Cancel</button>
-    <button type="button" onclick="this.closest('dialog').close()">Confirm</button>
+    <button class="outline" commandfor="modal-1" command="close" autofocus="">Cancel</button>
+    <button>Confirm</button>
   </footer>
 </dialog>
 ```
