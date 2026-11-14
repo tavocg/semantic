@@ -19,13 +19,11 @@ Use `.card` to group related content with the same surface, padding, border,
 and corner radius as a form.
 
 <article class="card">
-  <header>
-    <hgroup>
-      <h3>Example card</h3>
-      <p>A summary with an action.</p>
-    </hgroup>
+  <hgroup>
+    <h3>Example card</h3>
     <button type="button" commandfor="modal-1" command="show-modal">Details</button>
-  </header>
+    <p>A summary with an action.</p>
+  </hgroup>
   <p>Use a card to group related content.</p>
 </article>
 
