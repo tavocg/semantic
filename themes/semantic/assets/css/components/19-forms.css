@@ -56,7 +56,6 @@ body > header button[popovertarget="site-aside"] {
   margin: 0;
 }
 :is(dialog, .card) > header > :is(button, a.button) { margin: 0 }
-hgroup > :is(input, select, textarea, button, a.button) { grid-area: 1 / 2; margin: 0 }
 
 input[type="color"] {
   display: block;

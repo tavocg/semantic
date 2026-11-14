@@ -96,7 +96,9 @@ weight = 20
 
 ## Heading groups
 
-Place a control after the heading to align it on the right. Supporting text sits underneath and keeps the heading group's secondary text color.
+The first child of an `hgroup` sits on the left, and the second child aligns
+on the right, regardless of its element type. Put supporting text third so
+it spans both columns underneath and keeps the secondary text color.
 
 <hgroup>
   <strong>Email notifications</strong>
@@ -112,7 +114,23 @@ Place a control after the heading to align it on the right. Supporting text sits
 </hgroup>
 ```
 
-The heading can also be an `h1`–`h6`. Inputs, selects, textareas, buttons, and `a.button` links can occupy the control position.
+The heading can also be an `h1`–`h6`. The second child can be an input, button,
+link, status label, paragraph, or any other element. Every child after the
+second spans both columns below the first row.
+
+<hgroup>
+  <h3>Project status</h3>
+  <span>Up to date</span>
+  <p>All changes are saved.</p>
+</hgroup>
+
+```html
+<hgroup>
+  <h3>Project status</h3>
+  <span>Up to date</span>
+  <p>All changes are saved.</p>
+</hgroup>
+```
 
 ## Text fields
 

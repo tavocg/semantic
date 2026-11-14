@@ -17,8 +17,6 @@ form, .card {
 
     > hgroup {
       min-width: 0;
-      > :first-child { margin: 0 }
-      > p:not(:first-child) { margin: calc(var(--space) / 4) 0 0 }
     }
   }
 }
