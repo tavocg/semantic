@@ -10,6 +10,7 @@ header {
   padding: var(--space);
 }
 
-dialog > header {
+dialog > header,
+hgroup header {
   padding: 0;
 }

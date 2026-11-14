@@ -53,6 +53,10 @@ weight = 30
     <button commandfor="modal-1" command="close">×</button>
   </header>
   {{< lorem >}}
+  <footer>
+    <button type="button" class="outline" onclick="this.closest('dialog').close()">Cancel</button>
+    <button type="button" onclick="this.closest('dialog').close()">Confirm</button>
+  </footer>
 </dialog>
 
 ```html
@@ -63,6 +67,10 @@ weight = 30
     <button commandfor="modal-1" command="close">×</button>
   </header>
   <p>Modal content.</p>
+  <footer>
+    <button type="button" class="outline" onclick="this.closest('dialog').close()">Cancel</button>
+    <button type="button" onclick="this.closest('dialog').close()">Confirm</button>
+  </footer>
 </dialog>
 ```
 

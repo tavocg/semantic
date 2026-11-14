@@ -17,4 +17,9 @@ footer {
     margin-top: calc(var(--space) * 1.5);
     justify-content: end;
   }
+
+  &:has(> button, > a.button) {
+    justify-content: flex-end;
+    gap: calc(var(--space) / 2);
+  }
 }
