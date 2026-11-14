@@ -13,6 +13,38 @@ weight = 30
   </ul>
 </nav>
 
+## Cards
+
+Use `.card` to group related content with the same surface, padding, border,
+and corner radius as a form.
+
+<article class="card">
+  <header>
+    <hgroup>
+      <h3>Example card</h3>
+      <p>A summary with an action.</p>
+    </hgroup>
+    <button type="button" commandfor="modal-1" command="show-modal">Details</button>
+  </header>
+  <p>Use a card to group related content.</p>
+</article>
+
+```html
+<article class="card">
+  <header>
+    <hgroup>
+      <h3>Example card</h3>
+      <p>A summary with an action.</p>
+    </hgroup>
+    <button type="button" commandfor="modal-1" command="show-modal">Details</button>
+  </header>
+  <p>Use a card to group related content.</p>
+</article>
+```
+
+The Details button opens the example modal below. The class also works on
+elements such as `<div>` and `<section>`.
+
 ## Tables
 
 ### Small table

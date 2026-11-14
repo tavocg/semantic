@@ -1,0 +1,24 @@
+/* Shared panel appearance for cards and forms. */
+
+form, .card {
+  margin: calc(var(--space) * 1.5) 0;
+  padding: var(--space);
+  background-color: var(--cbs);
+  border: 1px solid var(--c-border);
+  border-radius: var(--rl);
+}
+
+.card {
+  > :first-child { margin-block-start: 0 }
+  > :last-child { margin-block-end: 0 }
+
+  > header {
+    padding: 0;
+
+    > hgroup {
+      min-width: 0;
+      > :first-child { margin: 0 }
+      > p:not(:first-child) { margin: calc(var(--space) / 4) 0 0 }
+    }
+  }
+}

@@ -16,6 +16,7 @@ Keep control and button styles in `19-forms.css`, including contextual and busy
 states. Navigation links belong in `09-nav.css`; text links belong in
 `03-typography.css`. Shared keyframes and reduced-motion settings live in
 `animations.css`. Component files apply those animations where needed.
+Cards and forms share their panel styles in `10-card.css`.
 
 Component spacing uses `--space` (default: `1rem`) from `01-theme.css`.
 Margins, padding, and gaps use this unit or multiples and fractions of it;
