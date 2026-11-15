@@ -80,7 +80,6 @@
 
   pre, table, nav { overflow-x: auto }
   hr { border-top: var(--d) }
-  progress, meter { width: 100% }
 
   a:not(.button, nav a) {
     color: var(--a);
@@ -114,7 +113,7 @@
     }
   }
 
-  form, input, button, select, a.button, fieldset, .card, pre, dialog, details, nav a, blockquote, textarea {
+  form, input, button, select, a.button, fieldset, .card, pre, dialog, details, nav a, blockquote, textarea, progress, meter {
     > * { margin-block: 0.5rem }
     > footer { margin-top: 1.5rem }
     padding: 0.5rem 1.1rem;
@@ -148,7 +147,30 @@
       }
       &:is(blockquote) {
         border-width: 0 0 0 0.25rem;
+        border-color: currentColor;
       }
+    }
+
+    &:is(progress, meter) {
+      appearance: none;
+      padding: 0;
+      height: 0.75rem;
+      overflow: hidden;
+      &::-webkit-progress-bar { background: #0000 }
+      &::-webkit-meter-inner-element { display: block }
+      &::-webkit-meter-bar { background: #0000; border: 0; height: 100% }
+      &::-webkit-progress-value, &::-webkit-meter-optimum-value, &::-webkit-meter-suboptimum-value, &::-webkit-meter-even-less-good-value { background: var(--p); border-radius: var(--r) }
+      &::-moz-progress-bar, &::-moz-meter-bar { background: var(--p); border-radius: var(--r) }
+    }
+
+    &:is(meter) {
+      --p: var(--green);
+      --bs: var(--b);
+      background-image: none;
+      &:-moz-meter-sub-optimum { --p: var(--orange) }
+      &:-moz-meter-sub-sub-optimum { --p: var(--red) }
+      &::-webkit-meter-suboptimum-value { --p: var(--orange) }
+      &::-webkit-meter-even-less-good-value { --p: var(--red) }
     }
 
     &:is(dialog) {
@@ -260,9 +282,24 @@
     gap: 0.5rem;
   }
 
-  button, a.button {
+  button, a.button, span.tag {
     display: inline-block;
     white-space: nowrap;
+  }
+
+  blockquote, span.tag {
+    --bs: rgb(from var(--p) r g b / 8%);
+    color: var(--p);
+  }
+
+  span.tag {
+    background: var(--bs);
+    border-radius: var(--r);
+    padding: 0.15rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  button, a.button {
     transition: transform var(--motion, 100ms);
     &:not(:disabled, [aria-disabled="true"]):active { transform: scale(var(--press, 0.96)) }
     &:not(.plain, .outline, [command="close"]) {
