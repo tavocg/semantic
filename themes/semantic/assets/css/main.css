@@ -156,8 +156,7 @@
       max-width: 95%;
       border: var(--d);
       margin: auto;
-      &[open] { animation: fade-up var(--motion, 150ms) ease-out }
-      &::backdrop { background: #0008; backdrop-filter: blur(4px) }
+      &[open] { animation: fade-right var(--motion, 150ms) ease-out }
     }
 
     option, optgroup {
@@ -207,28 +206,54 @@
     }
   }
 
-  nav a {
-    display: block;
-    color: var(--fs);
-    &:hover, &[aria-current="page"] {
-      color: var(--f);
-      background: var(--bs);
+  :is(dialog, body > aside)::backdrop { background: #0008; backdrop-filter: blur(4px) }
+
+  body > aside {
+    inset: 0;
+    inset-inline-end: auto;
+    width: min(16rem, 85vw);
+    height: 100dvh;
+    overflow: auto;
+    color: var(--f);
+    background: var(--b);
+
+    &:popover-open { animation: fade-right var(--motion, 150ms) ease-out }
+  }
+
+  @media (min-width: 48rem) {
+    body:has(> aside) {
+      display: grid;
+      grid-template: auto 1fr auto / 16rem minmax(0, 1fr);
+
+      > aside {
+        display: block;
+        position: sticky;
+        grid-row: 1 / -1;
+        &:popover-open { position: fixed }
+      }
+      > :not(aside) { grid-column: 2 }
     }
+    [popovertarget="site-aside"] { display: none }
+  }
+
+  nav {
+    padding: 0.25rem;
+    a {
+      display: block;
+      color: var(--fs);
+      &:hover, &[aria-current="page"] {
+        color: var(--f);
+        background: var(--bs);
+      }
+    }
+    ul { white-space: nowrap }
+    &:not(aside *) ul { display: flex; gap: 0.25rem }
   }
 
   label:has(> input:is([type="checkbox"], [type="radio"])) {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-  }
-
-  nav ul { white-space: nowrap }
-  nav:not(aside *) {
-    padding: 0.25rem;
-    ul {
-      display: flex;
-      gap: 0.25rem;
-    }
   }
 
   button, a.button {
@@ -245,7 +270,7 @@
     }
   }
 
-  main, body > header { padding: 1rem }
+  main, body > header, body > aside { padding: 1rem }
 
   hgroup p, figcaption, .mute, .mute * { color: var(--fs) !important }
 
