@@ -1,11 +1,11 @@
 /* Reusable motion; component rules choose where to apply it. */
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(0.5rem) }
+  from { opacity: 0; translate: 0 0.5rem }
 }
 
 @keyframes spin {
-  to { transform: rotate(1turn) }
+  to { rotate: 1turn }
 }
 
 @media (prefers-reduced-motion: reduce) {

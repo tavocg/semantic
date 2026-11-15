@@ -24,7 +24,7 @@
 @scope (:root) to (.nostyle) {
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--f) transparent;
+    scrollbar-color: var(--f) #0000;
   }
 
   body, header, footer { display: flex }
@@ -33,7 +33,7 @@
     flex-direction: column;
     min-height: 100dvh;
     color: var(--f);
-    background-color: var(--b);
+    background: var(--b);
   }
 
   main {
@@ -132,15 +132,13 @@
       background-color: var(--bs);
       border: var(--d);
       &:is(header [command="close"], .outline) {
-        background-color: transparent;
+        background-color: #0000;
         &:not(.outline) {
-          border: none;
+          border: 0;
         }
       }
       &:is(blockquote) {
-        border: none;
-        border-left: var(--d);
-        border-width: 0.25rem;
+        border-width: 0 0 0 0.25rem;
       }
     }
 
@@ -173,7 +171,7 @@
       width: 1em;
       height: 1em;
       margin-inline-end: 0.5em;
-      border: 0.125em solid transparent;
+      border: 0.125em solid #0000;
       border-top-color: currentColor;
       border-radius: 50%;
       animation: var(--spin, spin 0.5s linear infinite);
