@@ -137,5 +137,7 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
 ## Spinner
 
 {{< example >}}
-<div class="card" aria-busy="true">Loading...</div>
+<div class="card" aria-busy="true">
+  Loading...
+</div>
 {{< /example >}}
