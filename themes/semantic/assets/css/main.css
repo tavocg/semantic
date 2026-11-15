@@ -223,7 +223,7 @@
 
   nav ul { white-space: nowrap }
   nav:not(aside *) {
-    overflow: visible;
+    padding: 0.25rem;
     ul {
       display: flex;
       gap: 0.25rem;
