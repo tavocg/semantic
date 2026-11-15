@@ -113,7 +113,7 @@
     margin-top: 0.5rem;
 
     &:disabled { opacity: 0.5 }
-    &:is(:focus, :active):not(form, fieldset, dialog, pre, card, blockquote, :disabled) {
+    &:is(:focus, :active):not(form, fieldset, dialog, pre, card, blockquote, .card, :disabled) {
       outline: 0.125rem solid rgb(from var(--p) r g b / 35%);
     }
 
