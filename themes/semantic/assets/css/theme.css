@@ -1,5 +1,7 @@
 /* Shared color formulas. Each palette overrides only the primary color. */
 :root {
+  font-size: 18px;
+
   color-scheme: light dark;
 
   --p: light-dark(#1b59b3, #62a6ff);
