@@ -218,7 +218,13 @@
   }
 
   nav ul { white-space: nowrap }
-  nav:not(aside *) ul { display: flex; gap: 0.25rem }
+  nav:not(aside *) {
+    overflow: visible;
+    ul {
+      display: flex;
+      gap: 0.25rem;
+    }
+  }
 
   button, a.button {
     display: inline-block;
