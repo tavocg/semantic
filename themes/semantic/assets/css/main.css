@@ -168,21 +168,32 @@
       animation: var(--spin, spin 0.5s linear infinite);
     }
 
-    > summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      &::after { content: "+"; color: var(--fs) }
+    summary {
+      display: block;
+      &::after { content: "+"; color: var(--fs); float: right }
     }
     &[open] > summary::after { content: "−" }
 
-    &:is(nav a) {
-      color: var(--fs);
-      &:hover, &[aria-current="page"] {
-        color: var(--f);
-        background-color: var(--bs);
+    &[role="switch"] {
+      --r:1rem;
+      appearance: none;
+      width: 2.5rem;
+      height: 1.5rem;
+      background: radial-gradient(var(--b) 71%, #0000 0) 3px/1rem 1rem no-repeat var(--fs);
+
+      &:checked {
+        background-position: right 3px center;
+        background-color: var(--p);
       }
+    }
+  }
+
+  nav a {
+    display: block;
+    color: var(--fs);
+    &:hover, &[aria-current="page"] {
+      color: var(--f);
+      background: var(--bs);
     }
   }
 
@@ -192,7 +203,7 @@
     gap: 0.5rem;
   }
 
-  nav:not(aside nav) ul { display: flex; gap: 0.25rem }
+  nav:not(aside *) ul { display: flex; gap: 0.25rem }
 
   button, a.button {
     transition: transform var(--motion, 100ms);
