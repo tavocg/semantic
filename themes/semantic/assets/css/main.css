@@ -179,7 +179,8 @@
 
     summary {
       display: block;
-      &::after { content: "+"; color: var(--fs); float: right }
+      color: var(--fs);
+      &::after { content: "+"; float: right }
     }
     &[open] > summary::after { content: "−" }
 
