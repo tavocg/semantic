@@ -80,7 +80,7 @@ elements such as `<div>` and `<section>`.
 <dialog id="modal-1">
   <header>
     <h2>Example modal</h2>
-    <button commandfor="modal-1" command="close">×</button>
+    <button class="plain" commandfor="modal-1" command="close">×</button>
   </header>
   {{< lorem >}}
   <footer>
