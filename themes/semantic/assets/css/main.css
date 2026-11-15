@@ -75,6 +75,7 @@
   h5 { font-size: 1.125rem }
 
   pre, table, nav { overflow-x: auto }
+  hr { border-top: var(--d) }
 
   a:not(.button, nav a) {
     color: var(--a);
@@ -100,7 +101,7 @@
     text-align: start;
     th, td {
       padding: 0.25rem 0.5rem;
-      border-bottom: var(--d);
+      &:not(:last-child > tr:last-child > *) { border-bottom: var(--d) }
       &.nowrap {
         white-space: nowrap
       }

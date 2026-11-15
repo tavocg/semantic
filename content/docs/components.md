@@ -15,6 +15,8 @@ weight = 30
 </nav>
 {{< /example >}}
 
+---
+
 ## Cards
 
 Use `.card` to group related content with the same surface, padding, border,
@@ -31,6 +33,8 @@ and corner radius as a form.
   </hgroup>
 </article>
 {{< /example >}}
+
+---
 
 ## Tables
 
@@ -57,6 +61,8 @@ and corner radius as a form.
 | Isaac Newton | Physics and mathematics | Laws of motion and universal gravitation | Force, acceleration, momentum, gravitational attraction | Classical mechanics, engineering, and orbital calculations |
 | James Clerk Maxwell | Mathematical physics | Classical theory of electromagnetism | Electric and magnetic fields, electromagnetic waves | Radio communication, optics, and electrical engineering |
 
+---
+
 ## Modals
 
 {{< example >}}
@@ -73,6 +79,8 @@ and corner radius as a form.
   </footer>
 </dialog>
 {{< /example >}}
+
+---
 
 ## Accordions
 
