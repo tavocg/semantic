@@ -1,9 +1,0 @@
-/* Block quotations (<blockquote>). */
-
-blockquote {
-  margin: calc(var(--space) * 1.5) 0;
-  padding: calc(var(--space) / 8) calc(var(--space) * 1.5);
-  background-color: var(--cbs);
-
-  border-inline-start: 0.2rem solid var(--cfs);
-}

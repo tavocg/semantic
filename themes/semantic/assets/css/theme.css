@@ -1,0 +1,32 @@
+:root {
+  color-scheme: light dark;
+
+  --p: light-dark(#0054d4, #4a92ff);
+
+  --f: light-dark(
+    color-mix(in srgb, var(--p) 20%, #5e5e5e),
+    color-mix(in srgb, var(--p) 10%, #bababa)
+  );
+
+  --fs: rgb(from var(--f) r g b / 60%);
+
+  --h: light-dark(
+    color-mix(in srgb, var(--p) 4%, #404040),
+    color-mix(in srgb, var(--p) 4%, #c7c7c7)
+  );
+
+  --a: light-dark(
+    color-mix(in srgb, var(--p) 60%, #a6a6a6),
+    color-mix(in srgb, var(--p) 60%, #f0f0f0)
+  );
+
+  --b: light-dark(
+    color-mix(in srgb, var(--p) 8%, #fcfcfc),
+    color-mix(in srgb, var(--p) 2%, #0f0f0f)
+  );
+
+  --bs: rgb(from var(--f) r g b / 6%);
+
+  --d: 0.0625rem solid rgb(from var(--f) r g b / 15%);
+  --r: 0.5rem;
+}

@@ -17,27 +17,127 @@
  * this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
-@import "components/00-preflight.css";
-@import "components/01-theme.css";
-@import "components/02-body.css";
-@import "components/03-typography.css";
-@import "components/04-header.css";
-@import "components/05-main.css";
-@import "components/06-section.css";
-@import "components/07-article.css";
-@import "components/08-aside.css";
-@import "components/09-nav.css";
-@import "components/10-card.css";
-@import "components/11-footer.css";
-@import "components/12-hgroup.css";
-@import "components/13-lists.css";
-@import "components/14-blockquote.css";
-@import "components/15-figure.css";
-@import "components/16-media.css";
-@import "components/17-tables.css";
-@import "components/18-code.css";
-@import "components/19-forms.css";
-@import "components/20-details.css";
-@import "components/21-dialog.css";
-@import "components/22-hr.css";
-@import "animations.css";
+@import "reset.css";
+@import "theme.css";
+
+@scope (:root) to (.nostyle) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--f) transparent;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    color: var(--f);
+    background-color: var(--b);
+  }
+
+  main {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  main, article, section, form, label {
+    &:not(header &, footer &) > * {
+      margin-bottom: 1.5rem
+    }
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    &:is(body > &, main > &) {
+      padding: 4rem;
+      gap: 2rem 4rem;
+      justify-content: space-evenly;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6, strong { font-weight: bold; color: var(--h) }
+  h1 { font-size: 2.25rem; line-height: 2.5rem }
+  h2 { font-size: 1.875rem; line-height: 2.25rem }
+  h3 { font-size: 1.5rem; line-height: 2.25rem }
+  h4 { font-size: 1.25rem; line-height: 1.75rem }
+  h5 { font-size: 1.125rem; line-height: 1.75rem }
+
+  pre {
+    padding: 0.5rem;
+    border: var(--d);
+    border-radius: var(--r);
+    overflow-x: auto;
+  }
+
+  a:not(.button) {
+    color: var(--a);
+    &:hover {
+      text-decoration: underline
+    }
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    text-align: left;
+    margin: 0 auto;
+    th, td {
+      padding: 0.2rem 0.5rem;
+      border-bottom: var(--d);
+      &:is(.nowrap) {
+        white-space: nowrap
+      }
+    }
+  }
+
+  form, input:not([type="checkbox"], [type="radio"]), button, select, a.button, fieldset, .card {
+    &:not(button, a.button) { width: 100% }
+    padding: 0.5rem 0.8rem;
+    border: var(--d);
+    border-radius: var(--r);
+    margin-top: 0.25rem;
+
+    background-color: var(--bs);
+    &:is(button, a.button) {
+      &:not(.plain) {
+        min-width: 6.5rem;
+      }
+      &:not(.plain, .outline, [type="reset"]) {
+        color: var(--b);
+        background-color: var(--p);
+      }
+      &:hover {
+        filter: brightness(1.2);
+      }
+    }
+  }
+
+  fieldset {
+    padding: 1rem;
+    border: var(--d);
+    border-radius: var(--r);
+  }
+
+  hgroup p {
+    color: var(--fs);
+  }
+
+  figcaption {
+    text-align: center;
+    margin-top: 0.2rem;
+    color: var(--fs);
+    font-size: small;
+  }
+}
