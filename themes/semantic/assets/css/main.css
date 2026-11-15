@@ -80,7 +80,7 @@
 
   pre, table, nav { overflow-x: auto }
   hr { border-top: var(--d) }
-  progress { width: 100% }
+  progress, meter { width: 100% }
 
   a:not(.button, nav a) {
     color: var(--a);
