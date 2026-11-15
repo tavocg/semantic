@@ -74,7 +74,7 @@
 
   pre, table { overflow-x: auto }
 
-  a:not(.button) {
+  a:not(.button, nav a) {
     color: var(--a);
     &:hover {
       text-decoration: underline
@@ -105,7 +105,7 @@
     }
   }
 
-  form, input, button, select, a.button, fieldset, .card, pre, dialog {
+  form, input, button, select, a.button, fieldset, .card, pre, dialog, details, nav a {
     > * { margin-block: 0.5rem }
 
     padding: 0.5rem 0.75rem;
@@ -128,9 +128,9 @@
       vertical-align: middle;
     }
 
-    &:not(.plain, dialog) {
-      background-color: var(--bs);
+    &:not(.plain, dialog, nav a) {
       border: var(--d);
+      background-color: var(--bs);
     }
 
     &:is(dialog) {
@@ -167,14 +167,32 @@
       border-radius: 50%;
       animation: var(--spin, spin 0.5s linear infinite);
     }
-  }
 
+    > summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      &::after { content: "+"; color: var(--fs) }
+    }
+    &[open] > summary::after { content: "−" }
+
+    &:is(nav a) {
+      color: var(--fs);
+      &:hover, &[aria-current="page"] {
+        color: var(--f);
+        background-color: var(--bs);
+      }
+    }
+  }
 
   label:has(> input:is([type="checkbox"], [type="radio"])) {
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
+
+  nav:not(aside nav) ul { display: flex; gap: 0.25rem }
 
   button, a.button {
     transition: transform var(--motion, 100ms);
