@@ -100,37 +100,25 @@ The first child of an `hgroup` sits on the left, and the second child aligns
 on the right, regardless of its element type. Put supporting text third so
 it spans both columns underneath and keeps the secondary text color.
 
+{{< example >}}
 <hgroup>
   <strong>Email notifications</strong>
   <input type="checkbox" role="switch" aria-label="Email notifications" checked>
   <p>Receive a short summary of project updates and upcoming milestones.</p>
 </hgroup>
-
-```html
-<hgroup>
-  <strong>Email notifications</strong>
-  <input type="checkbox" role="switch" aria-label="Email notifications" checked>
-  <p>Receive a short summary of project updates and upcoming milestones.</p>
-</hgroup>
-```
+{{< /example >}}
 
 The heading can also be an `h1`–`h6`. The second child can be an input, button,
 link, status label, paragraph, or any other element. Every child after the
 second spans both columns below the first row.
 
+{{< example >}}
 <hgroup>
   <h3>Project status</h3>
   <span>Up to date</span>
   <p>All changes are saved.</p>
 </hgroup>
-
-```html
-<hgroup>
-  <h3>Project status</h3>
-  <span>Up to date</span>
-  <p>All changes are saved.</p>
-</hgroup>
-```
+{{< /example >}}
 
 ## Text fields
 

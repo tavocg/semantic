@@ -15,13 +15,14 @@ Sentence mode defaults to the first sentence and renders inline text.
 
 {{- $count := 1 -}}
 {{- $mode := "paragraph" -}}
+{{- $params := .Params | default (slice) -}}
 {{- $first := printf "%v" (.Get 0) -}}
 {{- if in (slice "inline" "sentence") $first -}}
   {{- $mode = $first -}}
-  {{- if gt (len .Params) 1 -}}
+  {{- if gt (len $params) 1 -}}
     {{- $count = int (.Get 1) -}}
   {{- end -}}
-{{- else if gt (len .Params) 0 -}}
+{{- else if gt (len $params) 0 -}}
   {{- $count = int (.Get 0) -}}
 {{- end -}}
 

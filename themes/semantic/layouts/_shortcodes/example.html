@@ -1,0 +1,37 @@
+{{- /*
+Renders an example and shows its source inside a collapsible accordion.
+
+The inner content is rendered as-is by default, so it can be plain HTML. Use
+"markdown" to render Markdown instead. The same inner content is highlighted
+as code, using "html" unless another language is given.
+
+Nested shortcodes are expanded before this shortcode runs, so their source is
+not preserved in the code block.
+
+@example: {{< example >}}
+<button>Save</button>
+{{< /example >}}
+
+@example: {{< example lang="css" summary="Styles" >}}
+button { color: red }
+{{< /example >}}
+
+@example: {{< example render="markdown" lang="markdown" >}}
+**Hello** world
+{{< /example >}}
+*/ -}}
+
+{{- $lang := .Get "lang" | default "html" -}}
+{{- $summary := .Get "summary" | default "Code" -}}
+{{- $code := .InnerDeindent | strings.TrimSpace -}}
+
+{{- if eq (.Get "render") "markdown" -}}
+  {{- .InnerDeindent | markdownify -}}
+{{- else -}}
+  {{- .Inner | safeHTML -}}
+{{- end -}}
+
+<details>
+  <summary>{{ $summary }}</summary>
+  {{ highlight $code $lang }}
+</details>
