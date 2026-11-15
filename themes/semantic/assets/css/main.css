@@ -42,7 +42,7 @@
 
   main {
     flex-grow: 1;
-    width: min(100%, 48rem);
+    width: min(100%, 72rem);
   }
 
   main, table { margin: 0 auto }
