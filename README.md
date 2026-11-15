@@ -15,15 +15,8 @@ hugo build --minify
 rsvg-convert public/social-card.svg --output public/social-card.png
 ```
 
-Keep control and button styles in `19-forms.css`, including contextual and busy
-states. Navigation links belong in `09-nav.css`; text links belong in
-`03-typography.css`. Shared keyframes and reduced-motion settings live in
-`animations.css`. Component files apply those animations where needed.
-Cards and forms share their panel styles in `10-card.css`.
-
-Component spacing uses `--space` (default: `1rem`) from `01-theme.css`.
-Margins, padding, and gaps use this unit or multiples and fractions of it;
-override `--space` to adjust the theme's spacing throughout.
+Component styles live in `main.css`; shared color tokens and built-in palettes
+live in `theme.css`. The component rules are scoped to exclude `.nostyle` subtrees.
 
 ## Color themes
 
@@ -39,9 +32,9 @@ override `--space` to adjust the theme's spacing throughout.
 </html>
 ```
 
-Each palette changes the background, text, and accent colors. Derived surfaces,
-including the sidebar, follow the palette. Each theme follows the system's light
-or dark preference through
+Each palette overrides only `--p`, the primary color. Shared formulas derive
+text, headings, links, backgrounds, surfaces, and borders from that color.
+Each theme follows the system's light or dark preference through
 `color-scheme: light dark`. Omit the attribute to use the default palette.
 Use `<html>` so the theme variables apply to the whole document.
 

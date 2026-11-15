@@ -4,9 +4,11 @@ weight = 50
 +++
 
 The `semantic.css` stylesheet includes five built-in themes: **blue** (the default),
-**green**, **violet**, **red**, and **orange**. Each changes the page background, text,
-accent, and derived surfaces such as the sidebar. Spacing and validation colors
-stay consistent across themes.
+**green**, **violet**, **red**, and **orange**. Each theme overrides only the
+primary color, `--p`, with values for light and dark mode. Text, headings,
+links, backgrounds, surfaces, and borders use the same shared formulas and
+derive their colors from that primary. Layout, spacing, and corner radii stay
+consistent across themes.
 
 {{< theme-preview >}}
 
@@ -47,6 +49,24 @@ in the same stylesheet.
 Place the attribute on `<html>`, rather than `<body>`, so the root variables are
 available throughout the document. Use the standard custom-data attribute
 `data-theme` instead of a custom `theme` attribute.
+
+## Color tokens
+
+The color definitions live in `theme.css`. A theme needs only one override:
+
+```css
+:root[data-theme="green"] {
+  --p: light-dark(#086d4f, #4de6ac);
+}
+```
+
+The shared tokens are `--f` for text, `--fs` for secondary text, `--h` for
+headings, `--a` for links, `--b` for the page background, `--bs` for subtle
+surfaces, and `--d` for borders. Changing `--p` updates these derived colors
+without duplicating the rest of the palette.
+Text and headings share one foreground color, and links use the primary color.
+Only the foreground and page background need color mixes; the other tokens
+reuse those colors or add transparency.
 
 ## Hugo
 

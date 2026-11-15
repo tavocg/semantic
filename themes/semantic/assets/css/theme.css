@@ -1,32 +1,35 @@
+/* Shared color formulas. Each palette overrides only the primary color. */
 :root {
   color-scheme: light dark;
 
-  --p: light-dark(#0054d4, #4a92ff);
+  --p: light-dark(#1b59b3, #62a6ff);
 
-  --f: light-dark(
-    color-mix(in srgb, var(--p) 20%, #5e5e5e),
-    color-mix(in srgb, var(--p) 10%, #bababa)
-  );
+  --f: color-mix(in srgb, var(--p) 5%, light-dark(#292929, #e7e7e7));
 
-  --fs: rgb(from var(--f) r g b / 60%);
+  --fs: rgb(from var(--f) r g b / 72%);
 
-  --h: light-dark(
-    color-mix(in srgb, var(--p) 4%, #404040),
-    color-mix(in srgb, var(--p) 4%, #c7c7c7)
-  );
+  --h: var(--f);
+  --a: var(--p);
 
-  --a: light-dark(
-    color-mix(in srgb, var(--p) 60%, #a6a6a6),
-    color-mix(in srgb, var(--p) 60%, #f0f0f0)
-  );
+  --b: color-mix(in srgb, var(--p) 2%, light-dark(#fafafa, #141414));
+  --bs: rgb(from var(--f) r g b / 5%);
 
-  --b: light-dark(
-    color-mix(in srgb, var(--p) 8%, #fcfcfc),
-    color-mix(in srgb, var(--p) 2%, #0f0f0f)
-  );
-
-  --bs: rgb(from var(--f) r g b / 6%);
-
-  --d: 0.0625rem solid rgb(from var(--f) r g b / 15%);
+  --d: 0.0625rem solid rgb(from var(--f) r g b / 20%);
   --r: 0.5rem;
+}
+
+:root[data-theme="green"] {
+  --p: light-dark(#086d4f, #4de6ac);
+}
+
+:root[data-theme="violet"] {
+  --p: light-dark(#7047a3, #bd87ff);
+}
+
+:root[data-theme="red"] {
+  --p: light-dark(#b3293e, #ff7e8c);
+}
+
+:root[data-theme="orange"] {
+  --p: light-dark(#97500c, #ffae47);
 }
