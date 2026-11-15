@@ -19,6 +19,7 @@
 
 @import "reset.css";
 @import "theme.css";
+@import "animations.css";
 
 @scope (:root) to (.nostyle) {
   * {
@@ -42,7 +43,7 @@
 
   main, table { margin: 0 auto }
 
-  :is(main, article, section, form, label):not(header *, footer *) > * {
+  :is(main, article, section, form, label):not(header *, footer *) > :not(dialog) {
     margin-bottom: 1.5rem;
   }
 
@@ -52,6 +53,7 @@
   }
 
   footer {
+    justify-content: end;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
@@ -81,6 +83,8 @@
 
   table {
     display: block;
+    width: fit-content;
+    max-width: 100%;
     text-align: start;
     th, td {
       padding: 0.25rem 0.5rem;
@@ -91,17 +95,60 @@
     }
   }
 
-  form, input:not([type="checkbox"], [type="radio"]), button, select, a.button, fieldset, .card, pre {
+  form, input, button, select, a.button, fieldset, .card, pre, dialog, pre {
+    > * { margin-block: 0.5rem }
+
     padding: 0.5rem 0.75rem;
     border-radius: var(--r);
     margin-top: 0.25rem;
-    &:not(.plain) {
-      border: var(--d);
+
+    &:disabled { opacity: 0.5 }
+
+    &:not(button, a.button, [type="checkbox"], [type="radio"], [type="color"]) {
+      width: 100%
+    }
+
+    &:is([type="checkbox"], [type="radio"]) {
+      width: 1.25rem;
+      height: 1.25rem;
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    &:not(.plain, dialog) {
       background-color: var(--bs);
+      border: var(--d);
+    }
+
+    &:is(dialog) {
+      width: min(36rem, 95%);
+      border: var(--d);
+      margin: auto;
+      &[open] { animation: fade-up var(--motion, 150ms) ease-out }
+      &::backdrop { background: #0008; backdrop-filter: blur(4px) }
+    }
+
+    option, optgroup {
+      color: var(--f);
+      background: var(--b);
+    }
+
+    &[type="color"] {
+      width: 3rem;
+      height: 2.5rem;
+      padding: 0.25rem;
+      &::-webkit-color-swatch-wrapper { padding: 0 }
+      &::-webkit-color-swatch { border: 0; border-radius: var(--r) }
+      &::-moz-color-swatch { border: 0; border-radius: var(--r) }
     }
   }
 
-  input:not([type="checkbox"], [type="radio"]), select { width: 100% }
+
+  label:has(> input:is([type="checkbox"], [type="radio"])) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
   button, a.button {
     &:not(.plain, .outline, [type="reset"]) {
@@ -113,7 +160,7 @@
     }
   }
 
-  main, header, form, fieldset, .card, pre { padding: 1rem }
+  main { padding: 1rem }
 
   hgroup p, figcaption { color: var(--fs) }
 
