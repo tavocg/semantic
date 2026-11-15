@@ -143,6 +143,10 @@
     }
 
     &:is(dialog) {
+      background-color: var(--b);
+    }
+
+    &:is(dialog) {
       width: 36rem;
       max-width: 95%;
       border: var(--d);
