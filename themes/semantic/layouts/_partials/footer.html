@@ -6,7 +6,7 @@
 <div>
   <small>
     <strong>Documentation</strong>
-    <ul>
+    <ul class="mute">
       {{- with site.GetPage "/docs" }}
         {{- range .Pages }}
           <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
@@ -18,7 +18,7 @@
 <div>
   <small>
     <strong>Project</strong>
-    <ul>
+    <ul class="mute">
       <li><a href="https://github.com/tavocg/semantic" target="_blank" rel="noopener noreferrer">Source code</a></li>
       <li><a href="https://raw.githubusercontent.com/tavocg/semantic/refs/heads/main/LICENSE" target="_blank" rel="noopener noreferrer">License</a></li>
     </ul>
