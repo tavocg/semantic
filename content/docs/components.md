@@ -23,16 +23,14 @@ and corner radius as a form.
 {{< example >}}
 <article class="card">
   <hgroup>
-    <h3>Example card</h3>
-    <button type="button" commandfor="modal-1" command="show-modal">Details</button>
-    <p>A summary with an action.</p>
+    <header>
+      <h3>Example card</h3>
+      <button>Button</button>
+    </header>
+    <p>A summary with an action. Use a card to group related content.</p>
   </hgroup>
-  <p>Use a card to group related content.</p>
 </article>
 {{< /example >}}
-
-The Details button opens the example modal below. The class also works on
-elements such as `<div>` and `<section>`.
 
 ## Tables
 
@@ -62,16 +60,15 @@ elements such as `<div>` and `<section>`.
 ## Modals
 
 {{< example >}}
-<button commandfor="modal-1" command="show-modal">Open modal</button>
-
-<dialog id="modal-1">
+<button commandfor="modal" command="show-modal">Open modal</button>
+<dialog id="modal">
   <header>
     <h2>Example modal</h2>
-    <button class="plain" commandfor="modal-1" command="close">×</button>
+    <button commandfor="modal" command="close">×</button>
   </header>
   <p>Modal content.</p>
   <footer>
-    <button class="outline" commandfor="modal-1" command="close" autofocus="">Cancel</button>
+    <button class="outline" commandfor="modal" command="close">Cancel</button>
     <button>Confirm</button>
   </footer>
 </dialog>

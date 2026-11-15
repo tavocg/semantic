@@ -5,89 +5,21 @@ weight = 20
 
 <form>
   <hgroup>
-    <h2>My form</h2>
-    <p>Form that sends data.</p>
+    <h2>Sign in</h2>
+    <p>This is a form example.</p>
   </hgroup>
-  <label for="search">Search</label>
-  <input type="search" id="search" name="search" placeholder="Search">
-  <label for="text">Text</label>
-  <input type="text" id="text" name="text" placeholder="Text">
-  <label for="select">Select</label>
-  <select id="select" name="select" required="">
-    <option value="" selected="">Select…</option>
-    <option>…</option>
-  </select>
-  <label for="file">
-    <span>File browser</span>
-    <input type="file" id="file" name="file">
+  <label>
+    Email
+    <input type="email" id="email" placeholder="john@doe.com">
   </label>
-  <label for="range">
-    <span>Range slider</span>
-    <input type="range" min="0" max="100" value="50" id="range" name="range">
+  <label>
+    Password
+    <input type="password" id="password">
   </label>
-  <div class="grid">
-    <label for="valid">
-      <span>Valid</span>
-      <input type="text" id="valid" name="valid" placeholder="Valid" aria-invalid="false">
-    </label>
-    <label for="invalid">
-      <span>Invalid</span>
-      <input type="text" id="invalid" name="invalid" placeholder="Invalid" aria-invalid="true">
-    </label>
-    <label for="disabled">
-      <span>Disabled</span>
-      <input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled="">
-    </label>
-  </div>
-  <div class="grid">
-    <label for="date">
-      <span>Date</span>
-      <input type="date" id="date" name="date">
-    </label>
-    <label for="time">
-      <span>Time</span>
-      <input type="time" id="time" name="time">
-    </label>
-    <label for="color">
-      <span>Color</span>
-      <input type="color" id="color" name="color" value="#0eaaaa">
-    </label>
-  </div>
-  <div class="grid">
-    <fieldset>
-      <legend>Checkboxes</legend>
-      <label for="checkbox-1">
-        <input type="checkbox" id="checkbox-1" name="checkbox-1" checked="">
-        Checkbox
-      </label>
-      <label for="checkbox-2">
-        <input type="checkbox" id="checkbox-2" name="checkbox-2">
-        Checkbox
-      </label>
-    </fieldset>
-    <fieldset>
-      <legend>Radio buttons</legend>
-      <label for="radio-1">
-        <input type="radio" id="radio-1" name="radio" value="radio-1" checked="">
-        Radio button
-      </label>
-      <label for="radio-2">
-        <input type="radio" id="radio-2" name="radio" value="radio-2">
-        Radio button
-      </label>
-    </fieldset>
-    <fieldset>
-      <legend>Switches</legend>
-      <label for="switch-1">
-        <input type="checkbox" id="switch-1" name="switch-1" role="switch" checked="">
-        Switch
-      </label>
-      <label for="switch-2">
-        <input type="checkbox" id="switch-2" name="switch-2" role="switch">
-        Switch
-      </label>
-    </fieldset>
-  </div>
+  <label for="session">
+    <input type="checkbox" id="session" checked="">
+    Remember me
+  </label>
   <footer>
     <button type="reset" onclick="event.preventDefault()">Reset</button>
     <button type="submit" aria-busy="true" onclick="event.preventDefault()">Submit</button>
@@ -96,119 +28,114 @@ weight = 20
 
 ## Heading groups
 
-The first child of an `hgroup` sits on the left, and the second child aligns
-on the right, regardless of its element type. Put supporting text third so
-it spans both columns underneath and keeps the secondary text color.
-
-{{< example >}}
-<hgroup>
-  <strong>Email notifications</strong>
-  <input type="checkbox" role="switch" aria-label="Email notifications" checked>
-  <p>Receive a short summary of project updates and upcoming milestones.</p>
-</hgroup>
-{{< /example >}}
-
 The heading can also be an `h1`–`h6`. The second child can be an input, button,
 link, status label, paragraph, or any other element. Every child after the
 second spans both columns below the first row.
 
 {{< example >}}
 <hgroup>
-  <h3>Project status</h3>
-  <span>Up to date</span>
-  <p>All changes are saved.</p>
+  <header>
+    <strong>Example setting</strong>
+    <input type="checkbox" role="switch">
+  </header>
+  <p>Useful for describing switches.</p>
+</hgroup>
+
+<hgroup>
+  <header>
+    <strong>Enable notifications</strong>
+    <input type="checkbox" role="switch" checked>
+  </header>
+  <p>Example description of this setting.</p>
 </hgroup>
 {{< /example >}}
 
 ## Text fields
 
-<div class="card" aria-busy="true">
-  Loading...
-</div>
+Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="color"` for other input types.
 
-```html
+{{< example >}}
 <label>
   <span>Name</span>
-  <input type="text" name="name" placeholder="Your name">
+  <input type="text" placeholder="John Doe">
 </label>
-```
-
-Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="color"` for other input types.
+<label>
+  <span>Phone number</span>
+  <input type="number" placeholder="888 8888 8888">
+</label>
+{{< /example >}}
 
 ## Select
 
-```html
+{{< example >}}
 <label>
-  <span>Choice</span>
+  <span>Choose an option</span>
   <select name="choice">
-    <option>First option</option>
-    <option>Second option</option>
+    <option>First</option>
+    <option>Second</option>
   </select>
 </label>
-```
+{{< /example >}}
 
 ## Slider
 
-```html
+{{< example >}}
 <label>
   <span>Volume</span>
   <input type="range" name="volume" min="0" max="100" value="50">
 </label>
-```
+{{< /example >}}
 
 ## Validation
 
-```html
+{{< example >}}
 <label>
   <span>Valid</span>
-  <input type="text" aria-invalid="false">
+  <input type="email" aria-invalid="false" value="incorrect@email.com">
 </label>
 <label>
   <span>Invalid</span>
-  <input type="text" aria-invalid="true">
+  <input type="email" aria-invalid="true" value="correct@email.com">
 </label>
-```
+{{< /example >}}
 
 ## Checkboxes
 
-```html
-<label><input type="checkbox" name="updates" checked> Receive updates</label>
-```
+{{< example >}}
+<label><input type="checkbox">Receive updates</label>
+<label><input type="checkbox">Share anonymous info</label>
+<label><input type="checkbox">Enable something</label>
+{{< /example >}}
 
 ## Radio buttons
 
-```html
-<label><input type="radio" name="choice" value="one" checked> One</label>
-<label><input type="radio" name="choice" value="two"> Two</label>
-```
+{{< example >}}
+<label><input type="radio" value="one" checked>One</label>
+<label><input type="radio" value="two">Two</label>
+{{< /example >}}
 
 ## Switches
 
-```html
-<label><input type="checkbox" name="notifications" role="switch"> Notifications</label>
-```
+{{< example >}}
+<label><input type="checkbox" role="switch">Notify me</label>
+{{< /example >}}
 
 ## Buttons
 
-```html
-<button>Button</button>
-<button class="outline">Outline</button>
-<button class="plain">Plain</button>
-<button type="reset">Reset</button>
-<button type="submit">Submit</button>
-<a class="button" href="/docs/">Documentation</a>
-```
-
-## Busy and disabled states
-
-```html
-<button aria-busy="true">Loading</button>
-<button disabled>Disabled</button>
-<input type="text" disabled>
-```
+{{< example >}}
+<div style="display:flex;gap:1rem">
+  <button class="plain">Plain</button>
+  <button class="outline">Outline</button>
+  <button>Button</button>
+</div>
+<div style="display:flex;gap:1rem">
+  <button disabled>Disabled</button>
+  <button aria-busy="true">Loading</button>
+</div>
+{{< /example >}}
 
 ## Spinner
 
-```html
-<span class="spinner" role="status" aria-label="Loading"></span>
-```
+{{< example >}}
+<div class="card" aria-busy="true">Loading...</div>
+{{< /example >}}
