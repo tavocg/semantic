@@ -104,7 +104,7 @@
 
     &:disabled { opacity: 0.5 }
     &:is(:focus, :active):not(form, fieldset, dialog, pre, card, :disabled) {
-      outline: 0.125rem solid rgb(from var(--p) r g b / 20%);
+      outline: 0.125rem solid rgb(from var(--p) r g b / 35%);
     }
 
     &:not(button, a.button, dialog, [type="checkbox"], [type="radio"], [type="color"]) {
@@ -145,6 +145,18 @@
       &::-webkit-color-swatch { border: 0; border-radius: var(--r) }
       &::-moz-color-swatch { border: 0; border-radius: var(--r) }
     }
+
+    &[aria-busy="true"]::before {
+      content: "";
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin-inline-end: 0.5em;
+      border: 0.125em solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: var(--spin, spin 0.5s linear infinite);
+    }
   }
 
 
@@ -164,18 +176,6 @@
     &:hover {
       filter: brightness(1.1)
     }
-  }
-
-  [aria-busy="true"]::before {
-    content: "";
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-inline-end: 0.5em;
-    border: 0.125em solid transparent;
-    border-top-color: currentColor;
-    border-radius: 50%;
-    animation: var(--spin, spin 0.5s linear infinite);
   }
 
   main, body > header { padding: 1rem }
