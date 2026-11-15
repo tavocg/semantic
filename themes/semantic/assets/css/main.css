@@ -29,6 +29,7 @@
 
   body, header, footer {
     display: flex;
+    gap: 1.5rem;
   }
 
   body {
@@ -58,12 +59,10 @@
   footer {
     justify-content: end;
     flex-wrap: wrap;
-    gap: 0.5rem;
   }
 
   :is(body, main) > footer {
     padding: 2rem;
-    gap: 2rem;
     justify-content: space-evenly;
   }
 
