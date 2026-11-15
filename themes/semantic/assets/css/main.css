@@ -93,11 +93,12 @@
 
   form, input:not([type="checkbox"], [type="radio"]), button, select, a.button, fieldset, .card, pre {
     padding: 0.5rem 0.75rem;
-    border: var(--d);
     border-radius: var(--r);
     margin-top: 0.25rem;
-
-    background-color: var(--bs);
+    &:not(.plain) {
+      border: var(--d);
+      background-color: var(--bs);
+    }
   }
 
   input:not([type="checkbox"], [type="radio"]), select { width: 100% }
@@ -107,7 +108,9 @@
       color: var(--b);
       background-color: var(--p);
     }
-    &:hover { filter: brightness(1.1) }
+    &:hover {
+      filter: brightness(1.1)
+    }
   }
 
   main, header, form, fieldset, .card, pre { padding: 1rem }
