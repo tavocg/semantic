@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}"{{ with .Param "theme" }} data-theme="{{ . }}"{{ end }}>
-<head>
-  {{ partial "head.html" . }}
-</head>
-<body>
-  {{ block "aside" . }}{{ end }}
-  <header>
-    {{ partial "header.html" . }}
-  </header>
-  <main>
-    {{ block "main" . }}{{ end }}
-  </main>
-  {{ block "footer" . }}
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    {{ block "aside" . }}{{ end }}
+    <header>
+      {{ partial "header.html" . }}
+    </header>
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+    <hr>
+    {{ block "footer" . }}
     <footer>
       {{ partial "footer.html" . }}
     </footer>
-  {{ end }}
-  {{ partial "htmz.html" . }}
-</body>
+    {{ end }}
+    {{ partial "htmz.html" . }}
+  </body>
 </html>
