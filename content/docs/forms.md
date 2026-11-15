@@ -110,8 +110,8 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
 ## Radio buttons
 
 {{< example >}}
-<label><input type="radio" value="one" checked>One</label>
-<label><input type="radio" value="two">Two</label>
+<label><input type="radio" name="radio" value="one" checked>One</label>
+<label><input type="radio" name="radio" value="two">Two</label>
 {{< /example >}}
 
 ## Switches
