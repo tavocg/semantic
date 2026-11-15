@@ -21,7 +21,7 @@ weight = 20
     Remember me
   </label>
   <footer>
-    <button type="reset" onclick="event.preventDefault()">Reset</button>
+    <button type="reset" class="outline" onclick="event.preventDefault()">Reset</button>
     <button type="submit" aria-busy="true" onclick="event.preventDefault()">Submit</button>
   </footer>
 </form>
@@ -123,15 +123,11 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
 ## Buttons
 
 {{< example >}}
-<div style="display:flex;gap:1rem">
-  <button class="plain">Plain</button>
-  <button class="outline">Outline</button>
-  <button>Button</button>
-</div>
-<div style="display:flex;gap:1rem">
-  <button disabled>Disabled</button>
-  <button aria-busy="true">Loading</button>
-</div>
+<button class="plain">Plain</button>
+<button class="outline">Outline</button>
+<button disabled>Disabled</button>
+<button>Button</button>
+<button aria-busy="true">Loading</button>
 {{< /example >}}
 
 ## Spinner
