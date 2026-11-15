@@ -134,6 +134,10 @@ second spans both columns below the first row.
 
 ## Text fields
 
+<div class="card" aria-busy="true">
+  Loading...
+</div>
+
 ```html
 <label>
   <span>Name</span>
