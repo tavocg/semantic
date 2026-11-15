@@ -81,6 +81,16 @@
     }
   }
 
+  :is(ol, ul, menu, dl):not(nav *, footer *, header *) {
+    margin: 1.5rem 0;
+    padding-inline-start: 1rem;
+    list-style: square;
+    li::marker { color: var(--fs); font-size: 0.8em }
+    &:is(ol) { list-style: decimal }
+  }
+
+  dt { font-weight: bold } dd { margin-inline-start: 1rem }
+
   table {
     display: block;
     width: fit-content;
