@@ -69,11 +69,6 @@
   h1, h2, h3, h4, h5, h6, strong {
     font-weight: bold;
     color: var(--h);
-    aside &:has(+ nav > ul) {
-      display: block;
-      margin-top: 1rem;
-      padding-inline-start: 1.35rem;
-    }
   }
   h1, h2, h3, h4, h5, ul li { line-height: 1.6 }
   h1 { font-size: 2.25rem }
@@ -92,9 +87,10 @@
     }
   }
 
-  :is(ol, ul, menu, dl):not(nav *, footer *, header *) {
-    margin: 1.5rem 0;
-    padding-inline-start: 1rem;
+  :is(ol, ul, menu, dl):not(nav *, footer *, header *), aside :has(+ nav > ul) {
+    display: block;
+    margin: 1rem 0;
+    padding-inline-start: 1.35rem;
     list-style: square;
     li::marker { color: var(--fs); font-size: 0.8em }
     &:is(ol) { list-style: decimal }
