@@ -43,8 +43,8 @@
 
   main, table { margin: 0 auto }
 
-  :is(main, article, section, form, label):not(header *, footer *) > :not(dialog) {
-    margin-bottom: 1.5rem;
+  :is(main, article, section, form, label) > * {
+    margin-bottom: 1rem;
   }
 
   header {
@@ -105,15 +105,15 @@
     }
   }
 
-  form, input, button, select, a.button, fieldset, .card, pre, dialog, details, nav a {
+  form, input, button, select, a.button, fieldset, .card, pre, dialog, details, nav a, blockquote {
     > * { margin-block: 0.5rem }
 
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 1.1rem;
     border-radius: var(--r);
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
 
     &:disabled { opacity: 0.5 }
-    &:is(:focus, :active):not(form, fieldset, dialog, pre, card, :disabled) {
+    &:is(:focus, :active):not(form, fieldset, dialog, pre, card, blockquote, :disabled) {
       outline: 0.125rem solid rgb(from var(--p) r g b / 35%);
     }
 
@@ -129,8 +129,19 @@
     }
 
     &:not(.plain, dialog, nav a) {
-      border: var(--d);
       background-color: var(--bs);
+      border: var(--d);
+      &:is(header [command="close"], .outline) {
+        background-color: transparent;
+        &:not(.outline) {
+          border: none;
+        }
+      }
+      &:is(blockquote) {
+        border: none;
+        border-left: var(--d);
+        border-width: 0.25rem;
+      }
     }
 
     &:is(dialog) {
@@ -208,7 +219,7 @@
   button, a.button {
     transition: transform var(--motion, 100ms);
     &:not(:disabled, [aria-disabled="true"]):active { transform: scale(var(--press, 0.96)) }
-    &:not(.plain, .outline, [type="reset"]) {
+    &:not(.plain, .outline, [type="reset"], [command="close"]) {
       color: var(--b);
       background-color: var(--p);
     }
