@@ -43,8 +43,8 @@ second spans both columns below the first row.
 
 <hgroup>
   <header>
-    <strong>Enable notifications</strong>
-    <input type="checkbox" role="switch" checked>
+    <strong>Choose color</strong>
+    <input type="color" role="switch" checked>
   </header>
   <p>Example description of this setting.</p>
 </hgroup>
