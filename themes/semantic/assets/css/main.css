@@ -131,9 +131,9 @@
     &:not(.plain, dialog, nav a) {
       background-color: var(--bs);
       border: var(--d);
-      &:is(header [command="close"], .outline) {
+      &:is(header [command="close"], :read-write, select) {
         background-color: #0000;
-        &:not(.outline) {
+        &:not(.outline, :read-write, select) {
           border: 0;
         }
       }
