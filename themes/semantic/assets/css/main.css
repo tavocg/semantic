@@ -250,8 +250,8 @@
         background: var(--bs);
       }
     }
-    ul { white-space: nowrap }
-    &:not(aside *) ul { display: flex; gap: 0.25rem }
+    ul { display: grid; gap: 0.25rem; white-space: nowrap }
+    &:not(aside *) ul { display: flex }
   }
 
   label:has(> input:is([type="checkbox"], [type="radio"])) {
