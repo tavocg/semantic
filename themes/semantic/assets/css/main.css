@@ -111,7 +111,6 @@
 
     padding: 0.5rem 1.1rem;
     border-radius: var(--r);
-    margin-top: 0.5rem;
 
     &:disabled { opacity: 0.5 }
     &:is(:focus, :active):not(form, fieldset, dialog, pre, card, blockquote, .card, :disabled) {
@@ -119,7 +118,8 @@
     }
 
     &:not(button, a.button, dialog, [type="checkbox"], [type="radio"], [type="color"]) {
-      width: 100%
+      width: 100%;
+      margin-top: 0.5rem;
     }
 
     &:is([type="checkbox"], [type="radio"]) {
