@@ -72,7 +72,7 @@
   h4 { font-size: 1.25rem }
   h5 { font-size: 1.125rem }
 
-  pre, table { overflow-x: auto }
+  pre, table, nav { overflow-x: auto }
 
   a:not(.button, nav a) {
     color: var(--a);
@@ -213,6 +213,7 @@
     gap: 0.5rem;
   }
 
+  nav ul { white-space: nowrap }
   nav:not(aside *) ul { display: flex; gap: 0.25rem }
 
   button, a.button {
