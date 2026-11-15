@@ -13,10 +13,14 @@ consistent across themes.
 {{< theme-preview >}}
 
 <p><a href="#usage">Example text link</a></p>
-<button type="button">Primary action</button>
-<button type="button" class="outline">Secondary action</button>
+<button type="button" class="outline">Outline</button>
+<button type="button">Primary</button>
 
 <form>
+  <hgroup>
+    <h3>My form</h3>
+    <p>Example form.</p>
+  </hgroup>
   <label for="theme-name">Name</label>
   <input id="theme-name" name="name" type="text" placeholder="Your name">
   <label for="theme-choice">Choice</label>
