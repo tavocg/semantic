@@ -215,6 +215,8 @@
   nav:not(aside *) ul { display: flex; gap: 0.25rem }
 
   button, a.button {
+    display: inline-block;
+    white-space: nowrap;
     transition: transform var(--motion, 100ms);
     &:not(:disabled, [aria-disabled="true"]):active { transform: scale(var(--press, 0.96)) }
     &:not(.plain, .outline, [type="reset"], [command="close"]) {
