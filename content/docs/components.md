@@ -36,6 +36,29 @@ and corner radius as a form.
 
 ---
 
+## Tags and blockquotes
+
+Use `span.tag` for short labels. Tags and blockquotes use the current primary
+color; add `.blue`, `.green`, `.violet`, `.red`, or `.orange` to override it.
+The same palettes adapt to light and dark mode.
+
+{{< example >}}
+<p>
+  <span class="tag">Default</span>
+  <span class="tag blue">New</span>
+  <span class="tag green">On track</span>
+  <span class="tag violet">In review</span>
+  <span class="tag red">Blocked</span>
+  <span class="tag orange">Needs attention</span>
+</p>
+<blockquote>A note using the current theme.</blockquote>
+<blockquote class="green">All checks passed. Ready to publish.</blockquote>
+<blockquote class="orange">Review these changes before continuing.</blockquote>
+<blockquote class="red">The service is unavailable. Try again later.</blockquote>
+{{< /example >}}
+
+---
+
 ## Tables
 
 ### Small table
@@ -60,6 +83,35 @@ and corner radius as a form.
 | Albert Einstein | Theoretical physics | Special and general relativity | Spacetime, mass-energy equivalence, gravity | Cosmology and relativistic corrections in satellite navigation |
 | Isaac Newton | Physics and mathematics | Laws of motion and universal gravitation | Force, acceleration, momentum, gravitational attraction | Classical mechanics, engineering, and orbital calculations |
 | James Clerk Maxwell | Mathematical physics | Classical theory of electromagnetism | Electric and magnetic fields, electromagnetic waves | Radio communication, optics, and electrical engineering |
+
+---
+
+## Progress
+
+Progress bars use the theme's primary color. Set `value` and `max` to show
+how much of a task is complete.
+
+{{< example >}}
+<label>Upload progress<progress value="65" max="100">65%</progress></label>
+{{< /example >}}
+
+---
+
+## Meter
+
+Use `meter` for a measurement within `min` and `max`. The browser evaluates
+`value` against `low`, `high`, and `optimum`: green indicates the optimal range,
+orange a less favorable range, and red the least favorable range. These colors
+reuse the green, orange, and red palettes and adapt to light and dark mode.
+Set `optimum` near `max` when higher values are better, or near `min` when lower
+values are better.
+
+{{< example >}}
+<label>Storage usage<meter min="0" max="100" low="60" high="85" optimum="0" value="40">40%</meter></label>
+<label>Storage filling up<meter min="0" max="100" low="60" high="85" optimum="0" value="75">75%</meter></label>
+<label>Storage nearly full<meter min="0" max="100" low="60" high="85" optimum="0" value="95">95%</meter></label>
+<label>Battery level<meter min="0" max="100" low="20" high="60" optimum="100" value="80">80%</meter></label>
+{{< /example >}}
 
 ---
 
