@@ -236,7 +236,7 @@
 
   main, body > header { padding: 1rem }
 
-  hgroup p, figcaption, .mute { color: var(--fs) }
+  hgroup p, figcaption, .mute, .mute * { color: var(--fs) !important }
 
   figcaption {
     text-align: center;
