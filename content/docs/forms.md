@@ -63,6 +63,10 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
   <span>Phone number</span>
   <input type="number" placeholder="888 8888 8888">
 </label>
+<label>
+  <span>Message</span>
+  <textarea placeholder="Message"></textarea>
+</label>
 {{< /example >}}
 
 ## Select

@@ -105,7 +105,7 @@
     }
   }
 
-  form, input, button, select, a.button, fieldset, .card, pre, dialog, details, nav a, blockquote {
+  form, input, button, select, a.button, fieldset, .card, pre, dialog, details, nav a, blockquote, textarea {
     > * { margin-block: 0.5rem }
 
     padding: 0.5rem 1.1rem;
