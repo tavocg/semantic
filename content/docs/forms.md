@@ -44,7 +44,7 @@ second spans both columns below the first row.
 <hgroup>
   <header>
     <strong>Choose color</strong>
-    <input type="color" role="switch" checked>
+    <input type="color" value="#62a6ff" aria-label="Choose color">
   </header>
   <p>Example description of this setting.</p>
 </hgroup>
