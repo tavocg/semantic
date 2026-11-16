@@ -97,8 +97,6 @@
     &:is(ol) { list-style: decimal }
   }
 
-  dt { font-weight: bold } dd { margin-inline-start: 1rem }
-
   table {
     display: block;
     width: fit-content;
