@@ -35,8 +35,8 @@ second spans both columns below the first row.
 {{< example >}}
 <hgroup>
   <header>
-    <strong>Example setting</strong>
-    <input type="checkbox" role="switch">
+    <label for="example-setting"><strong>Example setting</strong></label>
+    <input type="checkbox" id="example-setting" role="switch">
   </header>
   <p>Useful for describing switches.</p>
 </hgroup>
@@ -61,7 +61,7 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
 </label>
 <label>
   <span>Phone number</span>
-  <input type="number" placeholder="888 8888 8888">
+  <input type="tel" placeholder="888 8888 8888">
 </label>
 <label>
   <span>Message</span>
