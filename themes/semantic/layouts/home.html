@@ -1,3 +1,28 @@
 {{ define "main" }}
-  {{ .Content }}
+  <div style="position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));align-items:center;gap:4rem;padding:clamp(1.5rem,5vw,5rem)">
+    {{ partial "hero-background.html" . }}
+    <section>
+      <p class="primary" style="font-size:.75rem;font-weight:bold;letter-spacing:.12em;text-transform:uppercase">CSS for the modern web</p>
+      <h1 style="font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1;letter-spacing:-.04em">Semantic CSS</h1>
+      <p>{{ .Description }}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-block:1.5rem">
+        <a class="button" href="{{ "semantic.css" | relURL }}" download>Download</a>
+        <a class="button outline" href="{{ with site.GetPage "/docs" }}{{ .RelPermalink }}{{ end }}">Documentation</a>
+      </div>
+      <p class="mute"><small>One stylesheet · Native controls · Light &amp; dark</small></p>
+    </section>
+    <section id="component-preview" class="card" aria-labelledby="preview-title" style="max-width:32rem;justify-self:center;background:var(--b)">
+      <header><strong>Made with Semantic</strong><span class="tag green">On track</span></header>
+      <hr>
+      <hgroup><h2 id="preview-title">Your next good idea.</h2><p>A few familiar elements, ready to use.</p></hgroup>
+      <label>Project name<input type="text" value="Something worth making"></label>
+      <label>Project type<select><option>A small web app</option><option>A personal blog</option><option>A dashboard</option></select></label>
+      <label>Ready for launch<progress value="75" max="100">75%</progress></label>
+      <footer>
+        <a class="button outline" href="{{ with site.GetPage "/docs/components" }}{{ .RelPermalink }}{{ end }}">Components</a>
+        <a class="button" href="{{ with site.GetPage "/docs/forms" }}{{ .RelPermalink }}{{ end }}">Explore forms</a>
+      </footer>
+    </section>
+  </div>
+  <div style="width:min(100%,72rem);padding:clamp(1rem,4vw,3rem);margin:auto">{{ .Content }}</div>
 {{ end }}

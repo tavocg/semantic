@@ -1,6 +1,8 @@
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem">
-{{ range .Page.Sections.ByWeight }}
-<article class="card" style="display:flex;flex-direction:column">
+{{ $section := .Page }}
+{{ with .Get "section" }}{{ $section = site.GetPage . }}{{ end }}
+{{ range $section.Sections.ByWeight }}
+<article class="card {{ .Params.theme }}" style="display:flex;flex-direction:column">
   <a href="{{ .RelPermalink }}" aria-label="Explore {{ .Title }}">{{ partial "examples/art.html" (dict "kind" .Params.art) }}</a>
   <hgroup><h2>{{ .Title }}</h2><p>{{ .Description }}</p></hgroup>
   <p class="mute">{{ .Params.category }} · {{ .Params.theme | title }} theme</p>
