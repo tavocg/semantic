@@ -35,8 +35,10 @@
     </div>
     <div style="width:min(100%,72rem);padding:1rem;margin:auto">{{ .Content }}</div>
     {{ else }}
+    {{ if .Params.article }}<article>{{ end }}
     <section><hgroup><p class="primary">{{ $app.Title }} / Workspace</p><h1>{{ .Title }}</h1><p>{{ .Description }}</p></hgroup><a class="button outline" href="{{ $app.RelPermalink }}">Visit landing</a></section>
     {{ .Content }}
+    {{ if .Params.article }}</article>{{ end }}
     {{ end }}
   </main>
   <footer>
