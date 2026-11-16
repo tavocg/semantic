@@ -2,7 +2,7 @@
   {{- $opts := dict
     "targetPath" "semantic.css"
     "minify" (cond hugo.IsDevelopment false true)
-    "sourceMap" (cond hugo.IsDevelopment "linked" "none")
+    "sourceMap" "none"
   }}
   {{- $css := . | css.Build $opts }}
   {{- if not hugo.IsDevelopment }}
@@ -10,7 +10,9 @@
   {{- end }}
   {{- with $css }}
     {{- .Publish }}
-    {{- if hugo.IsDevelopment }}
+    {{- if site.Params.inject }}
+      <style>{{ .Content | safeCSS }}</style>
+    {{- else if hugo.IsDevelopment }}
       <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{- else }}
       {{- with . | fingerprint }}

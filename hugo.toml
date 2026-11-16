@@ -34,6 +34,7 @@ theme = 'semantic'
     weight = 30
 
 [params]
+inject = true
 description = 'A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.'
 
 [markup.goldmark.renderer]

@@ -2,6 +2,9 @@ baseURL = 'https://example.org/'
 locale = 'en-US'
 title = 'My New Hugo Project'
 
+[params]
+inject = false
+
 [menus]
   [[menus.main]]
     name = 'Docs'

@@ -95,6 +95,17 @@ theme = 'blue'
 A section can also supply the theme through Hugo's `cascade`. The top-level Hugo
 setting `theme = 'semantic'` selects the Hugo theme itself.
 
+To embed the stylesheet in every page instead of loading an external CSS file:
+
+```toml
+[params]
+inject = true
+```
+
+`inject` defaults to `false`. This documentation site enables it. Production
+builds minify the CSS in either mode, and `semantic.css` remains available for
+download in both modes.
+
 ## Light and dark modes
 
 Palette selection is independent of light and dark mode. Each palette uses
