@@ -290,8 +290,13 @@
   }
 
   blockquote, span.tag {
-    --bs: rgb(from var(--p) r g b / 8%);
+    --bs: rgb(from currentColor r g b / 8%);
     color: var(--p);
+  }
+
+  blockquote {
+    color: var(--f);
+    &:is(.blue, .green, .violet, .red, .orange, .info, .alert, .warn, .important, .tip) { color: var(--p) }
   }
 
   span.tag {
@@ -304,6 +309,7 @@
   button, a.button {
     margin-block: 0.25rem;
     transition: transform var(--motion, 100ms);
+    &:is(.info, .alert, .warn, .important, .tip):is(.plain, .outline) { color: var(--p) }
     &:not(:disabled, [aria-disabled="true"]):active { transform: scale(var(--press, 0.96)) }
     &:not(.plain, .outline, [command="close"]) {
       color: var(--b);

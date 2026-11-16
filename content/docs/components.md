@@ -38,23 +38,31 @@ and corner radius as a form.
 
 ## Tags and blockquotes
 
-Use `span.tag` for short labels. Tags and blockquotes use the current primary
-color; add `.blue`, `.green`, `.violet`, `.red`, or `.orange` to override it.
-The same palettes adapt to light and dark mode.
+Use `span.tag` for short labels. Tags use the current primary color (`--p`),
+while blockquotes use the text color (`--f`) by default, including their border
+and subtle background. Add `.info` for information (blue), `.tip` for
+advice (green), `.alert` for errors or destructive actions (red),
+`.warn` for warnings (orange), and `.important` for
+important details (violet). These variants adapt to light and dark mode.
+Color classes such as `.blue`, `.green`, and `.violet` are also available.
 
 {{< example >}}
 <p>
   <span class="tag">Default</span>
   <span class="tag blue">New</span>
-  <span class="tag green">On track</span>
+  <span class="tag info">Information</span>
+  <span class="tag tip">Tip</span>
   <span class="tag violet">In review</span>
-  <span class="tag red">Blocked</span>
-  <span class="tag orange">Needs attention</span>
+  <span class="tag alert">Blocked</span>
+  <span class="tag warn">Needs attention</span>
+  <span class="tag important">Important</span>
 </p>
-<blockquote>A note using the current theme.</blockquote>
-<blockquote class="green">All checks passed. Ready to publish.</blockquote>
-<blockquote class="orange">Review these changes before continuing.</blockquote>
-<blockquote class="red">The service is unavailable. Try again later.</blockquote>
+<blockquote>A note using the default text color.</blockquote>
+<blockquote class="info">Your next statement will be available tomorrow.</blockquote>
+<blockquote class="tip">Use the search field to quickly find a transaction.</blockquote>
+<blockquote class="warn">Review these changes before continuing.</blockquote>
+<blockquote class="alert">The service is unavailable. Try again later.</blockquote>
+<blockquote class="important">Save your recovery codes before continuing.</blockquote>
 {{< /example >}}
 
 ---

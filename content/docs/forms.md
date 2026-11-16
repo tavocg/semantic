@@ -134,6 +134,52 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
 <button aria-busy="true">Loading</button>
 {{< /example >}}
 
+Use `.info` for information, `.alert` for destructive actions, and `.warn` for
+actions that need caution. Use `.important` (violet) for important actions and
+`.tip` (green) for advice.
+These variants also work with `.outline`, `.plain`, and links styled as `.button`.
+Their colors adapt to light and dark mode.
+
+### Blue — info
+
+{{< example >}}
+<button type="button" class="info">View details</button>
+<button type="button" class="info outline">More information</button>
+<button type="button" class="info plain">View information</button>
+{{< /example >}}
+
+### Green — tip
+
+{{< example >}}
+<button type="button" class="tip">Show tip</button>
+<button type="button" class="tip outline">View suggestions</button>
+<button type="button" class="tip plain">Show shortcut</button>
+{{< /example >}}
+
+### Violet — important
+
+{{< example >}}
+<button type="button" class="important">Save recovery codes</button>
+<button type="button" class="important outline">Review requirements</button>
+<button type="button" class="important plain">View requirements</button>
+{{< /example >}}
+
+### Red — alert
+
+{{< example >}}
+<button type="button" class="alert">Delete account</button>
+<button type="button" class="alert outline">Discard changes</button>
+<button type="button" class="alert plain">Remove item</button>
+{{< /example >}}
+
+### Orange — warn
+
+{{< example >}}
+<button type="button" class="warn">Pause subscription</button>
+<button type="button" class="warn outline">Retry payment</button>
+<button type="button" class="warn plain">Review changes</button>
+{{< /example >}}
+
 ## Spinner
 
 {{< example >}}

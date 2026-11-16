@@ -21,22 +21,22 @@
   --orange: light-dark(#97500c, #ffae47);
 }
 
-:root, .blue {
+:root, .blue, .info {
   --p: light-dark(#1b59b3, #62a6ff);
 }
 
-:root[data-theme="green"], .green {
+:root[data-theme="green"], .green, .tip {
   --p: var(--green);
 }
 
-:root[data-theme="violet"], .violet {
+:root[data-theme="violet"], .violet, .important {
   --p: light-dark(#7047a3, #bd87ff);
 }
 
-:root[data-theme="red"], .red {
+:root[data-theme="red"], .red, .alert {
   --p: var(--red);
 }
 
-:root[data-theme="orange"], .orange {
+:root[data-theme="orange"], .orange, .warn {
   --p: var(--orange);
 }
