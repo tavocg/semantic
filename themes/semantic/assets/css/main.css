@@ -45,7 +45,8 @@
     width: min(100%, 72rem);
   }
 
-  main, table { margin: 0 auto }
+  main, table, article { margin: 0 auto }
+  article { max-width: 48rem }
 
   :is(main, article, section, form, label) > * {
     margin-bottom: 1rem;
