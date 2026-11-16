@@ -11,7 +11,7 @@
   </aside>
   {{ end }}
   <header>
-    <div>
+    <div style="white-space:nowrap">
     {{ if and $app.Params.sidebar (not .Params.landing) }}<button class="plain" popovertarget="site-aside" aria-label="Toggle workspace navigation">☰</button>{{ end }}
     <a href="{{ $app.RelPermalink }}"><strong>{{ $app.Title }}</strong></a>
     </div>
