@@ -60,7 +60,10 @@
   footer {
     justify-content: end;
     flex-wrap: wrap;
-    &:not(body > footer) { gap: 0.5rem }
+    &:not(body > footer) {
+      gap: 0.5rem;
+      align-items: center;
+    }
   }
 
   :is(body, main) > footer {

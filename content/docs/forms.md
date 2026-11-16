@@ -21,8 +21,8 @@ weight = 20
     Remember me
   </label>
   <footer>
-    <button type="reset" class="outline" onclick="event.preventDefault()">Reset</button>
-    <button type="submit" aria-busy="true" onclick="event.preventDefault()">Submit</button>
+    <a href="#" onclick="event.preventDefault()">Already have an account?</a>
+    <button type="submit" aria-busy="true" onclick="event.preventDefault()">Sign in</button>
   </footer>
 </form>
 
