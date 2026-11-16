@@ -1,0 +1,7 @@
+<nav aria-label="{{ .label }}"><ul>
+  <li><a href="{{ .app.RelPermalink }}"{{ if eq .page .app }} aria-current="page"{{ end }}>Home</a></li>
+  {{ $page := .page }}
+  {{ range .app.RegularPages.ByWeight }}
+  <li><a href="{{ .RelPermalink }}"{{ if eq . $page }} aria-current="page"{{ end }}>{{ .LinkTitle }}</a></li>
+  {{ end }}
+</ul></nav>

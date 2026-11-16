@@ -1,0 +1,7 @@
++++
+title = 'The empty page'
+description = 'An essay on design, attention, and knowing when to stop.'
+weight = 20
++++
+
+<article><hgroup><p class="primary">Essay / Design</p><p>By Alex Morgan · 6 minute read</p></hgroup><button type="button" class="outline" aria-pressed="false">Save article</button><p>Before a room becomes a room, it is a place where something could happen. Before a page becomes a page, it is a little promise of the same kind.</p><p>We tend to treat empty space as a problem to solve. Add a feature. Fill a shelf. Schedule the afternoon. But usefulness often begins with a more patient question: what does this need to make possible?</p><h2>Leave room for the reader</h2><p>A margin gives a sentence somewhere to breathe. A pause lets a conversation change direction. A simple interface gives the person using it a chance to understand what matters.</p><blockquote class="violet">The most useful thing we can add is sometimes a little less.</blockquote><p>This is not an argument for blankness. It is an invitation to choose. Keep the detail that carries meaning. Remove the detail that only asks for attention.</p><h2>A small practice</h2><p>At the end of the day, clear one surface. Close one tab. Leave one question unanswered until morning. Notice whether the space makes the next decision easier.</p><footer><a class="button outline" href="{{< relref "/examples/margin/journal" >}}">Back to journal</a></footer></article>

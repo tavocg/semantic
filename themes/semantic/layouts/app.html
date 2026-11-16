@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="{{ .Param "theme" | default "blue" }}">
+<head>{{ partial "head.html" . }}</head>
+{{ $app := .CurrentSection }}
+<body>
+  {{ if and $app.Params.sidebar (not .Params.landing) }}
+  <aside id="site-aside" popover>
+    <strong>{{ $app.Title }} workspace</strong>
+    {{ partial "examples/nav.html" (dict "app" $app "page" . "label" "Workspace sections") }}
+    <p class="mute"><small>Demo environment<br>Fictional services and metrics</small></p>
+  </aside>
+  {{ end }}
+  <header>
+    <div>
+    {{ if and $app.Params.sidebar (not .Params.landing) }}<button class="plain" popovertarget="site-aside" aria-label="Toggle workspace navigation">☰</button>{{ end }}
+    <a href="{{ $app.RelPermalink }}"><strong>{{ $app.Title }}</strong></a>
+    </div>
+    {{ partial "examples/nav.html" (dict "app" $app "page" . "label" "Main navigation") }}
+  </header>
+  <main{{ if .Params.landing }} style="width:100%;padding:0"{{ else }}{{ with .Param "width" }} style="width:min(100%,{{ . }})"{{ end }}{{ end }}>
+    {{ if .Params.landing }}
+    <div style="position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));align-items:center;gap:4rem;padding:clamp(1.5rem,5vw,5rem)">
+      <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" style="position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none"><defs><pattern id="hero-grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M60 0H0V60" fill="none" stroke="var(--p)" stroke-opacity=".15"/></pattern></defs><path fill="url(#hero-grid)" d="M0 0h1200v600H0z"/><circle cx="1000" cy="100" r="260" fill="none" stroke="var(--p)" stroke-opacity=".12" stroke-width="60"/></svg>
+      <section>
+        <p class="primary" style="font-size:.75rem;font-weight:bold;letter-spacing:.12em;text-transform:uppercase">{{ .Params.eyebrow }}</p>
+        <h1>{{ .Params.headline }}</h1>
+        <p>{{ .Description }}</p>
+        <p>
+          {{ with site.GetPage .Params.start }}<a class="button" href="{{ .RelPermalink }}">{{ $app.Params.action }}</a>{{ end }}
+          <a class="button outline" href="#features">Explore features</a>
+        </p>
+        <p class="mute"><small>Visual example · sample data · no account needed</small></p>
+      </section>
+      <div style="width:100%;max-width:36rem;justify-self:center">{{ partial "examples/art.html" (dict "kind" .Params.art) }}</div>
+    </div>
+    <div style="width:min(100%,72rem);padding:1rem;margin:auto">{{ .Content }}</div>
+    {{ else }}
+    <section><hgroup><p class="primary">{{ $app.Title }} / Workspace</p><h1>{{ .Title }}</h1><p>{{ .Description }}</p></hgroup><a class="button outline" href="{{ $app.RelPermalink }}">Visit landing</a></section>
+    {{ .Content }}
+    {{ end }}
+  </main>
+  <footer>
+    <div><strong>{{ $app.Title }}</strong><br><small class="mute">Built with Semantic CSS</small></div>
+    <div><small><strong>Explore</strong><ul class="mute"><li><a href="{{ with site.GetPage "/examples" }}{{ .RelPermalink }}{{ end }}">All examples</a></li><li><a href="{{ with site.GetPage "/docs/components" }}{{ .RelPermalink }}{{ end }}">Components</a></li></ul></small></div>
+  </footer>
+</body>
+</html>

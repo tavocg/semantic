@@ -1,0 +1,32 @@
+<svg class="primary" style="width:100%;height:auto;max-height:24rem;font-size:14px;color-scheme:light;--b:#fff;background:#fff;border-radius:var(--r)" viewBox="0 0 520 360" role="img" aria-label="{{ .kind | title }} application preview">
+  <rect x="12" y="18" width="496" height="324" rx="20" fill="var(--b)" stroke="currentColor" stroke-opacity=".35"/>
+  <path d="M12 66H508" stroke="currentColor" stroke-opacity=".2"/>
+  <g fill="currentColor"><circle cx="34" cy="42" r="5"/><circle cx="52" cy="42" r="5" opacity=".5"/><circle cx="70" cy="42" r="5" opacity=".2"/></g>
+  {{ if eq .kind "orbit" }}
+  <text x="32" y="96" font-weight="700">Spring release</text>
+  <g fill="currentColor" opacity=".07"><rect x="30" y="116" width="142" height="200" rx="10"/><rect x="189" y="116" width="142" height="200" rx="10"/><rect x="348" y="116" width="142" height="200" rx="10"/></g>
+  <text x="42" y="142">TO DO</text><text x="201" y="142">IN PROGRESS</text><text x="360" y="142">DONE</text>
+  <g fill="var(--b)" stroke="currentColor" stroke-opacity=".3"><rect x="40" y="158" width="122" height="64" rx="8"/><rect x="40" y="234" width="122" height="64" rx="8"/><rect x="199" y="158" width="122" height="102" rx="8"/><rect x="358" y="158" width="122" height="64" rx="8"/></g>
+  <text x="50" y="184">Research</text><text x="50" y="260">Wireframes</text><text x="209" y="184">Design system</text><text x="368" y="184">Kickoff</text>
+  <path d="M210 231H295M370 200l7 7 13-16" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+  {{ else if eq .kind "ledger" }}
+  <text x="34" y="103">TOTAL BALANCE</text><text x="34" y="147" font-size="36" font-weight="700">$24,860</text><text x="355" y="105">+12.8% this month</text>
+  <g stroke="currentColor" stroke-opacity=".12"><path d="M34 185H486M34 230H486M34 275H486"/></g>
+  <path d="M34 274 87 255 140 263 193 216 246 229 299 175 352 186 405 143 486 124V300H34Z" fill="currentColor" opacity=".12"/>
+  <path d="M34 274 87 255 140 263 193 216 246 229 299 175 352 186 405 143 486 124" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+  <text x="34" y="325">JAN</text><text x="240" y="325">MAR</text><text x="454" y="325">JUN</text>
+  {{ else if eq .kind "margin" }}
+  <rect x="34" y="88" width="208" height="230" rx="8" fill="currentColor" opacity=".1"/>
+  <circle cx="138" cy="166" r="52" fill="currentColor" opacity=".25"/>
+  <path d="M52 285 125 195 157 231 198 171 228 285" fill="currentColor" opacity=".6"/>
+  <text x="268" y="110" font-size="12">ISSUE 08 / SLOW LIVING</text><text x="268" y="158" font-size="26" font-weight="700">Make room</text><text x="268" y="190" font-size="26" font-weight="700">for less.</text>
+  <g stroke="currentColor" stroke-opacity=".25" stroke-width="6"><path d="M268 222H477M268 240H465M268 258H450"/></g>
+  <text x="268" y="303">Read the story →</text>
+  {{ else }}
+  <text x="34" y="104" font-weight="700">All systems operational</text><circle cx="467" cy="100" r="8" fill="currentColor"/>
+  <g fill="currentColor" opacity=".1"><rect x="34" y="127" width="138" height="63" rx="8"/><rect x="191" y="127" width="138" height="63" rx="8"/><rect x="348" y="127" width="138" height="63" rx="8"/></g>
+  <text x="47" y="151">UPTIME</text><text x="47" y="175" font-weight="700">99.98%</text><text x="204" y="151">LATENCY</text><text x="204" y="175" font-weight="700">42 ms</text><text x="361" y="151">REGIONS</text><text x="361" y="175" font-weight="700">6 healthy</text>
+  <g stroke="currentColor" stroke-width="10"><path d="M40 248v42M60 230v60M80 241v49M100 220v70M120 245v45M140 229v61M160 235v55M180 219v71M200 245v45M220 230v60M240 239v51M260 221v69M280 230v60M300 245v45M320 228v62M340 240v50M360 215v75M380 230v60M400 242v48M420 222v68M440 230v60M460 240v50"/></g>
+  <text x="34" y="320">Request volume · last 24 hours</text>
+  {{ end }}
+</svg>

@@ -4,6 +4,35 @@ title = 'Semantic'
 
 theme = 'semantic'
 
+[menus]
+  [[menus.main]]
+    name = 'Docs'
+    params = { icon = 'docs' }
+    pageRef = '/docs'
+    weight = 20
+  [[menus.main]]
+    name = 'Examples'
+    params = { icon = 'examples' }
+    pageRef = '/examples'
+    weight = 25
+  [[menus.main]]
+    name = 'GitHub'
+    params = { icon = 'github' }
+    url = 'https://github.com/tavocg/semantic'
+    weight = 30
+  [[menus.footer]]
+    name = 'Examples'
+    pageRef = '/examples'
+    weight = 10
+  [[menus.footer]]
+    name = 'Source code'
+    url = 'https://github.com/tavocg/semantic'
+    weight = 20
+  [[menus.footer]]
+    name = 'License'
+    url = 'https://raw.githubusercontent.com/tavocg/semantic/refs/heads/main/LICENSE'
+    weight = 30
+
 [params]
 description = 'A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.'
 
