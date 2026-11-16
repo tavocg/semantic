@@ -314,6 +314,7 @@
   main, body > header, body > aside { padding: 1rem }
 
   hgroup p, figcaption, .mute, .mute * { color: var(--fs) !important }
+  .primary, .primary * { color: var(--p) !important }
 
   figcaption {
     text-align: center;
