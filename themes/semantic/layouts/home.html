@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <div style="position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));align-items:center;gap:4rem;padding:1rem">
+  <div style="position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));align-items:center;gap:4rem;padding:clamp(1.5rem,5vw,5rem) clamp(1rem,10vw - 4rem,5rem)">
     {{ partial "hero-background.html" . }}
     <section>
       <p class="primary" style="font-size:.75rem;font-weight:bold;letter-spacing:.12em;text-transform:uppercase">CSS for the modern web</p>
