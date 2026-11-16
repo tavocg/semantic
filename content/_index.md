@@ -1,6 +1,6 @@
 +++
 title = 'Semantic CSS'
-description = "A drop-in, beautiful, hand-crafted stylesheet for semantic HTML under 10kb (4kb gz'd)."
+description = "A drop-in, beautiful, hand-crafted stylesheet for semantic HTML under 10kb (3.3kb gz'd)."
 +++
 
 <section style="margin-block:2rem 4rem">
