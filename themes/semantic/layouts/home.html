@@ -5,7 +5,7 @@
       <p class="primary" style="font-size:.75rem;font-weight:bold;letter-spacing:.12em;text-transform:uppercase">CSS for the modern web</p>
       <h1 style="font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1;letter-spacing:-.04em">Semantic CSS</h1>
       <p>{{ .Description }}</p>
-      <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-block:1.5rem">
+      <div>
         <a class="button" href="{{ "semantic.css" | relURL }}" download>Download</a>
         <a class="button outline" href="{{ with site.GetPage "/docs" }}{{ .RelPermalink }}{{ end }}">Documentation</a>
       </div>
