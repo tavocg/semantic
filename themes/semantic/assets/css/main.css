@@ -255,7 +255,6 @@
         display: block;
         position: sticky;
         grid-row: 1 / -1;
-        &:popover-open { position: fixed }
       }
       > :not(aside) { grid-column: 2 }
     }
