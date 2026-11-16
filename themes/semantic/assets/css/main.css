@@ -253,8 +253,8 @@
 
       > aside {
         display: block;
-        position: sticky;
-        grid-row: 1 / -1;
+        position: fixed;
+        &::backdrop { display: none }
       }
       > :not(aside) { grid-column: 2 }
     }
