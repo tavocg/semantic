@@ -26,6 +26,6 @@ theme = 'violet'
 </section>
 <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem">
   <article class="card"><h3>For your next good idea</h3><p><strong>3 projects</strong>Included in a small, focused workspace.</p><a class="button" href="{{< relref "/examples/orbit/projects" >}}">Try the demo</a></article>
-  <article><blockquote>“We stopped asking where things were and started making them.”</blockquote><p class="mute">Maya Chen · Studio North, fictional customer</p></article>
+  <article><blockquote>“We stopped asking where things were and started making them.”<p class="mute">Maya Chen · Studio North, fictional customer</p></blockquote></article>
 </section>
 <section><h2>A few useful answers</h2><details><summary>Can I try it without an account?</summary><p>Yes. Browse the workspace to see sample projects, tasks, and team cards. This is a visual preview; changes are not saved.</p></details><details><summary>How is this example built?</summary><p>Semantic HTML, the violet theme, and native browser controls. No JavaScript is included.</p></details></section>
