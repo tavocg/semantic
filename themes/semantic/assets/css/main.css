@@ -113,9 +113,6 @@
     th, td {
       padding: 0.25rem 0.5rem;
       &:not(:last-child > tr:last-child > *) { border-bottom: var(--d) }
-      &.nowrap {
-        white-space: nowrap
-      }
     }
   }
 
@@ -327,6 +324,7 @@
 
   hgroup p, figcaption, .mute, .mute * { color: var(--fs) !important }
   .primary, .primary * { color: var(--p) !important }
+  .nowrap { white-space: nowrap }
 
   figcaption {
     text-align: center;
