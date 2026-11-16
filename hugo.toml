@@ -35,6 +35,7 @@ theme = 'semantic'
 
 [params]
 inject = true
+injectFavicon = true
 description = 'A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.'
 
 [markup.goldmark.renderer]

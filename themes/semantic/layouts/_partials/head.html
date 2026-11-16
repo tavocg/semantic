@@ -1,6 +1,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
-<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+{{ if site.Params.injectfavicon }}
+  {{ with resources.Get "favicon.svg" }}
+    <link rel="icon" href="{{ printf "data:image/svg+xml;base64,%s" (.Content | base64Encode) | safeURL }}" type="image/svg+xml">
+  {{ end }}
+{{ else }}
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}">
+{{ end }}
 {{ partial "head/social.html" . }}
 {{ partialCached "head/css.html" . }}

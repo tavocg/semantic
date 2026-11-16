@@ -106,6 +106,17 @@ inject = true
 builds minify the CSS in either mode, and `semantic.css` remains available for
 download in both modes.
 
+The favicon defaults to `static/favicon.ico`, supplied by your site. To embed
+the theme's SVG favicon in every page instead:
+
+```toml
+[params]
+injectFavicon = true
+```
+
+`injectFavicon` defaults to `false` and is enabled on this documentation site.
+To replace the embedded SVG, add your own `assets/favicon.svg`.
+
 ## Light and dark modes
 
 Palette selection is independent of light and dark mode. Each palette uses

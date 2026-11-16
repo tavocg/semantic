@@ -4,6 +4,7 @@ title = 'My New Hugo Project'
 
 [params]
 inject = false
+injectFavicon = false
 
 [menus]
   [[menus.main]]
