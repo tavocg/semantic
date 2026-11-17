@@ -71,7 +71,7 @@
     justify-content: space-evenly;
   }
 
-  h1, h2, h3, h4, h5, h6, strong {
+  h1, h2, h3, h4, h5, h6, strong, dt {
     font-weight: bold;
     color: var(--h);
   }
@@ -99,9 +99,9 @@
   :is(ol, ul, menu, dl):not(nav *, footer *, header *), aside :has(+ nav > ul) {
     display: block;
     margin: 1rem 0;
-    padding-inline-start: 1.35rem;
+    &:not(dl) { padding-inline-start: 1.35rem }
     list-style: square;
-    li::marker { color: var(--fs); font-size: 0.8em }
+    li::marker, dd { color: var(--fs) }
     &:is(ol) { list-style: decimal }
   }
 
