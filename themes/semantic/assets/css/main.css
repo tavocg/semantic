@@ -24,7 +24,7 @@
 @scope (:root) to (.nostyle) {
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--f) #0000;
+    scrollbar-color: var(--fs) #0000;
   }
 
   body, header, footer {
