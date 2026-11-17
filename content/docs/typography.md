@@ -27,6 +27,17 @@ weight = 10
 2. {{< lorem sentence 2 >}}
 3. {{< lorem sentence 3 >}}
 
+### Description lists
+
+{{< example >}}
+<dl>
+  <dt>HTML</dt>
+  <dd>Describes the structure and meaning of content.</dd>
+  <dt>CSS</dt>
+  <dd>Controls the presentation of content.</dd>
+</dl>
+{{< /example >}}
+
 ## Inline text elements
 
 <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem">
