@@ -96,7 +96,7 @@
     }
   }
 
-  :is(ol, ul, menu, dl):not(nav *, footer *, header *), aside :has(+ nav > ul) {
+  :is(ol, ul, menu, dl):not(nav *, footer *, header *), aside :not(nav):has(+ nav > ul) {
     display: block;
     margin: 1rem 0;
     &:not(dl) { padding-inline-start: 1.35rem }
