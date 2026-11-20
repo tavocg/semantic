@@ -1,7 +1,5 @@
 /* Shared color formulas. Each palette overrides only the primary color. */
 :root {
-  font-size: 18px;
-
   color-scheme: light dark;
 
   --f: color-mix(in srgb, var(--p) 5%, light-dark(#292929, #e7e7e7));
