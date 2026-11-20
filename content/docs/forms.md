@@ -4,51 +4,25 @@ weight = 20
 +++
 
 <form>
-  <hgroup>
-    <h2>Sign in</h2>
-    <p>This is a form example.</p>
-  </hgroup>
+  <h2>Sign in</h2>
+  <p class="mute">This is a form example.</p>
   <label>
     Email
-    <input type="email" id="email" placeholder="john@doe.com">
+    <input type="email" placeholder="john@doe.com">
   </label>
   <label>
     Password
-    <input type="password" id="password">
+    <input type="password">
   </label>
-  <label for="session">
-    <input type="checkbox" id="session" checked="">
+  <label>
+    <input type="checkbox" checked>
     Remember me
   </label>
   <footer>
     <a href="#" onclick="event.preventDefault()">Already have an account?</a>
-    <button type="submit" aria-busy="true" onclick="event.preventDefault()">Sign in</button>
+    <button aria-busy="true" onclick="event.preventDefault()">Sign in</button>
   </footer>
 </form>
-
-## Heading groups
-
-The heading can also be an `h1`–`h6`. The second child can be an input, button,
-link, status label, paragraph, or any other element. Every child after the
-second spans both columns below the first row.
-
-{{< example >}}
-<hgroup>
-  <header>
-    <label for="example-setting"><strong>Example setting</strong></label>
-    <input type="checkbox" id="example-setting" role="switch">
-  </header>
-  <p>Useful for describing switches.</p>
-</hgroup>
-
-<hgroup>
-  <header>
-    <strong>Choose color</strong>
-    <input type="color" value="#62a6ff" aria-label="Choose color">
-  </header>
-  <p>Example description of this setting.</p>
-</hgroup>
-{{< /example >}}
 
 ## Text fields
 
@@ -57,7 +31,7 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
 {{< example >}}
 <label>
   <span>Name</span>
-  <input type="text" placeholder="John Doe">
+  <input placeholder="John Doe">
 </label>
 <label>
   <span>Phone number</span>
@@ -67,6 +41,7 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
   <span>Message</span>
   <textarea placeholder="Message"></textarea>
 </label>
+<label>Choose color<input type="color" value="#62a6ff"></label>
 {{< /example >}}
 
 ## Select
@@ -74,7 +49,7 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
 {{< example >}}
 <label>
   <span>Choose an option</span>
-  <select name="choice">
+  <select>
     <option>First</option>
     <option>Second</option>
   </select>
@@ -86,7 +61,7 @@ Use `type="search"`, `type="file"`, `type="date"`, `type="time"`, or `type="colo
 {{< example >}}
 <label>
   <span>Volume</span>
-  <input type="range" name="volume" min="0" max="100" value="50">
+  <input type="range">
 </label>
 {{< /example >}}
 
@@ -143,41 +118,41 @@ Their colors adapt to light and dark mode.
 ### Blue — info
 
 {{< example >}}
-<button type="button" class="info">View details</button>
-<button type="button" class="info outline">More information</button>
-<button type="button" class="info plain">View information</button>
+<button class="info">View details</button>
+<button class="info outline">More information</button>
+<button class="info plain">View information</button>
 {{< /example >}}
 
 ### Green — tip
 
 {{< example >}}
-<button type="button" class="tip">Show tip</button>
-<button type="button" class="tip outline">View suggestions</button>
-<button type="button" class="tip plain">Show shortcut</button>
+<button class="tip">Show tip</button>
+<button class="tip outline">View suggestions</button>
+<button class="tip plain">Show shortcut</button>
 {{< /example >}}
 
 ### Violet — important
 
 {{< example >}}
-<button type="button" class="important">Save recovery codes</button>
-<button type="button" class="important outline">Review requirements</button>
-<button type="button" class="important plain">View requirements</button>
+<button class="important">Save recovery codes</button>
+<button class="important outline">Review requirements</button>
+<button class="important plain">View requirements</button>
 {{< /example >}}
 
 ### Red — alert
 
 {{< example >}}
-<button type="button" class="alert">Delete account</button>
-<button type="button" class="alert outline">Discard changes</button>
-<button type="button" class="alert plain">Remove item</button>
+<button class="alert">Delete account</button>
+<button class="alert outline">Discard changes</button>
+<button class="alert plain">Remove item</button>
 {{< /example >}}
 
 ### Orange — warn
 
 {{< example >}}
-<button type="button" class="warn">Pause subscription</button>
-<button type="button" class="warn outline">Retry payment</button>
-<button type="button" class="warn plain">Review changes</button>
+<button class="warn">Pause subscription</button>
+<button class="warn outline">Retry payment</button>
+<button class="warn plain">Review changes</button>
 {{< /example >}}
 
 ## Spinner

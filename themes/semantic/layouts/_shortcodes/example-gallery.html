@@ -4,9 +4,9 @@
 {{ range $section.Sections.ByWeight }}
 <article class="card {{ .Params.theme }}" style="display:flex;flex-direction:column">
   <a href="{{ .RelPermalink }}" aria-label="Explore {{ .Title }}">{{ partial "examples/art.html" (dict "kind" .Params.art) }}</a>
-  <hgroup><h2>{{ .Title }}</h2><p>{{ .Description }}</p></hgroup>
-  <p class="mute">{{ .Params.category }} · {{ .Params.theme | title }} theme</p>
-  <footer style="margin-top:auto"><a class="button" href="{{ .RelPermalink }}">Explore {{ .Title }}</a></footer>
+  <h2>{{ .Title }}</h2><p class="mute">{{ .Description }}</p>
+  <p class="mute" style="margin-block-end:auto">{{ .Params.category }} · {{ .Params.theme | title }} theme</p>
+  <footer><a class="button" href="{{ .RelPermalink }}">Explore {{ .Title }}</a></footer>
 </article>
 {{ end }}
 </div>

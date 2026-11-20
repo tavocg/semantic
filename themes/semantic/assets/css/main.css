@@ -35,26 +35,26 @@
   body {
     flex-direction: column;
     min-height: 100dvh;
-    color: var(--f);
-    background: var(--b);
     accent-color: var(--p);
   }
+
+  body, body > aside { color: var(--f); background: var(--b) }
 
   main {
     flex-grow: 1;
     width: min(100%, 72rem);
   }
 
-  main, table, article { margin: 0 auto }
+  main, table, article { margin-inline: auto }
   article { max-width: 48rem }
 
-  :is(main, article, section, form, label) > * {
-    margin-bottom: 1rem;
+  :where(main, article, section, aside, form, fieldset, .card, dialog, details, blockquote):not(header, footer) > * + * {
+    margin-block-start: 1rem;
   }
 
   header {
     align-items: center;
-    justify-content: space-between;
+    > :first-child { flex-grow: 1 }
   }
 
   footer {
@@ -98,7 +98,6 @@
 
   :is(ol, ul, menu, dl):not(nav *, footer *, header *), aside :not(nav):has(+ nav > ul) {
     display: block;
-    margin: 1rem 0;
     &:not(dl) { padding-inline-start: 1.35rem }
     list-style: square;
     li::marker, dd { color: var(--fs) }
@@ -117,25 +116,21 @@
   }
 
   form, input, button, select, a.button, fieldset, .card, pre, dialog, details, nav a, blockquote, textarea, progress, meter {
-    > * { margin-block: 0.5rem }
-    > footer { margin-top: 1.5rem }
-    padding: 0.5rem 1.1rem;
+    padding: 0.5rem 1rem;
     border-radius: var(--r);
 
     &:disabled { opacity: 0.5 }
-    &:is(:focus, :active):not(form, fieldset, dialog, pre, card, blockquote, .card, :disabled) {
+    &:is(:focus, :active):not(form, fieldset, dialog, pre, blockquote, .card, :disabled) {
       outline: 0.125rem solid rgb(from var(--p) r g b / 35%);
     }
 
-    &:not(button, a.button, nav a, dialog, [type="checkbox"], [type="radio"], [type="color"]) {
+    &:where(:not(button, a.button, nav a, dialog)) {
       width: 100%;
-      margin-top: 0.5rem;
     }
 
     &:is([type="checkbox"], [type="radio"]) {
       width: 1.25rem;
       height: 1.25rem;
-      margin: 0;
       vertical-align: middle;
     }
 
@@ -161,7 +156,7 @@
       overflow: hidden;
       &::-webkit-progress-bar { background: #0000 }
       &::-webkit-meter-inner-element { display: block }
-      &::-webkit-meter-bar { background: #0000; border: 0; height: 100% }
+      &::-webkit-meter-bar { position: static; background: #0000; border: 0; height: 100% }
       &::-webkit-progress-value, &::-webkit-meter-optimum-value, &::-webkit-meter-suboptimum-value, &::-webkit-meter-even-less-good-value { background: var(--p); border-radius: var(--r) }
       &::-moz-progress-bar, &::-moz-meter-bar { background: var(--p); border-radius: var(--r) }
     }
@@ -178,14 +173,10 @@
 
     &:is(dialog) {
       background-color: var(--b);
-    }
-
-    &:is(dialog) {
       width: 36rem;
       max-width: 95%;
       border: var(--d);
       margin: auto;
-      &[open] { animation: fade-right var(--motion, 150ms) ease-out }
     }
 
     option, optgroup {
@@ -235,6 +226,7 @@
     }
   }
 
+  dialog[open], body > aside:popover-open { animation: fade-right var(--motion, 150ms) ease-out }
   :is(dialog, body > aside)::backdrop { background: #0008; backdrop-filter: blur(4px) }
 
   body > aside {
@@ -243,10 +235,6 @@
     width: min(16rem, 85vw);
     height: 100dvh;
     overflow: auto;
-    color: var(--f);
-    background: var(--b);
-
-    &:popover-open { animation: fade-right var(--motion, 150ms) ease-out }
   }
 
   @media (min-width: 48rem) {
@@ -278,10 +266,14 @@
     &:not(aside *) ul { display: flex }
   }
 
-  label:has(> input:is([type="checkbox"], [type="radio"])) {
-    display: flex;
-    align-items: center;
+  label:has(> :is(input, select, textarea, progress, meter)) {
+    display: grid;
     gap: 0.5rem;
+
+    &:has(> input:is([type="checkbox"], [type="radio"])) {
+      display: flex;
+      align-items: center;
+    }
   }
 
   button, a.button, span.tag {
@@ -302,12 +294,12 @@
   span.tag {
     background: var(--bs);
     border-radius: var(--r);
-    padding: 0.15rem 0.6rem;
+    margin-inline: 0.25rem;
+    padding: 0.15rem 0.5rem;
     font-size: 0.75rem;
   }
 
   button, a.button {
-    margin-block: 0.25rem;
     transition: transform var(--motion, 100ms);
     &:is(.info, .alert, .warn, .important, .tip):is(.plain, .outline) { color: var(--p) }
     &:not(:disabled, [aria-disabled="true"]):active { transform: scale(var(--press, 0.96)) }
@@ -322,13 +314,13 @@
 
   main, body > header, body > aside { padding: 1rem }
 
-  hgroup p, figcaption, .mute, .mute * { color: var(--fs) !important }
+  figcaption, .mute, .mute * { color: var(--fs) !important }
   .primary, .primary * { color: var(--p) !important }
   .nowrap { white-space: nowrap }
 
   figcaption {
     text-align: center;
-    margin-top: 0.25rem;
+    margin-block-start: 0.25rem;
     font-size: small;
   }
 }

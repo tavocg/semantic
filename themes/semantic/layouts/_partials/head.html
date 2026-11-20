@@ -3,7 +3,7 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ if site.Params.injectfavicon }}
   {{ with resources.Get "favicon.svg" }}
-    <link rel="icon" href="{{ printf "data:image/svg+xml;base64,%s" (.Content | base64Encode) | safeURL }}" type="image/svg+xml">
+    <link rel="icon" href="{{ printf "data:image/svg+xml;base64,%s" (.Content | base64Encode) | safeURL }}">
   {{ end }}
 {{ else }}
   <link rel="icon" href="{{ "favicon.ico" | relURL }}">

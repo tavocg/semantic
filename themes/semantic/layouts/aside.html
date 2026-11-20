@@ -9,7 +9,7 @@
 {{ define "main" }}
   {{ $section := . }}
   {{ if .IsPage }}{{ $section = .Parent }}{{ end }}
-  <div id="aside-content" tabindex="-1">
+  <div>
     <h1>{{ $section.Title }}</h1>
     <section>
       <h2>{{ if .IsSection }}Overview{{ else }}{{ .Title }}{{ end }}</h2>

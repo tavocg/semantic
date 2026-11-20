@@ -17,7 +17,7 @@
     <strong>Project</strong>
     <ul class="mute">
       {{- range site.Menus.footer }}
-      <li><a href="{{ .URL }}"{{ if (urls.Parse .URL).IsAbs }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Name }}</a></li>
+      <li><a href="{{ .URL }}"{{ if (urls.Parse .URL).IsAbs }} target="_blank" rel="noreferrer"{{ end }}>{{ .Name }}</a></li>
       {{- end }}
     </ul>
 </div>

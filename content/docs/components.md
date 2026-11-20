@@ -20,17 +20,16 @@ weight = 30
 ## Cards
 
 Use `.card` to group related content with the same surface, padding, border,
-and corner radius as a form.
+and corner radius as a form. In a `header`, the first element expands to fill
+the space available beside the other items.
 
 {{< example >}}
 <article class="card">
-  <hgroup>
-    <header>
-      <h3>Example card</h3>
-      <button>Button</button>
-    </header>
-    <p>A summary with an action. Use a card to group related content.</p>
-  </hgroup>
+  <header>
+    <h3>Example card</h3>
+    <button>Button</button>
+  </header>
+  <p class="mute">A summary with an action. Use a card to group related content.</p>
 </article>
 {{< /example >}}
 
@@ -115,10 +114,10 @@ Set `optimum` near `max` when higher values are better, or near `min` when lower
 values are better.
 
 {{< example >}}
-<label>Storage usage<meter min="0" max="100" low="60" high="85" optimum="0" value="40">40%</meter></label>
-<label>Storage filling up<meter min="0" max="100" low="60" high="85" optimum="0" value="75">75%</meter></label>
-<label>Storage nearly full<meter min="0" max="100" low="60" high="85" optimum="0" value="95">95%</meter></label>
-<label>Battery level<meter min="0" max="100" low="20" high="60" optimum="100" value="80">80%</meter></label>
+<label>Storage usage<meter max="100" low="60" high="85" optimum="0" value="40">40%</meter></label>
+<label>Storage filling up<meter max="100" low="60" high="85" optimum="0" value="75">75%</meter></label>
+<label>Storage nearly full<meter max="100" low="60" high="85" optimum="0" value="95">95%</meter></label>
+<label>Battery level<meter max="100" low="20" high="60" optimum="100" value="80">80%</meter></label>
 {{< /example >}}
 
 ---

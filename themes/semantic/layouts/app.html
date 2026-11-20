@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="{{ .Param "theme" | default "blue" }}">
+<html lang="en"{{ with .Param "theme" }} data-theme="{{ . }}"{{ end }}>
 <head>{{ partial "head.html" . }}</head>
 {{ $app := .CurrentSection }}
 <body>
@@ -33,10 +33,10 @@
       </section>
       <div style="width:100%;max-width:36rem;justify-self:center">{{ partial "examples/art.html" (dict "kind" .Params.art) }}</div>
     </div>
-    <div style="width:min(100%,72rem);padding:1rem;margin:auto">{{ .Content }}</div>
+    <div style="display:grid;gap:2rem;width:min(100%,72rem);padding:1rem;margin:auto">{{ .Content }}</div>
     {{ else }}
     {{ if .Params.article }}<article>{{ end }}
-    <section><hgroup><p class="primary">{{ $app.Title }} / Workspace</p><h1>{{ .Title }}</h1><p>{{ .Description }}</p></hgroup><a class="button outline" href="{{ $app.RelPermalink }}">Visit landing</a></section>
+    <section><p class="primary">{{ $app.Title }} / Workspace</p><h1>{{ .Title }}</h1><p class="mute">{{ .Description }}</p><a class="button outline" href="{{ $app.RelPermalink }}">Visit landing</a></section>
     {{ .Content }}
     {{ if .Params.article }}</article>{{ end }}
     {{ end }}
