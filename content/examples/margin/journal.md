@@ -6,7 +6,7 @@ weight = 10
 
 <section>
 <header>
-  <search><label>Find a story<input type="search" placeholder="Search design, places, or rituals"></label></search>
+  <search><input type="search" placeholder="Search design, places, or rituals"></search>
   <button type="button" class="outline" commandfor="story-dialog" command="show-modal">Add story</button>
 </header>
 <dialog id="story-dialog" aria-labelledby="story-title">
