@@ -1,0 +1,9 @@
+{{- $css := resources.Get "css/main.css" -}}
+{{- with $css -}}
+  {{- $opts := dict "targetPath" "semantic.css" "minify" (not hugo.IsDevelopment) "sourceMap" "none" -}}
+  {{- $css = . | css.Build $opts -}}
+  {{- if not hugo.IsDevelopment -}}
+    {{- $css = resources.FromString "semantic.css" ($css | minify).Content -}}
+  {{- end -}}
+{{- end -}}
+{{- return $css -}}
