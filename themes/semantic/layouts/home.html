@@ -5,7 +5,7 @@
       <p class="primary" style="font-size:.75rem;font-weight:bold;letter-spacing:.12em;text-transform:uppercase">CSS for the modern web</p>
       <h1 style="font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1;letter-spacing:-.04em">{{ .Title }}{{ with site.Params.slogan }} <span class="mute" style="font-size:.5em;letter-spacing:-.02em">— {{ . }}</span>{{ end }}</h1>
       <p>{{ .Description | default site.Params.description }}</p>
-      <div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
         <a class="button" href="{{ "semantic.css" | relURL }}" download>Download</a>
         <a class="button outline" href="{{ with site.GetPage "/docs" }}{{ .RelPermalink }}{{ end }}">Documentation</a>
       </div>
@@ -20,7 +20,7 @@
       <label>Ready for launch<progress value="75" max="100">75%</progress></label>
       <footer>
         <a class="button outline" href="{{ with site.GetPage "/docs/components" }}{{ .RelPermalink }}{{ end }}">Components</a>
-        <a class="button" href="{{ with site.GetPage "/docs/forms" }}{{ .RelPermalink }}{{ end }}">Explore</a>
+        <a class="button" href="{{ with site.GetPage "/docs/forms" }}{{ .RelPermalink }}{{ end }}">Explore form styles</a>
       </footer>
     </section>
   </div>
