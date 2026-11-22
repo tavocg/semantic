@@ -27,5 +27,11 @@
     {{- $website = merge $website (dict "description" .) -}}
   {{- end -}}
   {{- $graph = slice $website $page -}}
+  {{- with site.Params.publisher -}}
+    {{- $publisherID := printf "%s#publisher" $home.Permalink -}}
+    {{- $publisher := dict "@type" "Person" "@id" $publisherID "name" .name "url" .url -}}
+    {{- $website = merge $website (dict "publisher" (dict "@id" $publisherID)) -}}
+    {{- $graph = slice $website $page $publisher -}}
+  {{- end -}}
 {{- end -}}
 <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>
