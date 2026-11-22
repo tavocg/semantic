@@ -1,0 +1,5 @@
+{{- with partialCached "stylesheet.html" .Page -}}
+  {{- $version := substr (crypto.SHA256 .Content) 0 12 -}}
+  {{- $tag := printf `<link rel="stylesheet" href="%s?v=%s">` .Permalink $version -}}
+  {{- highlight $tag "html" -}}
+{{- end -}}

@@ -14,7 +14,9 @@ title = 'Semantic CSS'
 
 <section id="get-started" style="margin-block:4rem">
   <h2>One file. A fresh start.</h2><p class="mute">Download the stylesheet, add it to your page, and write your HTML.</p>
-  <pre><code>&lt;link rel="stylesheet" href="semantic.css"&gt;</code></pre>
+
+{{< stylesheet-example >}}
+
   <p>You can keep building with the tools you already use. The examples on this site use the same stylesheet you download here.</p>
   <p>Put the link in your document's <code>&lt;head&gt;</code> so the browser can discover the stylesheet as it reads the page.</p>
   <p><span class="tag blue">Blue</span> <span class="tag green">Green</span> <span class="tag violet">Violet</span> <span class="tag red">Red</span> <span class="tag orange">Orange</span></p>
@@ -89,7 +91,7 @@ To see how much your page sends, reload it with caching disabled in your browser
 
 ## What fits in the first response?
 
-Measured from a local production build of this homepage with `gzip -n -9`, the HTML response body is about **10.1 kB**. It includes the stylesheet, the interactive example, and the SVG previews in the gallery. The logo is a separate **0.6 kB** SVG file before compression. The page also declares a **5.1 kB** Apple touch icon that supported clients can request. The standalone stylesheet is **3.4 kB** gzipped and is fetched separately when you click **Download**.
+Measured from a local production build of this homepage with `gzip -n -9`, the HTML response body is about **10.3 kB**. It includes the stylesheet, the interactive example, and the SVG previews in the gallery. The logo is a separate **0.6 kB** SVG file before compression. The page also declares a **5.1 kB** Apple touch icon that supported clients can request. The standalone stylesheet is **3.4 kB** gzipped and is fetched separately when you click **Download**.
 
 These figures measure the files. The first TCP window also has to carry response headers and TLS overhead. Keeping the styles and the first piece of content in the HTML puts them in the same response, where the browser can start using them as they arrive.
 
