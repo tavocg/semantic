@@ -1,0 +1,31 @@
+{{- $home := site.Home -}}
+{{- $websiteID := printf "%s#website" $home.Permalink -}}
+{{- $pageType := "WebPage" -}}
+{{- if and (not .IsHome) (not .IsPage) -}}
+  {{- $pageType = "CollectionPage" -}}
+{{- end -}}
+{{- $page := dict
+  "@type" $pageType
+  "url" .Permalink
+  "name" .Title
+  "inLanguage" site.Language.Locale
+  "isPartOf" (dict "@id" $websiteID)
+-}}
+{{- with .Description -}}
+  {{- $page = merge $page (dict "description" .) -}}
+{{- end -}}
+{{- $graph := slice $page -}}
+{{- if .IsHome -}}
+  {{- $website := dict
+    "@type" "WebSite"
+    "@id" $websiteID
+    "url" $home.Permalink
+    "name" $home.Title
+    "inLanguage" site.Language.Locale
+  -}}
+  {{- with $home.Description | default site.Params.description -}}
+    {{- $website = merge $website (dict "description" .) -}}
+  {{- end -}}
+  {{- $graph = slice $website $page -}}
+{{- end -}}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>
