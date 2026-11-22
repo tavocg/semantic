@@ -43,7 +43,7 @@ Renders a menu for the given menu ID.
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
           {{- end }}
         {{- end -}}
-      >{{ with .Params.icon }}{{ partial "icon.html" . }}{{ else }}{{ $name }}{{ end }}</a>
+      >{{ with .Params.icon }}{{ partial "icon.html" . }} <span>{{ $name }}</span>{{ else }}{{ $name }}{{ end }}</a>
       {{- with .Children }}
         <ul>
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
