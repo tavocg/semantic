@@ -1,5 +1,6 @@
 +++
 title = 'Components'
+footerTitle = 'UI components'
 weight = 30
 +++
 
