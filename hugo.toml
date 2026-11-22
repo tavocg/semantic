@@ -5,6 +5,15 @@ title = 'Semantic'
 theme = 'semantic'
 enableRobotsTXT = true
 
+[outputFormats.markdown]
+ugly = true
+
+[[cascade]]
+outputs = ['html', 'markdown']
+[cascade.target]
+path = '/docs/**'
+kind = 'page'
+
 [menus]
   [[menus.main]]
     name = 'Docs'

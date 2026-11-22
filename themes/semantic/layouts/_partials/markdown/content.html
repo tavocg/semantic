@@ -1,0 +1,15 @@
+{{- $blocks := slice (printf "# %s" .Title) -}}
+{{- with .RenderShortcodes | strings.TrimSpace -}}
+  {{- $blocks = $blocks | append . -}}
+{{- end -}}
+{{- $links := slice -}}
+{{- range .Pages -}}
+  {{- $title := .LinkTitle -}}
+  {{- with partialCached "markdown/url.html" . .Path -}}
+    {{- $links = $links | append (printf "- [%s](%s)" $title .) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $links -}}
+  {{- $blocks = $blocks | append (printf "## Contents\n\n%s" (delimit . "\n")) -}}
+{{- end -}}
+{{- return (printf "%s\n" (delimit $blocks "\n\n")) -}}

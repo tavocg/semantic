@@ -1,0 +1,11 @@
+{{- $url := "" -}}
+{{- $output := .OutputFormats.Get "markdown" -}}
+{{- if $output -}}
+  {{- $url = $output.Permalink -}}
+{{- else if and .IsSection (eq .Section "docs") -}}
+  {{- /* Hugo keeps section outputs in their directory, so publish the sibling file explicitly. */ -}}
+  {{- $path := .RelPermalink | strings.TrimPrefix site.Home.RelPermalink | strings.TrimSuffix "/" -}}
+  {{- $file := resources.FromString (printf "%s.md" $path) (partial "markdown/content.html" .) -}}
+  {{- $url = $file.Permalink -}}
+{{- end -}}
+{{- return $url -}}
