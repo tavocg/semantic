@@ -37,7 +37,7 @@ Keep your layout and any styles specific to your project. Once you've seen which
 
 ## Why Semantic CSS?
 
-Semantic CSS encourages HTML that does more with fewer bytes. Start with the elements that already describe your page. A `<label>` names a form field, a `<button>` provides keyboard interaction, and `<details>` with `<summary>` gives you a disclosure the browser can open and close on its own.
+Semantic CSS helps you supercharge HTML with a single lightweight stylesheet. Start with the elements that already describe your page. A `<label>` names a form field, a `<button>` provides keyboard interaction, and `<details>` with `<summary>` gives you a disclosure the browser can open and close on its own.
 
 The stylesheet gives those elements consistent defaults for spacing, type, and color. You can keep the markup small, skip extra wrappers and classes for everyday elements, and save JavaScript for behavior specific to your site.
 
@@ -51,7 +51,7 @@ A small data table is a good example. Its `<caption>` tells readers what the tab
 
 <section class="card">
   <header>
-    <h3>Release preview</h3>
+    <h3>Try the release preview</h3>
     <button type="button" commandfor="release-preview" command="show-modal">Open preview</button>
   </header>
   <p class="mute">Review a draft release and see how Semantic CSS styles its status and notes.</p>
