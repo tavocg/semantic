@@ -1,7 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>{{ if .IsHome }}{{ .Title }}{{ with site.Params.slogan }} — {{ . }}{{ end }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
-<link rel="canonical" href="{{ .Permalink }}">
+<title>{{ if .IsHome }}{{ .Title }}{{ with site.Params.slogan }} — {{ . }}{{ end }}{{ else if eq .Kind "404" }}404 Page not found | {{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ if site.Params.injectfavicon }}
   {{ with resources.Get "favicon.svg" }}
     <link rel="icon" href="{{ printf "data:image/svg+xml;base64,%s" (.Content | base64Encode) | safeURL }}">
@@ -10,5 +9,11 @@
 {{ else }}
   <link rel="icon" href="{{ "favicon.ico" | relURL }}">
 {{ end }}
-{{ partial "head/social.html" . }}
+{{ if eq .Kind "404" }}
+  <meta name="robots" content="noindex">
+{{ else }}
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ partial "head/social.html" . }}
+  {{ partial "head/structured-data.html" . }}
+{{ end }}
 {{ partialCached "head/css.html" . }}
