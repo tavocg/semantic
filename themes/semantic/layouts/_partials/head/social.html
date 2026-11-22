@@ -1,4 +1,9 @@
-{{- $title := cond .IsHome .Title (printf "%s | %s" .Title site.Title) -}}
+{{- $title := .Title -}}
+{{- if .IsHome -}}
+  {{- with site.Params.slogan }}{{ $title = printf "%s — %s" $title . }}{{ end -}}
+{{- else -}}
+  {{- $title = printf "%s | %s" .Title site.Title -}}
+{{- end -}}
 {{- $description := .Description | default site.Params.description -}}
 {{- $image := "social-card.png" | absURL -}}
 <meta name="description" content="{{ $description }}">
