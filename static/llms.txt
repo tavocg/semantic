@@ -1,0 +1,22 @@
+# Semantic CSS
+
+> Semantic CSS is a minimal, drop-in stylesheet for semantic HTML. It styles native elements and includes built-in light and dark themes.
+
+Load `semantic.css` in the document head and use standard HTML. Common elements receive default styles without a JavaScript runtime.
+
+## Documentation
+
+- [Documentation overview](https://semantic.win/docs.md): Index of the HTML and CSS examples.
+- [Typography](https://semantic.win/docs/typography.md): Text elements, lists, and tables.
+- [Forms](https://semantic.win/docs/forms.md): Examples of native form controls and validation styles.
+- [Components](https://semantic.win/docs/components.md): Navigation, cards, dialogs, and other interface examples.
+- [Themes](https://semantic.win/docs/themes.md): Built-in palettes and how to customize the primary color.
+
+## Project resources
+
+- [Download semantic.css](https://semantic.win/semantic.css): The standalone stylesheet.
+- [Source code](https://github.com/tavocg/semantic): Project repository and release history.
+
+## Optional
+
+- [Example gallery](https://semantic.win/examples/): Working layouts that use Semantic CSS.
