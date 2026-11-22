@@ -39,6 +39,7 @@ inject = true
 injectFavicon = true
 description = "A drop-in, beautiful, hand-crafted stylesheet for semantic HTML under 10kB (3.4kB gz'd)."
 slogan = 'Supercharge HTML'
+issueTracker = 'https://github.com/tavocg/semantic/issues/new'
 
 [markup.goldmark.renderer]
 unsafe = true
