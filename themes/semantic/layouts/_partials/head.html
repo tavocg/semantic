@@ -13,6 +13,9 @@
   <meta name="robots" content="noindex">
 {{ else }}
   <link rel="canonical" href="{{ .Permalink }}">
+  {{ with site.Params.llmsTxt }}
+    <link rel="describedby" href="{{ . | absURL }}">
+  {{ end }}
   {{ with partialCached "markdown/url.html" . .Path }}
     <link rel="alternate" type="text/markdown" href="{{ . }}">
   {{ end }}
