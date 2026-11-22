@@ -1,0 +1,2 @@
+# Semantic CSS does not run ads or authorize any advertising sellers.
+placeholder.example.com, placeholder, DIRECT, placeholder
