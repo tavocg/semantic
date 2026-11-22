@@ -59,8 +59,10 @@ html,
 
 hr {
   height: 0; /* 1 */
-  color: inherit; /* 2 */
-  border-top-width: 1px; /* 3 */
+  /* commented, main.css:89 sets the border color explicitly */
+  /* color: inherit; */
+  /* commented, already set in main.css:89 */
+  /* border-top-width: 1px; */
 }
 
 /*
@@ -76,14 +78,13 @@ abbr:where([title]) {
   Remove the default font size and weight for headings.
 */
 
-h1,
-h2,
-h3,
-h4,
-h5,
+/* commented, already set in main.css:73,78-82 */
+/* h1, h2, h3, h4, h5 { font-size: inherit; font-weight: inherit; } */
+
 h6 {
   font-size: inherit;
-  font-weight: inherit;
+  /* commented, already set in main.css:73 */
+  /* font-weight: inherit; */
 }
 
 /*
@@ -100,10 +101,8 @@ a {
   Add the correct font weight in Edge and Safari.
 */
 
-b,
-strong {
-  font-weight: bolder;
-}
+/* commented, already set in main.css:73 */
+/* b, strong { font-weight: bolder; } */
 
 /*
   1. Use the user's configured `mono` font-family by default.
@@ -192,9 +191,8 @@ progress {
   Add the correct display in Chrome and Safari.
 */
 
-summary {
-  display: list-item;
-}
+/* commented, already set in main.css:208 */
+/* summary { display: list-item; } */
 
 /*
   Make lists unstyled by default.

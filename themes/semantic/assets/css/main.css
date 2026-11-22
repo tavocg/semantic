@@ -21,306 +21,304 @@
 @import "theme.css";
 @import "animations.css";
 
-@scope (:root) to (.nostyle) {
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--fs) #0000;
-  }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--fs) #0000;
+}
 
-  body, header, footer {
-    display: flex;
-    gap: 1.5rem;
-  }
+body, header, footer {
+  display: flex;
+  gap: 1.5rem;
+}
 
-  body {
-    flex-direction: column;
-    min-height: 100dvh;
-    accent-color: var(--p);
-  }
+body {
+  flex-direction: column;
+  min-height: 100dvh;
+  accent-color: var(--p);
+}
 
-  body, body > aside { color: var(--f); background: var(--b) }
+body, body > aside { color: var(--f); background: var(--b) }
 
-  main {
-    flex-grow: 1;
-    width: min(100%, 72rem);
-  }
+main {
+  flex-grow: 1;
+  width: min(100%, 72rem);
+}
 
-  main, table, article { margin-inline: auto }
-  article { max-width: 48rem }
+main, table, article { margin-inline: auto }
+article { max-width: 48rem }
 
-  :where(main, article, section, aside, form, fieldset, .card, dialog, details, blockquote):not(header, footer) > * + * {
-    margin-block-start: 1rem;
-  }
+:where(main, article, section, aside, form, fieldset, .card, dialog, details, blockquote):not(header, footer) > * + * {
+  margin-block-start: 1rem;
+}
 
-  header {
-    align-items: center;
-    > :first-child { flex-grow: 1 }
-  }
+header {
+  align-items: center;
+  > :first-child { flex-grow: 1 }
+}
 
-  footer {
-    justify-content: end;
-    flex-wrap: wrap;
-    &:not(body > footer) {
-      gap: 0.5rem;
-      align-items: center;
-    }
-  }
-
-  :is(body, main) > footer {
-    padding: 2rem;
-    justify-content: space-evenly;
-  }
-
-  h1, h2, h3, h4, h5, h6, strong, dt {
-    font-weight: bold;
-    color: var(--h);
-  }
-  h1, h2, h3, h4, h5, ul li { line-height: 1.6 }
-  h1 { font-size: 2.25rem }
-  h2 { font-size: 1.875rem }
-  h3 { font-size: 1.5rem }
-  h4 { font-size: 1.25rem }
-  h5 { font-size: 1.125rem }
-
-  ins, del { text-decoration: none }
-  ins { color: var(--green) }
-  del { color: var(--red) }
-
-  pre, table, nav { overflow-x: auto }
-  hr { border-top: var(--d) }
-
-  a:not(.button, nav a) {
-    color: var(--a);
-    &:hover {
-      text-decoration: underline
-    }
-  }
-
-  :is(ol, ul, menu, dl):not(nav *, footer *, header *), aside :not(nav):has(+ nav > ul) {
-    display: block;
-    &:not(dl) { padding-inline-start: 1.35rem }
-    list-style: square;
-    li::marker, dd { color: var(--fs) }
-    &:is(ol) { list-style: decimal }
-  }
-
-  table {
-    display: block;
-    width: fit-content;
-    max-width: 100%;
-    text-align: start;
-    th, td {
-      padding: 0.25rem 0.5rem;
-      &:not(:last-child > tr:last-child > *) { border-bottom: var(--d) }
-    }
-  }
-
-  form, input, button, select, a.button, fieldset, .card, pre, dialog, details, nav a, blockquote, textarea, progress, meter {
-    padding: 0.5rem 1rem;
-    border-radius: var(--r);
-
-    &:disabled { opacity: 0.5 }
-    &:is(:focus, :active):not(form, fieldset, dialog, pre, blockquote, .card, :disabled) {
-      outline: 0.125rem solid rgb(from var(--p) r g b / 35%);
-    }
-
-    &:where(:not(button, a.button, nav a, dialog)) {
-      width: 100%;
-    }
-
-    &:is([type="checkbox"], [type="radio"]) {
-      width: 1.25rem;
-      height: 1.25rem;
-      vertical-align: middle;
-    }
-
-    &:not(.plain, dialog, nav a) {
-      background-color: var(--bs);
-      border: var(--d);
-      &:is(header [command="close"], :read-write, select) {
-        background-color: #0000;
-        &:not(.outline, :read-write, select) {
-          border: 0;
-        }
-      }
-      &:is(blockquote) {
-        border-width: 0 0 0 0.25rem;
-        border-color: currentColor;
-      }
-    }
-
-    &:is(progress, meter) {
-      appearance: none;
-      padding: 0;
-      height: 0.75rem;
-      overflow: hidden;
-      &::-webkit-progress-bar { background: #0000 }
-      &::-webkit-meter-inner-element { display: block }
-      &::-webkit-meter-bar { position: static; background: #0000; border: 0; height: 100% }
-      &::-webkit-progress-value, &::-webkit-meter-optimum-value, &::-webkit-meter-suboptimum-value, &::-webkit-meter-even-less-good-value { background: var(--p); border-radius: var(--r) }
-      &::-moz-progress-bar, &::-moz-meter-bar { background: var(--p); border-radius: var(--r) }
-    }
-
-    &:is(meter) {
-      --p: var(--green);
-      --bs: var(--b);
-      background-image: none;
-      &:-moz-meter-sub-optimum { --p: var(--orange) }
-      &:-moz-meter-sub-sub-optimum { --p: var(--red) }
-      &::-webkit-meter-suboptimum-value { --p: var(--orange) }
-      &::-webkit-meter-even-less-good-value { --p: var(--red) }
-    }
-
-    &:is(dialog) {
-      background-color: var(--b);
-      width: 36rem;
-      max-width: 95%;
-      border: var(--d);
-      margin: auto;
-    }
-
-    option, optgroup {
-      color: var(--f);
-      background: var(--b);
-    }
-
-    &[type="color"] {
-      width: 3rem;
-      height: 2.5rem;
-      padding: 0.25rem;
-      &::-webkit-color-swatch-wrapper { padding: 0 }
-      &::-webkit-color-swatch { border: 0; border-radius: var(--r) }
-      &::-moz-color-swatch { border: 0; border-radius: var(--r) }
-    }
-
-    &[aria-busy="true"]::before {
-      content: "";
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-      margin-inline-end: 0.5em;
-      border: 0.125em solid #0000;
-      border-top-color: currentColor;
-      border-radius: 50%;
-      animation: var(--spin, spin 0.5s linear infinite);
-    }
-
-    summary {
-      display: block;
-      color: var(--fs);
-      &::after { content: "+"; float: right }
-    }
-    &[open] > summary::after { content: "−" }
-
-    &[role="switch"] {
-      --r:1rem;
-      appearance: none;
-      width: 2.5rem;
-      height: 1.5rem;
-      background: radial-gradient(var(--b) 71%, #0000 0) 3px/1rem 1rem no-repeat var(--fs);
-
-      &:checked {
-        background-position: right 3px center;
-        background-color: var(--p);
-      }
-    }
-  }
-
-  dialog[open], body > aside:popover-open { animation: fade-right var(--motion, 150ms) ease-out }
-  :is(dialog, body > aside)::backdrop { background: #0008; backdrop-filter: blur(4px) }
-
-  body > aside {
-    inset: 0;
-    inset-inline-end: auto;
-    width: min(16rem, 85vw);
-    height: 100dvh;
-    overflow: auto;
-  }
-
-  @media (min-width: 48rem) {
-    body:has(> aside) {
-      display: grid;
-      grid-template: auto 1fr auto / 16rem minmax(0, 1fr);
-
-      > aside {
-        display: block;
-        position: fixed;
-        &::backdrop { display: none }
-      }
-      > :not(aside) { grid-column: 2 }
-    }
-    [popovertarget="site-aside"] { display: none }
-  }
-
-  nav {
-    padding: 0.25rem;
-    a {
-      display: block;
-      color: var(--fs);
-      &:hover, &[aria-current="page"] {
-        color: var(--f);
-        background: var(--bs);
-      }
-    }
-    ul { display: grid; gap: 0.25rem; white-space: nowrap }
-    &:not(aside *) ul { display: flex }
-  }
-
-  label:has(> :is(input, select, textarea, progress, meter)) {
-    display: grid;
+footer {
+  justify-content: end;
+  flex-wrap: wrap;
+  &:not(body > footer) {
     gap: 0.5rem;
+    align-items: center;
+  }
+}
 
-    &:has(> input:is([type="checkbox"], [type="radio"])) {
-      display: flex;
-      align-items: center;
+:is(body, main) > footer {
+  padding: 2rem;
+  justify-content: space-evenly;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong, dt {
+  font-weight: bold;
+  color: var(--h);
+}
+h1, h2, h3, h4, h5, ul li { line-height: 1.6 }
+h1 { font-size: 2.25rem }
+h2 { font-size: 1.875rem }
+h3 { font-size: 1.5rem }
+h4 { font-size: 1.25rem }
+h5 { font-size: 1.125rem }
+
+ins, del { text-decoration: none }
+ins { color: var(--green) }
+del { color: var(--red) }
+
+pre, table, nav { overflow-x: auto }
+hr { border-top: var(--d) }
+
+a:not(.button, nav a) {
+  color: var(--a);
+  &:hover {
+    text-decoration: underline
+  }
+}
+
+:is(ol, ul, menu, dl):not(nav *, footer *, header *), aside :not(nav):has(+ nav > ul) {
+  display: block;
+  &:not(dl) { padding-inline-start: 1.35rem }
+  list-style: square;
+  li::marker, dd { color: var(--fs) }
+  &:is(ol) { list-style: decimal }
+}
+
+table {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  text-align: start;
+  th, td {
+    padding: 0.25rem 0.5rem;
+    &:not(:last-child > tr:last-child > *) { border-bottom: var(--d) }
+  }
+}
+
+form, input, button, select, a.button, fieldset, .card, pre, dialog, details, nav a, blockquote, textarea, progress, meter {
+  padding: 0.5rem 1rem;
+  border-radius: var(--r);
+
+  &:disabled { opacity: 0.5 }
+  &:is(:focus, :active):not(form, fieldset, dialog, pre, blockquote, .card, :disabled) {
+    outline: 0.125rem solid rgb(from var(--p) r g b / 35%);
+  }
+
+  &:where(:not(button, a.button, nav a, dialog)) {
+    width: 100%;
+  }
+
+  &:is([type="checkbox"], [type="radio"]) {
+    width: 1.25rem;
+    height: 1.25rem;
+    vertical-align: middle;
+  }
+
+  &:not(.plain, dialog, nav a) {
+    background-color: var(--bs);
+    border: var(--d);
+    &:is(header [command="close"], :read-write, select) {
+      background-color: #0000;
+      &:not(.outline, :read-write, select) {
+        border: 0;
+      }
+    }
+    &:is(blockquote) {
+      border-width: 0 0 0 0.25rem;
+      border-color: currentColor;
     }
   }
 
-  button, a.button, span.tag {
-    display: inline-block;
-    white-space: nowrap;
+  &:is(progress, meter) {
+    appearance: none;
+    padding: 0;
+    height: 0.75rem;
+    overflow: hidden;
+    &::-webkit-progress-bar { background: #0000 }
+    &::-webkit-meter-inner-element { display: block }
+    &::-webkit-meter-bar { position: static; background: #0000; border: 0; height: 100% }
+    &::-webkit-progress-value, &::-webkit-meter-optimum-value, &::-webkit-meter-suboptimum-value, &::-webkit-meter-even-less-good-value { background: var(--p); border-radius: var(--r) }
+    &::-moz-progress-bar, &::-moz-meter-bar { background: var(--p); border-radius: var(--r) }
   }
 
-  blockquote, span.tag {
-    --bs: rgb(from currentColor r g b / 8%);
-    color: var(--p);
+  &:is(meter) {
+    --p: var(--green);
+    --bs: var(--b);
+    background-image: none;
+    &:-moz-meter-sub-optimum { --p: var(--orange) }
+    &:-moz-meter-sub-sub-optimum { --p: var(--red) }
+    &::-webkit-meter-suboptimum-value { --p: var(--orange) }
+    &::-webkit-meter-even-less-good-value { --p: var(--red) }
   }
 
-  blockquote {
+  &:is(dialog) {
+    background-color: var(--b);
+    width: 36rem;
+    max-width: 95%;
+    border: var(--d);
+    margin: auto;
+  }
+
+  option, optgroup {
     color: var(--f);
-    &:is(.blue, .green, .violet, .red, .orange, .info, .alert, .warn, .important, .tip) { color: var(--p) }
+    background: var(--b);
   }
 
-  span.tag {
-    background: var(--bs);
-    border-radius: var(--r);
-    margin-inline: 0.25rem;
-    padding: 0.15rem 0.5rem;
-    font-size: 0.75rem;
+  &[type="color"] {
+    width: 3rem;
+    height: 2.5rem;
+    padding: 0.25rem;
+    &::-webkit-color-swatch-wrapper { padding: 0 }
+    &::-webkit-color-swatch { border: 0; border-radius: var(--r) }
+    &::-moz-color-swatch { border: 0; border-radius: var(--r) }
   }
 
-  button, a.button {
-    transition: transform var(--motion, 100ms);
-    &:is(.info, .alert, .warn, .important, .tip):is(.plain, .outline) { color: var(--p) }
-    &:not(:disabled, [aria-disabled="true"]):active { transform: scale(var(--press, 0.96)) }
-    &:not(.plain, .outline, [command="close"]) {
-      color: var(--b);
+  &[aria-busy="true"]::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-inline-end: 0.5em;
+    border: 0.125em solid #0000;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: var(--spin, spin 0.5s linear infinite);
+  }
+
+  summary {
+    display: block;
+    color: var(--fs);
+    &::after { content: "+"; float: right }
+  }
+  &[open] > summary::after { content: "−" }
+
+  &[role="switch"] {
+    --r:1rem;
+    appearance: none;
+    width: 2.5rem;
+    height: 1.5rem;
+    background: radial-gradient(var(--b) 71%, #0000 0) 3px/1rem 1rem no-repeat var(--fs);
+
+    &:checked {
+      background-position: right 3px center;
       background-color: var(--p);
     }
-    &:hover {
-      filter: brightness(1.1)
+  }
+}
+
+dialog[open], body > aside:popover-open { animation: fade-right var(--motion, 150ms) ease-out }
+:is(dialog, body > aside)::backdrop { background: #0008; backdrop-filter: blur(4px) }
+
+body > aside {
+  inset: 0;
+  inset-inline-end: auto;
+  width: min(16rem, 85vw);
+  height: 100dvh;
+  overflow: auto;
+}
+
+@media (min-width: 48rem) {
+  body:has(> aside) {
+    display: grid;
+    grid-template: auto 1fr auto / 16rem minmax(0, 1fr);
+
+    > aside {
+      display: block;
+      position: fixed;
+      &::backdrop { display: none }
+    }
+    > :not(aside) { grid-column: 2 }
+  }
+  [popovertarget="site-aside"] { display: none }
+}
+
+nav {
+  padding: 0.25rem;
+  a {
+    display: block;
+    color: var(--fs);
+    &:hover, &[aria-current="page"] {
+      color: var(--f);
+      background: var(--bs);
     }
   }
+  ul { display: grid; gap: 0.25rem; white-space: nowrap }
+  &:not(aside *) ul { display: flex }
+}
 
-  main, body > header, body > aside { padding: 1rem }
+label:has(> :is(input, select, textarea, progress, meter)) {
+  display: grid;
+  gap: 0.5rem;
 
-  figcaption, .mute, .mute * { color: var(--fs) !important }
-  .primary, .primary * { color: var(--p) !important }
-  .nowrap { white-space: nowrap }
-
-  figcaption {
-    text-align: center;
-    margin-block-start: 0.25rem;
-    font-size: small;
+  &:has(> input:is([type="checkbox"], [type="radio"])) {
+    display: flex;
+    align-items: center;
   }
+}
+
+button, a.button, span.tag {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+blockquote, span.tag {
+  --bs: rgb(from currentColor r g b / 8%);
+  color: var(--p);
+}
+
+blockquote {
+  color: var(--f);
+  &:is(.blue, .green, .violet, .red, .orange, .info, .alert, .warn, .important, .tip) { color: var(--p) }
+}
+
+span.tag {
+  background: var(--bs);
+  border-radius: var(--r);
+  margin-inline: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+button, a.button {
+  transition: transform var(--motion, 100ms);
+  &:is(.info, .alert, .warn, .important, .tip):is(.plain, .outline) { color: var(--p) }
+  &:not(:disabled, [aria-disabled="true"]):active { transform: scale(var(--press, 0.96)) }
+  &:not(.plain, .outline, [command="close"]) {
+    color: var(--b);
+    background-color: var(--p);
+  }
+  &:hover {
+    filter: brightness(1.1)
+  }
+}
+
+main, body > header, body > aside { padding: 1rem }
+
+figcaption, .mute, .mute * { color: var(--fs) !important }
+.primary, .primary * { color: var(--p) !important }
+.nowrap { white-space: nowrap }
+
+figcaption {
+  text-align: center;
+  margin-block-start: 0.25rem;
+  font-size: small;
 }
