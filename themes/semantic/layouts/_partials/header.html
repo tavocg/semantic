@@ -2,6 +2,9 @@
   {{- if eq .Layout "aside" }}
     <button class="plain" popovertarget="site-aside" title="Toggle sidebar">☰</button>
   {{- end }}
-  <a href="{{ site.Home.RelPermalink }}"><img width="30" src="{{ (resources.Get "favicon.svg").RelPermalink }}" alt="Semantic CSS home"></a>
+  <a style="display:flex;gap:1rem" href="{{ site.Home.RelPermalink }}" aria-label="Semantic CSS home">
+    <img width="30" src="{{ (resources.Get "favicon.svg").RelPermalink }}" alt="Semantic CSS home">
+    <span><strong>Semantic</strong></span>
+  </a>
 </div>
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
