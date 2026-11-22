@@ -2,6 +2,11 @@
 <html lang="{{ site.Language.Locale }}"{{ with site.Language.Direction }} dir="{{ . }}"{{ end }}{{ with .Param "theme" }} data-theme="{{ . }}"{{ end }}>
   <head>
     {{ partial "head.html" . }}
+    <style>
+      @media (width < 48rem) {
+        body > header a[aria-label] > span { display: none }
+      }
+    </style>
   </head>
   <body>
     {{ block "aside" . }}{{ end }}
