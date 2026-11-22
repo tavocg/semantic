@@ -36,7 +36,8 @@ theme = 'semantic'
 [params]
 inject = true
 injectFavicon = true
-description = 'A drop-in, beautiful, hand-crafted stylesheet for semantic HTML.'
+description = "A drop-in, beautiful, hand-crafted stylesheet for semantic HTML under 10kB (3.4kB gz'd)."
+slogan = 'Supercharge HTML'
 
 [markup.goldmark.renderer]
 unsafe = true
