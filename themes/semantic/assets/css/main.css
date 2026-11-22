@@ -225,6 +225,8 @@ form, input, button, select, a.button, fieldset, .card, pre, dialog, details, na
   }
 }
 
+form, fieldset, dialog, details, blockquote, .card { padding-block: 1rem }
+
 dialog[open], body > aside:popover-open { animation: fade-right var(--motion, 150ms) ease-out }
 :is(dialog, body > aside)::backdrop { background: #0008; backdrop-filter: blur(4px) }
 
