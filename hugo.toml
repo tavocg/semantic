@@ -21,7 +21,7 @@ theme = 'semantic'
     url = 'https://github.com/tavocg/semantic'
     weight = 30
   [[menus.footer]]
-    name = 'Examples'
+    name = 'Browse all examples'
     pageRef = '/examples'
     weight = 10
   [[menus.footer]]
